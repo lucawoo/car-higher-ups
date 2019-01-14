@@ -1,0 +1,64 @@
+/*tab*/
+.swiper-tab{
+  width: 100%;
+  border-bottom: 2rpx solid #eee;
+  text-align: center;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+.swiper-tab-list{
+  font-size: 29rpx;
+  display: inline-block;
+  width: 50%;
+}
+.swiper-box{
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 70rpx;
+}
+
+.menu{
+  width: 100%;
+  color: #777777;
+}
+.menu-item{
+  width: 50%;
+  float: left;
+  font-size: 28rpx;
+  text-align: center;
+}
+.btm-line {
+  width: 16rpx;
+	height: 3rpx;
+  margin: 10rpx auto 0;
+}
+.dtab-active-bottom {
+  background: #00a0e8; 
+}
+.dtab-active-color {
+  color: #00a0e8;
+}
+
+/*cont*/
+.new-list{
+  margin-bottom: 60rpx;
+}
+.new-name{
+  font-size: 28rpx;
+  margin-top: -4rpx;
+}
+.new-describe{
+  font-size: 20rpx;
+  color: #656565;
+  margin-top: 5rpx;
+}
+.new-botm{
+  font-size: 18rpx;
+  color: #919191;
+  margin-top: 48rpx;
+}
+.new-price{
+  color: #00a0e8;
+  font-size: 24rpx;
+}

@@ -1,0 +1,117 @@
+<import src="/wxParse/wxParse.wxml" />
+
+
+<view class='{{tabIndex == 0||tabIndex == 1||tabIndex == 2?"overscroll":""}}'>
+  <view class='art-tit' style='border-bottom:10rpx solid #eee;padding:45rpx 7%;'>{{courseList.name}}</view>
+  <view class='article'>
+
+    <view class='art-cont'>
+    <view wx-if="{{lecturerId==bothList.lecturer.id?false:purchased=='false'}}">
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+
+
+    <view wx-if="{{lecturerId==bothList.lecturer.id?true:purchased=='true'}}">
+      <template is="wxParse" data="{{wxParseData:content2.nodes}}"/>
+    </view>
+
+    </view>
+
+    <!-- <view class='free'>
+      <view class='free-tit' style='padding-bottom:50rpx;'>以上为试看内容，需要获取课程后才能查看全文</view>
+    </view> -->
+
+  </view>
+</view> 
+
+
+
+
+<!--bottom-Tab-->
+
+
+<view class='botmmenu'>
+  <view class='menu swiper-tab {{fixed?"":"tabfix"}}'>
+    <block wx:for='{{menus}}' wx:key>
+      <view class='menu-item'>
+        <view bindtap='showMenuDetail' data-index='{{index}}'>{{item}}</view>
+      </view>
+    </block>
+  </view>
+
+
+
+
+</view>
+
+
+  <view class='swiper-box' wx-if="{{tabIndex == 0||tabIndex == 1||tabIndex == 2}}">
+    <view class='dclassify' class='good-dexc' wx:if='{{tabIndex == 0}}'>
+      <template is="wxParse" data="{{wxParseData:jianjie.nodes}}"/>
+    </view>
+    <view class='dclassify' style='font-size:26rpx;' wx:if='{{tabIndex == 1}}'>
+      <view class='attachList' style='display:flex;align-items:center;' wx:for="{{attachList}}" wx:key bindtap='seeattach' data-url='{{item.url}}' data-container="{{item.container}}">
+        <view class='attachList-type'>
+          <image wx-if="{{item.container=='png'||item.container=='jpg'||item.container=='jpeg'}}" src='/images/attach_jpg.png' mode="aspectFit"></image>
+          <image wx-if="{{item.container=='pdf'}}" src='/images/attach_pdf.png' mode="aspectFit"></image>
+          <image wx-if="{{item.container=='ppt'}}" src='/images/attach_ppt.png' mode="aspectFit"></image>
+          <image wx-if="{{item.container=='docx'}}" src='/images/attach_word.png' mode="aspectFit"></image>
+        </view>
+        <view class='attachList-right'>
+          <view class='attachList-name'>{{item.name}}</view>
+          <view style='clear: both;margin-top:38rpx;'>
+            <view class='attachList-size'>{{item.size}}M</view>
+            <!-- <view class='attachList-time'>{{item.created_at}}</view> -->
+          </view>
+        </view>
+      </view>
+      <view wx-if="{{!attachList.length}}">
+        <image src='/images/null.png' mode="aspectFit" style='width:30%;height:300rpx;margin-left:35%;margin-top:5%;'></image>
+        <view style='text-align:center;font-size:30rpx;color:#ddd;'>暂无课件</view>
+      </view>
+    </view>
+
+
+
+    <view class='dclassify' wx:if='{{tabIndex == 2}}'>
+      <view class='zan-row' style='padding-top:20rpx;'>
+        <view style='color:#00A0E8;font-size:24rpx;' class='zan-col zan-col-4 zan-col-offset-20' bindtap='sortlist'>
+          <image src='/images/sort.png' wx-if="{{sort}}" style='width:27rpx;height:18rpx;'></image>
+          <image src='/images/sort_1.png' wx-if="{{!sort}}" style='width:27rpx;height:18rpx;'></image>
+          排序
+        </view>
+      </view>
+      <view>
+        <view class='directory-list' bindtap='toclum' data-fid="{{bothList.id}}" data-type="{{item.type}}" data-purchased='{{bothList.is_Purchased}}' data-id='{{item.id}}' data-is_eval="{{bothList.is_evaluate}}" data-is_try_see='{{item.is_try_see}}' wx:key wx:for="{{lessonList}}">
+          <text class='list-num'>0{{index+1}}</text>
+          <view>
+            <view class='list-name'>{{item.name}}</view>
+            <view class='list-time'>{{item.created_at}}</view>
+            <view class='list-cont'>
+              <image style='width:180rpx;height:90rpx;border-radius:2px;float:left;' src='{{item.cover}}'></image>
+              <view class='list-kind' wx-if="{{item.type=='video'}}">
+                <image class='list-icon' src='/images/video_icon.png'></image>视频</view>
+              <view class='list-kind' wx-if="{{item.type=='audio'}}">
+                <image class='list-icon' src='/images/audio_icon.png'></image>音频</view>
+              <view class='list-kind' wx-if="{{item.type=='article'}}">
+                <image class='list-icon' src='/images/img_icon.png'></image>图文</view>
+              <view class='list-had zan-row'>
+                <text class='seepeo zan-col zan-col-6'>{{item.click_num}}观看</text>
+                <text class='trystudy zan-col zan-col-6 zan-col-offset-6' wx-if="{{item.is_try_see&&!bothList.is_Purchased}}">试看</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+<view wx:if='{{tabIndex == 0||tabIndex == 1||tabIndex == 2}}' bindtap='hidemenu' class='menu-dark'>
+</view>
+
+
+<view class='hoverclick hoverclick1' wx:if='{{tabIndex == 0}}' bindtap='hidemenu'>本节介绍</view>
+<view class='hoverclick hoverclick2' wx:if='{{tabIndex == 1}}' bindtap='hidemenu'>课件</view>
+<view class='hoverclick hoverclick3' wx:if='{{tabIndex == 2}}' bindtap='hidemenu'>选节</view>

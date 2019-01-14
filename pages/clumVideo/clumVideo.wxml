@@ -1,0 +1,105 @@
+<import src="/wxParse/wxParse.wxml"/>
+<view style='display: {{closeShareModal ? "none" : "block"}}'>
+  <view class='top'>
+    <view class='topvideo'>
+      <video id="myVideo" poster='{{poster}}' bindwaiting="bindwaiting" bindplay='playVideo' src="{{courseList.url}}" controls event-model="bubble" objectFit="fill" bindtimeupdate="videoTimeUpdated" bindended='videoEnd' objectFit="contain" autoplay='true' binderror="videoerror" custom-cache="{{false}}">
+      </video>
+    </view>
+  </view>
+
+
+
+  <view class='good-name'>
+    {{courseList.name}}
+  </view>
+
+
+  <view>
+    <view class='menu swiper-tab {{fixed?"":"tabfix"}}' style='border-bottom:1px solid #eee;'>
+      <block wx:for='{{menus}}' wx:key>
+        <view class='menu-item'>
+          <view bindtap='showMenuDetail' class='{{index == tabIndex ? "dtab-active-color" : ""}}' data-index='{{index}}'>{{item}}</view>
+          <view class='btm-line {{index == tabIndex ? "dtab-active-bottom" : ""}}'></view>
+        </view>
+      </block>
+    </view>
+
+    <view class='swiper-box'>
+      <view class='dclassify' wx:if='{{tabIndex == 0}}'>
+        <view class='synopsis'>
+          <view class='synopsis-cont'>
+            <template is="wxParse" data="{{wxParseData:jianjie.nodes}}"/>
+          </view>
+        </view>
+      </view>
+
+      <!--课件-->
+      <view class='dclassify' wx:if='{{tabIndex == 1}}'>
+        <view wx-if="{{!attachList.length}}">
+          <image src='/images/null.png' mode="aspectFit" style='width:30%;height:300rpx;margin-left:35%;margin-top:5%;'></image>
+          <view style='text-align:center;font-size:30rpx;color:#ddd;'>暂无课件</view>
+        </view>
+        <view class='attachList acccc' style='display:flex;align-items:center;' wx:for="{{attachList}}" wx:key bindtap='seeattach' data-url='{{item.url}}' data-container="{{item.container}}">
+          <view class='attachList-type'>
+            <image wx-if="{{item.container=='png'||item.container=='jpg'||item.container=='jpeg'}}" src='/images/attach_jpg.png' mode="aspectFit"></image>
+            <image wx-if="{{item.container=='pdf'}}" src='/images/attach_pdf.png' mode="aspectFit"></image>
+            <image wx-if="{{item.container=='ppt'}}" src='/images/attach_ppt.png' mode="aspectFit"></image>
+            <image wx-if="{{item.container=='docx'}}" src='/images/attach_word.png' mode="aspectFit"></image>
+          </view>
+          <view class='attachList-right'>
+            <view class='attachList-name'>{{item.name}}</view>
+            <view style='clear: both;margin-top:38rpx;'>
+              <view class='attachList-size'>{{item.size}}M</view>
+              <!-- <view class='attachList-time'>{{item.created_at}}</view> -->
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!--选节-->
+      <view class='dclassify' wx:if='{{tabIndex == 2}}' style='padding-bottom:110px;width:90%;margin-left:5%;'>
+        <view class='zan-row' style='padding-top:20rpx;'>
+          <view style='color:#00A0E8;font-size:24rpx;' class='zan-col zan-col-4 zan-col-offset-20' bindtap='sortlist'>
+            <image src='/images/sort.png' wx-if="{{sort}}" style='width:27rpx;height:18rpx;'></image>
+            <image src='/images/sort_1.png' wx-if="{{!sort}}" style='width:27rpx;height:18rpx;'></image>
+            排序
+          </view>
+        </view>
+        <view>
+          <view class='directory-list' bindtap='toclum' data-fid="{{bothList.id}}" data-type="{{item.type}}" data-purchased='{{bothList.is_Purchased}}' data-id='{{item.id}}' data-is_eval="{{bothList.is_evaluate}}" data-is_try_see='{{item.is_try_see}}' wx:key wx:for="{{lessonList}}">
+            <text class='list-num'>0{{index+1}}</text>
+            <view>
+              <view class='list-name'>{{item.name}}</view>
+              <view class='list-time'>{{item.created_at}}</view>
+              <view class='list-cont'>
+                <image style='width:180rpx;height:90rpx;border-radius:2px;float:left;' src='{{item.cover}}'></image>
+                <view class='list-kind' wx-if="{{item.type=='video'}}"><image class='list-icon' src='/images/video_icon.png'></image>视频</view>
+                <view class='list-kind' wx-if="{{item.type=='audio'}}"><image class='list-icon' src='/images/audio_icon.png'></image>音频</view>
+                <view class='list-kind' wx-if="{{item.type=='article'}}"><image class='list-icon' src='/images/img_icon.png'></image>图文</view>
+                <view class='list-had zan-row'>
+                  <text class='seepeo zan-col zan-col-6'>{{item.click_num}}观看</text>
+                  <text class='trystudy zan-col zan-col-6 zan-col-offset-6' wx-if="{{item.is_try_see&&!bothList.is_Purchased}}">试看</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<canvas style="width: 315px;height: 442px;background:red;position: fixed;top: -10000px;" canvas-id="shareFrends"></canvas>
+
+
+<view class='img-wrap' bindtap='closeShareModal' wx:if='{{closeShareModal}}'>
+  <view class='save-img-wrap'>
+    <image src='{{canvasimg}}' bindlongtap='saveimg' catchtap='stopFather'></image>
+    <view class='save-btn'>
+      <view bindtap='closeShareModal'>关闭</view>
+      <view catchtap='saveimg'>保存到相册</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,117 @@
+<view class='content'>
+
+  <view class='menu swiper-tab {{fixed?"":"tabfix"}}'>
+    <block wx:for='{{menus}}' wx:key>
+      <view class='menu-item'>
+        <view bindtap='showMenuDetail' class='{{index == tabIndex ? "dtab-active-color" : ""}}' data-index='{{index}}'>{{item}}</view>
+        <view class='btm-line {{index == tabIndex ? "dtab-active-bottom" : ""}}'></view>
+      </view>
+    </block>
+  </view>
+
+  <!--主体内容-->
+  <view class='swiper-box'>
+    <view class='dclassify' wx:if='{{tabIndex == 0}}'>
+      <view class='cont'>
+        <view class='cont-tit clearfloat'>
+          <text>收益历史</text>
+          <text class='income' wx-if="{{incomeList.length}}">+￥{{incom}}</text>
+        </view>
+        
+        <view class='detail-list zan-row' wx:key wx:for='{{incomeList}}'>
+          <view class='zan-col zan-col-1' style='width:59rpx;height:60rpx;border-radius:50%;'>
+            <image wx-if="{{item.type=='sell'}}" src='/images/finance-tuiguang.png' style='width:59rpx;height:60rpx;'></image>
+          </view>
+          <view class='zan-col zan-col-20 zan-col-offset-1'>
+            <view class='clearfloat'>
+              <text wx-if="{{item.type=='sell'}}" class='list-tit'>出售</text>
+              <text class='list-income'>{{item.price}}</text>
+            </view>
+            <view class='list-cont'>{{item.note}}</view>
+            <view class='clearfloat'>
+              <text class='list-date'>{{item.created_at}}</text>
+              <text class='list-buyer'>{{item.buyers}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx-if="{{!incomeList.length}}" style='display: flex;flex-direction: column;align-items: center;margin-top:-80rpx;'>
+          <image src='/images/null.png' mode="aspectFill" style='width:247rpx;height:288rpx;margin-top:260rpx;'></image>
+          <view style='font-size:28rpx;color:#ccc;margin-top:25rpx;'>暂无数据</view>
+        </view>
+
+
+      </view>
+    </view>
+    <!-- 支出  -->
+    <!-- <view class='drecommend' wx:if='{{tabIndex == 1}}'>
+      <view class='cont'>
+        <view class='cont-tit clearfloat'>
+          <text>学习历史</text>
+          <text class='income' wx-if="{{spendList.length}}">-￥{{spend}}</text>
+        </view>
+        
+        <view class='detail-list zan-row' wx:key wx:for='{{spendList}}'>
+          <view class='zan-col zan-col-1' style='width:59rpx;height:60rpx;border-radius:50%;'>
+            <image wx-if="{{item.type=='buy'}}" src='/images/finance-buy.png' style='width:59rpx;height:60rpx;'></image>
+            <image wx-if="{{item.type=='question'}}" src='/images/finance-question.png' style='width:59rpx;height:60rpx;'></image>
+            <image wx-if="{{item.type=='give'}}" src='/images/gift.png' style='width:59rpx;height:60rpx;'></image>
+          </view>
+          <view class='zan-col zan-col-20 zan-col-offset-1'>
+            <view class='clearfloat'>
+              <text wx-if="{{item.type=='buy'}}" class='list-tit'>学习</text>
+              <text wx-if="{{item.type=='give'}}" class='list-tit'>赠送</text>
+              <text wx-if="{{item.type=='question'}}" class='list-tit'>提问</text>
+              <text class='list-income'>{{item.price}}</text>
+            </view>
+            <view class='list-cont'>{{item.note}}</view>
+            <view class='clearfloat'>
+              <text class='list-date'>{{item.created_at}}</text>
+              <text class='list-buyer'>{{item.buyers}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx-if="{{!spendList.length}}" style='display: flex;flex-direction: column;align-items: center;margin-top:-80rpx;'>
+          <image src='/images/null.png' mode="aspectFill" style='width:247rpx;height:288rpx;margin-top:260rpx;'></image>
+          <view style='font-size:28rpx;color:#ccc;margin-top:25rpx;'>暂无数据</view>
+        </view>
+
+      </view>
+    </view> -->
+    <!-- 提现  -->
+    <view class='drecommend' wx:if='{{tabIndex == 2}}'>
+      <view class='cont'>
+        <view class='cont-tit clearfloat'>
+          <text>提现记录</text>
+          <text class='income' wx-if="{{withdrawList.length}}">-￥{{withdraw}}</text>
+        </view>
+        
+        <view class='detail-list zan-row' wx:key wx:for='{{withdrawList}}'>
+          <view class='zan-col zan-col-1' style='width:59rpx;height:60rpx;border-radius:50%;'>
+            <image src='/images/finance-tixian.png' style='width:59rpx;height:60rpx;'></image>
+          </view>
+          <view class='zan-col zan-col-20 zan-col-offset-1'>
+            <view class='clearfloat'>
+              <text class='list-tit'>提现</text>
+              <text class='list-income'>{{item.price}}</text>
+            </view>
+            <view class='list-cont'>{{item.note}}</view>
+            <view class='clearfloat'>
+              <text class='list-date'>{{item.created_at}}</text>
+              <text class='list-buyer'>{{item.buyers}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx-if="{{!withdrawList.length}}" style='display: flex;flex-direction: column;align-items: center;margin-top:-80rpx;'>
+          <image src='/images/null.png' mode="aspectFill" style='width:247rpx;height:288rpx;margin-top:260rpx;'></image>
+          <view style='font-size:28rpx;color:#ccc;margin-top:25rpx;'>暂无数据</view>
+        </view>
+
+
+      </view>
+    </view>
+  </view>
+
+</view>

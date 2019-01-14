@@ -1,0 +1,260 @@
+@import '../classifyDetail/index.wxss';
+.dsearch-header {
+  margin: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 684rpx;
+	height: 72rpx;
+	background-color: #f6f6f6;
+	border-radius: 36rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.dsearch-header image {
+  width: 25rpx;
+  height: 25rpx;
+  margin: 0 32rpx 0 48rpx;
+}
+
+.dsearch-input {
+  width: 100%;
+}
+/* 菜单  */
+.dserach-menu {
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  border-bottom: solid 1px #e5e5e5;
+}
+
+
+
+.dserach-menu view {
+  padding: 30rpx 10rpx;
+  border-bottom: 1px solid #fff;
+}
+
+.dserach-menu .dtab-active {
+  color: #00a0e8;
+  border-bottom: 1px solid #00a0e8;
+}
+/* 搜索结果列表  */
+.dresult-list-item {
+  display: flex;
+  padding: 0 40rpx;
+  margin-top: 60rpx;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 50rpx;
+}
+
+.dhistory-search {
+  padding: 40rpx;
+}
+
+.dclear-history {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  right: 40rpx;
+  bottom: 60rpx;
+}
+
+.dclear-history-btn {
+  width: 142rpx;
+	height: 44rrpx;
+	border-radius: 22px;
+	border: solid 1px #00a0e8;
+  color: #00a0e8;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 44rpx;
+}
+
+.dclear-history-btn .icon-dustbin_icon {
+  font-size: 26rpx;
+  margin-right: 10rpx;
+}
+
+.dhistory-search-title {
+  font-size: 24rpx;
+  color: #919191;
+}
+
+.dhistory-items {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.dhistory-items view {
+  padding: 0 24rpx;
+	height: 40rpx;
+	border-radius: 40rpx;
+	border: solid 1px #e5e5e5;
+  font-size: 20rpx;
+  color: #000000;
+  text-align: center;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.dhot-search-title {
+  font-size: 24rpx;
+  color: #919191;
+  margin-top: 70rpx;
+}
+
+.dhot-items {
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.dhot-items view {
+  padding: 0 24rpx;
+	height: 40rpx;
+	border-radius: 40rpx;
+	border: solid 1px #e5e5e5;
+  font-size: 20rpx;
+  color: #000000;
+  text-align: center;
+  line-height: 40rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.dresult-list-item image {
+  width: 201rpx;
+	height: 151rpx;
+	border-radius: 4rpx;
+  margin-right: 40rpx;
+}
+
+.dlist-item-detail {
+  width: 486rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dlist-item-class {
+  font-size: 18rpx;
+  color: #00a0e8;
+  display: flex;
+  align-items: center;
+}
+
+.dlist-item-class image {
+  width: 17rpx;
+  height: 17rpx;
+}
+
+.dlist-item-class text:nth-child(1) {
+  width: 18rpx;
+	height: 18rpx;
+	background-color: #00a0e8;
+	border-radius: 4rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 18rpx;
+  font-size: 14rpx;
+  margin-right: 10rpx;
+}
+
+.dlist-item-class1 {
+  font-size: 18rpx;
+  color: #00a0e8;
+  display: flex;
+  align-items: center;
+  line-height: 18rpx;
+}
+
+.dlist-item-class1 text:nth-child(1) {
+  font-size: 20rpx;
+  margin-right: 10rpx;
+  line-height: 20rpx;
+}
+
+.dlist-item-detail .dlist-item-class1 .icon-icon--music {
+  font-size: 32rpx;
+}
+
+.dlist-item-title {
+  color: #201f2a;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 12rpx;
+  font-weight: bold;
+}
+
+.dlist-item-detail-teacher {
+  width: 352rpx;
+  margin-top: -6rpx;
+}
+
+
+.dlist-item-subtitle {
+  color: #656565;
+  font-size: 20rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 12rpx;
+}
+
+.dresult-list-item .dsearch-result-list-teacher {
+  width: 120rpx;
+	height: 120rpx;
+  border-radius: 50%;
+}
+
+.dlist-item-subtitle-text {
+  text-overflow: ellipsis;  
+  font-size: 22rpx;
+  color: #666666;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.5;
+  margin-top: 20rpx;
+}
+
+.dcancle-btn {
+  width: 125rpx;
+	height: 54rpx;
+	border-radius: 27rpx;
+	border: solid 1px #0097ff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 54rpx;
+  color: #0087e4;
+  margin-left: 56rpx;
+}
+
+.dlist-item-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18rpx;
+  color: #919191;
+  margin-top: 24rpx;
+}
+
+.dlist-item-info text:nth-child(2) {
+  color: #00a0e8;
+  font-size: 24rpx;
+}
+
+.dlist-item-info .icon-book {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+
+.dlist-item-detail image {
+  width: 17rpx;
+  height: 17rpx;
+  margin-right: 10rpx;
+}

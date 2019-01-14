@@ -1,0 +1,26 @@
+<view class='vip'>
+  <image style="width: 80%;height: 295rpx;margin-left:10%;" src='{{vipcover}}' mode="aspectFit"></image>
+</view>
+
+<view style='text-align:center;font-size:26rpx;color:#999;' wx-if="{{vipstate}}">到期时间：{{endtimeY}}-{{endtimeM<10?'0'+endtimeM:endtimeM}}-{{endtimeD<10?'0'+endtimeD:endtimeD}}/{{endtimeH<10?'0'+endtimeH:endtimeH}}:{{endtimeMin<10?'0'+endtimeMin:endtimeMin}}:{{endtimeS<10?'0'+endtimeS:endtimeS}}</view>
+
+<view class='privilege'>
+  <view class='privilege-list'>
+    <image style="width: 100rpx;height: 100rpx;" src='../../images/tequan_1.png'></image>
+    
+  </view>
+  <view class='privilege-list'>
+    <image style="width: 100rpx;height: 100rpx;" src='../../images/tequan_2.png'></image>
+    
+  </view>
+</view>
+
+<view class="vip-details" wx-if="{{vipstate}}"> 
+  <text>您已开通</text>
+</view> 
+
+<view class='open-btn'>
+  <image style='width:40rpx;height:90rpx;' src='../../images/open_vip.png' mode="aspectFit"></image>
+  <button bindtap='buyvip' size="default" wx-if="{{!vipstate}}">开通</button>
+  <button size="default" wx-if="{{vipstate}}" bindtap='tovipD'>查看详情</button>
+</view>

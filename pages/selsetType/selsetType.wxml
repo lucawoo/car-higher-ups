@@ -1,0 +1,28 @@
+<view class='select-type'>
+  <view class='select-title'>请选择您要申请开课的类型</view>
+  <view class='select-tips'>类型选择后不可再进行变更</view>
+
+  <view class='select-personal' bindtap='selectType' data-type='1'>
+    <image src='/images/personal.png' ></image>
+  </view>
+
+
+  <view class='select-opganization' bindtap='selectType' data-type='2'>
+    <image src='/images/opganization.png' ></image>
+  </view>
+</view>
+
+
+<view class='dmodal-wrap-bg {{showView?"":"view_hide"}}'>
+  <view class='telbox {{showView?"":"view_hide"}}'>
+    <view style='padding: 36rpx;'>
+      <input placeholder='请输入11位手机号码' type='number' value='{{lecturer_phone}}' maxlength='11' bindinput="gettel"></input>
+      <view class='authcode'>
+        <input placeholder='验证码' bindinput='getCode' type='number' maxlength='6'></input>
+        <button class='{{getView?"geting":""}}' disabled="{{codebtn}}" catchtap='sendCode' style='border: 1px solid {{codebtn?"rgb(200,200,200)" : ""}}'>获取验证码</button>
+        <button class='{{getView?"":"geting"}}'  disabled style='padding-left: 0;padding-right: 0;'>重新发送{{codetime}}</button>
+      </view>
+      <view class='save-btn'><button catchtap="sumTel">提交</button></view>
+    </view>
+  </view>
+</view>

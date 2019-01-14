@@ -1,0 +1,150 @@
+
+<view class='{{firstcome||shuomintit||paycon?"overscroll":""}}'>
+
+  <view class='top'>
+    <view class="column_cover">
+      <image style='width:100%;height:350rpx;' mode="aspectFill" src='{{courseList.cover}}'></image>
+    </view>
+
+    <view class='collect no-love' wx-if="{{!courseList.is_collect}}" bindtap='collectdel' >
+      <image src='../../images/collect.png'></image>
+    </view>
+    <view class='collect loved' wx-if="{{courseList.is_collect}}" bindtap='cancelcollect' >
+      <image src='../../images/colled.png'></image>
+    </view>
+    <view class='to-invite' bindtap='togive'>
+      <image src='../../images/invite_icon.png'></image>
+    </view>
+    <!-- <view  class='to-give' bindtap='givefirend'>
+      <image src='../../images/gift.png'></image>
+    </view> -->
+  </view>
+
+  <view class='cont'>
+
+    <view class='menu swiper-tab {{fixed?"":"tabfix"}}'>
+      <block wx:for='{{menus}}' wx:key>
+        <view class='menu-item'>
+          <view bindtap='showMenuDetail' class='{{index == tabIndex ? "dtab-active-color" : ""}}' data-index='{{index}}'>{{index==1?item+'('+ courseList.lesson.length +')':item}}</view>
+          <view class='btm-line {{index == tabIndex ? "dtab-active-bottom" : ""}}'></view>
+        </view>
+      </block>
+    </view>
+
+    <!--主体内容-->
+    <view class='swiper-box'>
+      <view class='dclassify' wx:if='{{tabIndex == 0}}'>
+        <view class='sell-tit forcenter'>{{courseList.name}}</view>
+        <view class='sell-btm' style='width:90%;margin-left:5%;'>{{courseList.desc}}</view>
+        <view class='sell-msg forcenter'>
+          <text>已更新{{courseList.lesson_count?courseList.lesson_count:0}}期</text><text style='width:1px;height:15rpx;background:#e5e5e5;padding:0px;display:inline-block;'></text>
+          <text>{{courseList.subscribe_num}}人</text><text style='width:1px;height:15rpx;background:#e5e5e5;padding:0px;display:inline-block;'></text>
+          <text>{{courseList.evaluate_num}}人评论</text>
+        </view>
+        <view class="sell-price clearfloat forcenter" wx-if="{{!courseList.is_Purchased}}">
+          <!-- <text>￥{{courseList.price}}</text> -->
+          <!-- <view class='vip-price'><image src='../../images/vip_logo.png'></image>￥{{courseList.vip_scale}}</view> -->
+        </view>
+        <view class='column-article forcenter'>
+          <view style='border-bottom:1px solid #ededed;font-size:24rpx;padding-bottom:20rpx;'>专栏详情 <text class='borderblack'></text></view>
+          <view class='art-tit'>{{courseList.name}}</view>
+          <view class='art-cont'>{{courseList.desc}}...</view>
+        </view>
+      </view>
+      <!-- 目录  -->
+      <view class='drecommend' style='margin-bottom:200rpx;width:90%;margin-left:5%;margin-top:-20rpx;' wx:if='{{tabIndex == 1}}'>
+        <view class='zan-row' style='padding-top:50rpx;'>
+          <view style='color:#00A0E8;font-size:24rpx;' class='zan-col zan-col-4 zan-col-offset-20' bindtap='sortlist'>
+            <image src='/images/sort.png' wx-if="{{sort}}" style='width:27rpx;height:18rpx;'></image>
+            <image src='/images/sort_1.png' wx-if="{{!sort}}" style='width:27rpx;height:18rpx;'></image>
+            排序
+          </view>
+        </view>
+
+        <view>
+
+          <view bindtap='toclum' data-fid="{{courseList.id}}" data-purchased="{{courseList.is_Purchased}}" data-type="{{item.type}}" data-id='{{item.id}}' class='directory-list' data-is_eval="{{courseList.is_evaluate}}" wx:key wx:for="{{lessonList}}">
+            <text class='list-num'>0{{index+1}}</text>
+            <view>
+              <view class='list-name'>{{item.name}}</view>
+              <view class='list-time'>{{item.created_at}}</view>
+              <view class='list-cont'>
+                <image style='width:120rpx;height:90rpx;border-radius:2px;float:left;' src='{{item.cover}}'></image>
+                <view class='list-kind' wx-if="{{item.type=='video'}}"><image class='list-icon' src='/images/video_icon.png'></image>视频</view>
+                <view class='list-kind' wx-if="{{item.type=='audio'}}"><image class='list-icon' src='/images/audio_icon.png'></image>音频</view>
+                <view class='list-kind' wx-if="{{item.type=='article'}}"><image class='list-icon' src='/images/img_icon.png'></image>图文</view>
+                <view class='list-had zan-row'>
+                  <text class='seepeo zan-col zan-col-6'>{{item.click_num}}观看</text>
+                  <text class='talkpeo zan-col zan-col-6'>{{item.evaluate_num}}评论</text>
+                  <text class='trystudy zan-col zan-col-6 zan-col-offset-6' wx-if="{{item.is_try_see&&!courseList.is_Purchased}}" catchtap='trysee' data-fid="{{courseList.id}}" data-type="{{item.type}}" data-id='{{item.id}}' data-purchased="{{courseList.is_Purchased}}">试看</text>
+                </view>
+              </view>
+            </view>
+            
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<view class='paytit' wx-if="{{shuomintit}}">
+  <image src='/images/give_icon.png' style='width:171rpx;height:142rpx;margin-top:50rpx;'></image>
+  <view class='paytit-tit'>赠送好友，一起学习</view>
+  <view class='paytitli'>01、获取课程，将链接分享给好友</view>
+  <view class='paytitli'>02、好友点击领取，参与课程</view>
+  <view class='paytitli'>03、在我的赠送中，查看领取情况</view>
+  <button bindtap='paynext'>下一步</button>
+</view>
+
+<view class='payfor' wx-if="{{paycon}}">
+  <view class='title'>{{courseList.name}}</view>
+  <view class='pay-cont'>
+    <view class='cont-left'>赠送数量</view>
+    <view class='cont-right'>
+      <!-- <view class='rightbutton' bindtap='subtractnum'>-</view> -->
+      <!-- <view class='centernum'>{{buynum}}</view> -->
+      <!-- <view class='leftbutton' bindtap='addnum'>+</view> -->
+    </view>
+  </view>
+  <view class='allmo'>
+    <!-- <view>总金额</view> -->
+    <!-- <view>￥{{buynum*price}}</view> -->
+  </view>
+  <view class='surepay' bindtap='givebuy'>确认支付</view>
+</view>
+<view class='dark' bindtap='darkclick' wx-if="{{dark}}"></view>
+
+
+<view class='first' wx-if="{{firstcome}}">
+  <view class='btn' bindtap='iknow'></view>
+  <image src='/images/teach.png'></image>
+</view>
+
+
+<view class='bebuy' wx-if="{{!courseList.is_Purchased}}">
+  <!-- <view>
+    <button style='display:flex;align-items: center;' open-type="contact" session-from="weapp">
+      <image src='/images/zixun.png' style='height:30rpx;width:35rpx;margin: 0 15rpx 0 30%;' mode="aspectFit"></image>
+      <text> 咨询</text>
+    </button>
+  </view> -->
+  
+</view> 
+
+<view class='afbuy' wx-if="{{courseList.is_Purchased}}">
+  <!-- <view>
+    <button style='display:flex;align-items: center;' open-type="contact" session-from="weapp">
+      <image src='/images/zixun.png' style='height:30rpx;width:35rpx;margin: 0 15rpx 0 30%;' mode="aspectFit"></image>
+      <text> 咨询</text>
+    </button>
+  </view> -->
+  <view bindtap='toclum' data-fid="{{courseList.id}}" data-purchased='{{courseList.is_Purchased}}' data-type="{{courseList.lesson[0].type}}" data-id='{{courseList.lesson[0].id}}'>进入学习</view>
+</view>
+
+<view class='backhome' bindtap='_backhome' wx:if='{{share}}'>
+  <view><image src='/images/backhome.png'></image></view>
+</view>

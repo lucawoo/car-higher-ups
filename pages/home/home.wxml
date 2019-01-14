@@ -1,0 +1,348 @@
+<!--index.wxml-->
+<view class='home' >
+  <!-- 菜单  -->
+  <view class='dheader-menu'>
+    <view class='dheader-menu-left' bindtouchstart='moveleftStart' bindtouchmove='moveleftMove' style='left: {{left}}rpx'>
+      <block wx:for='{{menus}}' wx:key>
+        <view class='dheader-menu-left-item'>
+          <view style='padding-bottom: 15rpx' bindtap='showMenuDetail' class='{{index == tabIndex ? "dtab-active-color" : ""}}' data-index='{{index}}'>{{item}}</view>
+          <view class='dbottom-line {{index == tabIndex ? "dtab-active-bottom" : ""}}'></view>
+        </view>
+      </block>
+    </view>
+    <view class='dheader-menu-right'>
+      <navigator url="/pages/search/search" hover-class="none">
+        <image src='/images/search.png'></image>
+      </navigator>
+      <navigator url="/pages/news/news" hover-class="none">
+        <image src='/images/messages.png'></image>
+      </navigator>
+      <view wx-if="{{newnews}}" class='rednew'></view>
+    </view>
+  </view>
+  <!-- 菜单对应的内容  -->
+  <!-- 分类  -->
+  <view class='dmain'>
+    <view class='dclassify' wx:if='{{tabIndex == 0}}'>
+      <view class='dclassify-items'>
+        <block wx:for='{{classifyDatas}}' wx:key='{{item.cid}}'>
+            <view bindtap='linkClassifyDetail' class='dclassify-item' data-name='{{item.class_name}}' data-cid='{{item.cid}}'>
+              <view class='dclassify-items-inner'>
+                <view class='dclassify-items-inner'>
+                  <image src='{{item.class_image}}'></image>
+                  <text>{{item.class_name}}</text>
+                </view>
+                
+              </view>
+
+            </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- 推荐  -->
+    <view class='drecommend' wx:if='{{tabIndex == 1}}'>
+      <view class='drecommend-banner'>
+        <swiper next-margin='40rpx' autoplay='true' circular='true' bindchange='{{banners.length>0?"getCurrent":""}}'>
+          <block wx:for="{{banners.length>0?banners:3}}" wx:key>
+            <swiper-item>
+              <view bindtap='adsLinkDetail' data-server='{{item.server_url}}' data-url='{{item.adv_url}}' data-id='{{item.adv_id}}' data-detail='{{item.adv_detail ? 1 : 0}}'>
+                <image mode='aspectFill' src="{{item.adv_image? item.adv_image : '/images/baner-no.png'}}"  mode='aspectFill' />
+              </view>             
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      
+      <view class='dmenu-entry'>
+        <view class='dmenu-entry-item' wx:if='{{!is_lecturer}}'>
+          <navigator url='/pages/teacherCheckInStatus/index?first=false' hover-class="none">
+            <view class='dimage-icon-jiangshi'><image mode='aspectFill' src='/images/jiangshi.png'></image></view>
+            <view>我要开课</view>
+          </navigator>
+        </view>
+        <view class='dmenu-entry-item' wx:if='{{is_lecturer}}'>
+          <navigator url='/pages/myclass/myclass' hover-class="none">
+            <view class='dimage-icon-jiangshi'><image mode='aspectFill' src='/images/course-class.png'></image></view>
+            <view>我的课堂</view>
+          </navigator>
+        </view>
+        <!-- <view class='dmenu-entry-item' bindtap="tocolumn">
+          <view class='dimage-icon-zhuanlan'><image mode='aspectFill' src='/images/zhuanlan.png'></image></view>
+          <view>精选专栏</view>
+        </view> -->
+        <view class='dmenu-entry-item' bindtap="toFree">
+          <view class='dimage-icon-zhuanlan'><image mode='aspectFill' src='/images/free-icon.png'></image></view>
+
+          <view>公开课</view>
+
+        </view>
+        <view class='dmenu-entry-item'>
+          <navigator url='/pages/Leaderboard/index' hover-class="none">
+            <view class='dimage-icon-paihang'><image mode='aspectFill' src='/images/paihangbang.png'></image></view>
+            <view>排行榜</view>
+          </navigator>
+        </view>
+      </view>
+      <view class='dboutique'>
+        <view class='dboutique-title' bindtap='linkRemcomend'>
+          <view class='dboutique-title-left'>
+            <text>精品课程</text>
+            <text>/Recommend</text>
+          </view>
+          <view class='iconfont icon-previewright'></view>
+        </view>
+      </view>
+
+      <view class='swiper-warap'>
+        <scroll-view scroll-x="true" style='width: 100%;white-space:nowrap;'>
+          <block wx:for='{{classifyRecomment.recommend}}' wx:key>
+            <view class='wrap-remcomment' bindtap='linkDetail' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' data-id='{{item.goods_id}}'>
+              <view class='dvideo'>
+                <view><image mode='aspectFill' src='{{item.cover}}'></image></view>
+              </view>
+              <view class='dvideo-text'>
+                <view>{{item.goods_name}}</view>
+                <!-- <view>{{item.created_at}}</view> -->
+              </view>
+            </view> 
+          </block>
+        </scroll-view>
+      
+      </view>
+
+      
+      <!-- <view class='dline-hr'></view> -->
+      <!-- <view class='dsome-class-parts'>
+        <block wx:for='{{classifyRecomment.class}}' wx:key>
+          <view class='dclass-part-item' bindtap='linkClassifyDetail' data-name='{{item.class_name}}' data-cid='{{item.cid}}'>
+            <view class='dclass-parts-img'> 
+              <image mode='aspectFill' src='{{item.first_image}}'></image>
+            </view>
+            <view class='dmiddle-title'>{{item.class_name}}</view>
+          </view>
+
+        </block>
+
+        <block wx:for='{{space}}' wx:key>
+          <view class='dclass-part-item'>
+            <view class='dclass-parts-img'> 
+              <image mode='aspectFill' src='/images/after-time.png'></image>
+            </view>
+          </view>
+
+        </block>
+        
+      </view> -->
+      <view wx:for='{{classifyRecomment.class}}' wx:for-item='classifyItem' wx:if='{{classifyItem.course}}' wx:key='this'>
+        <view class='dline-hr'></view>
+        <view class='dparts-item-title'>
+          <view class='dboutique' style='position: relative;'>
+            <view style='height: 24rpx; width: 3rpx;background: #000;position:absolute;left: 0rpx;top: 12rpx;'></view>
+            <view class='dboutique-title' bindtap='toclassnew' data-cid='{{classifyItem.cid}}' data-name='{{classifyItem.class_name}}'>
+              <view class='dboutique-title-left'>
+                <text>{{classifyItem.class_name}}</text>
+                <text>{{classifyItem.english_name ? "/" + classifyItem.english_name : "" }}</text>
+              </view>
+              <!-- <navigator url='/pages/classifyDetail/index?cid={{classifyItem.cid}}' hover-class='none'> -->
+              <view class='iconfont icon-previewright'></view>
+            </view>
+          </view>
+        </view>
+        <view class='dparts-item-detail'>
+
+          <block wx:for='{{classifyItem.course}}' wx:for-item='parts' wx:key>
+            <view class='ddetail-item' bindtap='linkDetail' data-type="{{parts.goods.goods_type}}" data-typecourse='{{parts.goods_type}}' data-id='{{parts.goods_id}}'>
+              <image mode='aspectFill' src='{{parts.goods_cover}}'></image>
+              <view class='black-white'>
+                <view class='ddetail-item-tips'>
+                  <view>{{parts.lecturer.lecturer_name}}</view>
+                  <!-- <view class='dline-hieght'></view> -->
+                  <!-- <view>{{parts.subscribe_num}}  次学习</view> -->
+                  <!-- type 1:视频 2：音频 3：图文 4：课程  -->
+                  <view wx:if='{{parts.goods.goods_type == 2}}'>
+                    <image src='/images/white_video.png'></image>
+                  </view>
+                  <view wx:if='{{parts.goods.goods_type == 3}}'>
+                    <image src='/images/white_audio.png'></image>
+                  </view>
+                  <view wx:if='{{parts.goods.goods_type == 1}}'>
+                    <image  src='/images/white_img.png'></image>
+                  </view>
+                  <view wx:if='{{parts.goods_type == 2}}'>
+                    <image src='/images/white_class.png'></image>
+                  </view> 
+                </view>
+              </view>
+              <view class='ddetail-info'>
+                <view>{{parts.goods_name}}</view>
+                <view class=''>{{parts.click_count}}人查看</view>
+              </view>
+            </view>
+          </block>
+          
+        </view>
+      </view>
+
+    </view>
+
+    <!-- 关注  -->
+    <view class='dattention' wx:if='{{tabIndex == 2}}'>
+      <block wx:for='{{attentionData}}' wx:key>
+        <view class='dattention-header' >
+          <view class='dattention-person-info'>
+            <view class='dattention-person-avatar'><image mode='aspectFill' src='{{item.lecturer.lecturer_avatar}}'></image></view>
+            <view class='dattention-person-name'>{{item.lecturer.lecturer_name}}</view>
+          </view>
+          <view>{{item.created_at}}</view>
+        </view>
+        <view class='dattention-detail' bindtap='linkDetail' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' data-id='{{item.goods_id}}'>
+          <image src='{{item.goods_cover}}' mode='aspectFill'></image>
+          <!-- <view class='background-liner'>
+            <view class='dbottom-tips'>
+              <view>{{item.goods_name}}</view>
+              <view class='dbottom-tips-icon' wx:if='{{item.goods.goods_type == 2}}'>
+                <image src='/images/white_video.png'></image>
+              </view>
+              <view class='dbottom-tips-icon' wx:if='{{item.goods.goods_type == 3}}'>
+                <image src='/images/white_audio.png'></image>
+              </view>
+              <view class='dbottom-tips-icon' wx:if='{{item.goods.goods_type == 1}}'>
+                <image src='/images/white_img.png'></image>
+              </view>
+              <view class='dbottom-tips-icon' wx:if='{{item.goods_type == 2}}'>
+                <image src='/images/white_class.png'></image>
+              </view> 
+              <view class='dbottom-tips-icon' wx:if='{{item.goods_type == 1}}'>
+                <image src='/images/white_column.png'></image>
+              </view>
+            </view>
+          </view> -->
+        <view style='margin-top: 20rpx;font-size: 28rpx;'>{{item.goods_name}}</view>
+          
+        </view>
+      </block>
+
+      <view  class='no-buy-wrap' wx:if='{{noData}}'>
+        <view class='no-buy-image'>
+          <image src='/images/null.png'></image>
+        </view>
+
+        <view class='no-buy-text'>暂无数据</view>
+
+      </view>
+    </view>
+
+
+
+
+
+
+    
+    <!-- <view wx:if='{{tabIndex == 3}}'>
+      <view class='dfree' >
+            <block wx:for='{{freeDatas}}' wx:key>
+            <view class='ddetail-item' bindtap='linkDetail' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' data-id='{{item.goods_id}}'>
+              <image mode='aspectFill' src='{{item.goods_cover}}'></image>
+              <view class='black-white'>
+                <view class='ddetail-item-tips'>
+                  <view>{{item.lecturer.lecturer_name}}</view>
+                  <view class='dline-hieght'></view>
+                  <view>{{item.subscribe_num}}  次学习</view>
+                  <view wx:if='{{item.goods.goods_type == 2}}'>
+                    <image src='/images/white_video.png'></image>
+                  </view>
+                  <view wx:if='{{item.goods.goods_type == 3}}'>
+                    <image src='/images/white_audio.png'></image>
+                  </view>
+                  <view wx:if='{{item.goods.goods_type == 1}}'>
+                    <image src='/images/white_img.png'></image>
+                  </view>
+                  <view wx:if='{{item.goods_type == 2}}'>
+                    <image src='/images/white_class.png'></image>
+                  </view> 
+                </view>
+              </view>
+              <view class='ddetail-info'>
+                <view>{{item.goods_name}}</view>
+                
+              </view>
+            </view>
+          </block>
+          
+      </view>
+      <view  class='no-buy-wrap' wx:if='{{noData2}}'>
+        <view class='no-buy-image'>
+          <image src='/images/null.png'></image>
+        </view>
+
+        <view class='no-buy-text'>暂无数据</view>
+
+      </view>
+    </view> -->
+    <!-- 资讯  -->
+    <view class='dinformation' wx:if='{{tabIndex == 3}}'>
+      <view class='dinformation-banner'>
+        <swiper autoplay='true' circular='true'>
+          <block wx:for="{{bannersInfo.length>0?bannersInfo: 1}}" wx:key>
+            <swiper-item>
+              <image mode='aspectFill'  bindtap='{{bannersInfo.length>0?"infoLinkDetailAds":""}}' data-server='{{item.server_url}}' data-url='{{item.adv_url}}' data-id='{{item.adv_id}}' src="{{item.adv_image? item.adv_image : '/images/baner-no.png'}}" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <navigator url="/pages/searchInfo/search" hover-class="none">
+        <view class='dinformation-search' >        
+          <icon type='search' size='16' color='#bebdbd'></icon>
+          <view>搜索资讯</view>
+        </view>
+      </navigator>
+      <view class='dline-hr'></view>
+      <view class='dinformation-menu {{headerFixed ? "dheader-fixed" : ""}}'>
+        <view class='{{informationTabIndex == 0 ? "dinformation-menu-active" : ""}}'
+              bindtap='newInformation'>最新</view>
+        <view class='{{informationTabIndex == 1 ? "dinformation-menu-active" : ""}}'
+              bindtap='hotInformation'>最热</view>
+      </view>
+      <!-- 最新  -->
+      <view class='dinformation-list' style='{{headerFixed ? "margin-top: 134rpx;" : ""}}'>
+
+        <block wx:for='{{infoDatas}}' wx:key>
+          <view class='dinformation-list-item'  bindtap='linkInfoDetail' data-id='{{item.id}}' data-infor="1" data-url='{{item.url}}'>
+            <view><image mode='aspectFill' src='{{item.article_image}}'></image></view>
+            <view class='dinformation-list-detail'>
+              <view class='dinformation-list-title'>{{item.title}}</view>
+              <view class='dinformation-list-subtitle'>{{item.abstract}}</view>
+              <view class='dlist-detail-info'>
+                <view wx-if="{{!item.url}}">
+                  <text>{{item.scan_count}} 观看</text>
+                  <text style='margin-left: 20rpx;'>{{item.evaluate_count}} 人评论</text>
+                </view>
+                <view class='dlist-detail-time'>{{item.created_at}}</view>
+              </view>
+            </view>
+          </view>
+          <view class='dline-half-hr'></view>
+        </block>
+
+        <view wx-if="{{thisall}}" style='text-align:center;font-size:24rpx;color:#989898;'>已显示全部</view>
+
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+
+<view class='home-tips' catchtouchmove='true' wx:if='{{!hasSee && is_lecturer}}'>
+  <image src='/images/_02.png' mode='aspectFill' class='tip-01'></image>
+  <image src='/images/_04.png' mode='aspectFill' class='tip-02'></image>
+  <image src='/images/_05.png' mode='aspectFill' class='tip-03'></image>
+  <image src='/images/_06.png' mode='aspectFill' class='tip-04' bindtap='closeTIPS'></image>
+</view>
+
+
+
+
+

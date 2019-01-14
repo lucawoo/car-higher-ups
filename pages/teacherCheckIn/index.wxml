@@ -1,0 +1,105 @@
+
+<view class='dteacher-check-in {{showView ? "no-scollw": ""}}'>
+  <view class='form-tips'>请填写成为讲师所需资料。同一申请无需填写多次。申请结果信息将会以短信方式通知您</view>
+  <view class='personal-tips'>
+    <view>{{lecturerInfo.lecturer_class == 2 ? "机构信息": "个人信息"}}</view>
+    <view bindtap='saveInfo'><button>保存</button></view>
+  </view>
+  <form bindsubmit="formSubmit" report-submit='true'>
+    <view class='dform-item' bindtap='changeAvatar'>
+      <view class='dform-item-title'>{{lecturerInfo.lecturer_class == 2 ? "机构图标": "头像"}}:</view>
+      <view class='davater'>
+        <image  
+              mode='aspectFill' 
+              src='{{lecturerInfo.lecturer_avatar ? lecturerInfo.lecturer_avatar : "/images/teacher-avatar.png"}}'></image>
+      </view>
+    </view>
+    <view class='dform-item'>
+      <view class='dform-item-title'>{{lecturerInfo.lecturer_class == 2 ? "机构名称": "姓名"}}:</view>
+      <view class='dform-item-input is-full'><input name='avatar' type='text' value='{{lecturerInfo.lecturer_name ? lecturerInfo.lecturer_name : ""}}' bindinput='getName' placeholder='{{lecturerInfo.lecturer_class == 2 ? "输入机构名称（不超过30字）": "输入真实姓名"}}' placeholder-style='color: #b0b0b0'></input></view>
+    </view>
+    <view class='hr-line-sm'></view>
+    <view class='dform-item'>
+      <view style='width: 100%;'>
+        <view class='dself-info'>
+          <view class='dform-item-title'>{{lecturerInfo.lecturer_class == 2 ? "机构简介": "简介"}}:</view>
+          <view class='dtext-limt'>{{lecturerInfo.lecturer_info ? lecturerInfo.lecturer_info.length : countText}}/200</view>
+        </view>
+        <view class='dform-item-desc'>
+          <textarea class='dself-info-text' 
+                    bindinput='getInfo' maxlength='200' name='selfText' 
+                    placeholder-style='color: #b0b0b0' 
+                    placeholder='{{lecturerInfo.lecturer_class == 2 ? "请输入机构简介（不超过200字）简介将显示在课堂主页上，建议填写突出机构课程特点的内容": "输入个人简介(不超过200字)"}}' 
+                  value='{{lecturerInfo.lecturer_info ? lecturerInfo.lecturer_info : ""}}'>
+          </textarea>
+        </view>
+      </view>
+    </view>
+
+    <view class='dline-hr' style='margin-top: 20rpx;'></view>
+    <picker mode="selector" range='{{agencyType}}' value="{{agencyTypeIndex}}" bindchange="getType" wx:if='{{lecturerInfo.lecturer_class == 2}}'>
+      <view class='dform-item2'>
+        <view class='dform-item-title'>机构性质:</view>
+        <view style='display: flex;align-items: center;'>
+          <text class='{{lecturerInfo.agency_type ? "is-full" : "placeholder-color"}}'>{{lecturerInfo.agency_type ? agencyType[lecturerInfo.agency_type-1] : "选择机构性质"}}</text>
+          <text class='iconfont icon-previewright'></text>
+        </view>
+      </view>
+    </picker>
+
+    <picker mode="selector" range='{{personalNum}}' value="{{personalNumIndex}}" bindchange="getNum" wx:if='{{lecturerInfo.lecturer_class == 2}}'>
+      <view class='dform-item2'>
+        <view class='dform-item-title'>讲师规模:</view>
+        <view style='display: flex;align-items: center;'>
+          <text class='{{lecturerInfo.lecturer_scale ? "is-full" : "placeholder-color"}}'>{{lecturerInfo.lecturer_scale ? personalNum[lecturerInfo.lecturer_scale-1] : "选择讲师规模"}}</text>
+          <text class='iconfont icon-previewright'></text>
+        </view>
+      </view>
+    </picker>
+
+
+    <view class='ID-card' wx:if='{{lecturerInfo.lecturer_class == 1}}'>
+      <view class='ID-card-title'>身份证照片</view>
+      <view class='ID-card-tips'>请上传身份证正面图，要求图片信息清晰可见</view>
+      <view class='ID-card-wrap' bindtap='IDCardFont'>
+        <image src='{{lecturerInfo.hand_card_one?lecturerInfo.hand_card_one: "/images/ID-caremer.png"}}'></image>
+      </view>
+    </view>
+
+
+    <view class='ID-card' wx:if='{{lecturerInfo.lecturer_class == 2}}'>
+      <view class='ID-card-title'>相关证书</view>
+      <view class='some-certificate'>
+        <view class='ID-card-wrap' bindtap='getLicence'>
+          <view class='lenc-carmea'>
+            <image src='{{lecturerInfo.licence_pic? lecturerInfo.licence_pic : "/images/lenc-carmea.png"}}' mode='aspectFill' class='{{lecturerInfo.licence_pic? "have-img" : ""}}'></image>
+          </view>
+        </view>
+        <view class='ID-card-wrap' bindtap='getCertification'>
+          <view class='lenc-carmea'>
+            <image src='{{lecturerInfo.certification_pic? lecturerInfo.certification_pic : "/images/lenc-carmea.png"}}' mode='aspectFill' class='{{lecturerInfo.certification_pic? "have-img" : ""}}'></image>
+          </view>
+        </view>
+      </view>
+      <view class='certificate-tips'>
+        <view>营业执照</view>
+        <view>资质证书</view>
+      </view>
+    </view>
+
+
+    <view class='dform-item2' wx:if='{{lecturerInfo.lecturer_class == 2}}'>
+      <view class='dform-item-title'>联系人:</view>
+      <view class='dform-item-input is-full'><input name='avatar' type='text' value='{{lecturerInfo.contact_man ? lecturerInfo.contact_man : ""}}' bindinput='getContactName' placeholder='输入联系人姓名' placeholder-style='color: #b0b0b0'></input></view>
+    </view>
+    <view class='dform-item2' wx:if='{{lecturerInfo.lecturer_class == 2}}'>
+      <view class='dform-item-title'>手机号:</view>
+      <view class='dform-item-input is-full'><input name='avatar' type='text' value='{{lecturerInfo.contact_phone ? lecturerInfo.contact_phone : ""}}' bindinput='getContactPhone' placeholder='输入联系人手机号' placeholder-style='color: #b0b0b0'></input></view>
+    </view>
+
+
+    
+
+    <view class='dsubmit-btn'><button bindtap='nextStep'>下一步</button></view> 
+  </form>
+</view>

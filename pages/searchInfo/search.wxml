@@ -1,0 +1,49 @@
+<view class='dsearch-header'>
+  <view><image src='/images/search.png'></image></view>
+  <input class='dsearch-input' 
+         value='{{searchText}}' 
+         type="text" 
+         placeholder="搜索资讯" 
+         confirm-type='搜索'
+         bindconfirm='startSearch'
+         placeholder-style='color: #bebdbd;'></input>
+</view>
+<view class='dline-hr'></view>
+<view class='dsearch-main'>
+  <view class='dserach-menu'>
+    <block wx:for='{{dsearchTabs}}' wx:key>
+      <view class='{{tabIndex == index ? "dtab-active" : ""}}' bindtap='selectTab' data-index='{{index}}'>{{item}}</view>
+    </block>
+  </view>
+ 
+  <!-- 搜搜结果列表  全部-->
+  <view class='dsearch-result-list'>
+    <view wx-if="{{!infoDatas.length}}" style='display: flex;flex-direction: column;align-items: center;'>
+      <image src='/images/null.png' mode="aspectFill" style='width:247rpx;height:288rpx;margin-top:260rpx;'></image>
+      <view style='font-size:28rpx;color:#ccc;margin-top:25rpx;'>暂无数据</view>
+    </view>
+    <block wx:for='{{infoDatas}}' wx:key>
+      <view class='dinformation-list-item'  bindtap='linkInfoDetail' data-id='{{item.id}}' data-infor="1" data-url='{{item.url}}'>
+        <view><image src='{{item.article_image}}' mode='aspectFill'></image></view>
+        <view class='dinformation-list-detail'>
+          <view class='dinformation-list-title' style='overflow: hidden;white-space: nowrap;text-overflow: ellipsis;'>{{item.title}}</view>
+          <view class='dinformation-list-subtitle' style='overflow: hidden;white-space: nowrap;text-overflow: ellipsis;'>{{item.abstract}}</view>
+          <view class='dlist-detail-info'>
+            <view wx-if="{{!item.url}}">
+              <text>{{item.scan_count}} 观看</text>
+              <text style='margin-left: 20rpx;'>{{item.evaluate_count}} 人评论</text>
+            </view>
+            <view class='dlist-detail-time'>{{item.updated_at}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='dline-half-hr'></view>
+    </block>
+
+  </view>
+
+</view>
+
+
+
+

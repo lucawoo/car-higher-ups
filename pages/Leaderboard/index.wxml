@@ -1,0 +1,58 @@
+<view class='dclassify-detail-header'>
+  <view class='dclassify-detail-menu-wrap'>
+    <view class='dclassify-detail-menu'>
+      <block wx:for='{{leaderboard}}' wx:key>
+        <view>
+          <view bindtap='selectTop' class='dclassify-new {{index === tabIndex ? "dtab-active" : ""}}' data-index='{{index}}'>{{item}}</view>
+          <view class='dbottom-line {{index == tabIndex ? "dtab-active-bottom" : ""}}'></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 数据列表  -->
+<view class='dclassify-detail-list'>
+  <block wx:for='{{leaderData}}' wx:key>
+    <view class='dresult-list-item' bindtap='linkDetail' wx:if='{{item.goods_type != 1}}' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' data-id='{{item.goods_id}}'>
+      <image mode='aspectFill' src='{{item.cover}}'></image>
+      <view class='dlist-item-detail'>
+        <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 2}}'>
+          <image src='/images/video_icon.png'></image>
+          <text>视频</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods.goods_type == 3}}'>
+          <image src='/images/audio_icon.png'></image>
+          <text>音频</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods.goods_type == 1}}'>
+          <image src='/images/img_icon.png'></image>
+          <text>图文</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods_type == 2}}'>
+          <image src='/images/class_icon.png'></image>
+          <text>课程</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods_type == 1}}'>
+          <image src='/images/cloumn_icon.png'></image>
+          <text>专栏</text>
+        </view>
+        <view class='dlist-item-title'>{{item.goods_name}}</view>
+        <view class='dlist-item-subtitle'>{{item.goods_desc}}</view>
+        <view class='dlist-item-info'>
+          <text> {{item.click_num}}  人查看</text>
+          
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view class='no-buy-wrap' wx:if='{{noData}}'>
+  <view class='no-buy-image'>
+    <image src='/images/null.png'></image>
+  </view>
+
+  <view class='no-buy-text'>暂无数据</view>
+
+</view>

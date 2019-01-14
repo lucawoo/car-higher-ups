@@ -1,0 +1,55 @@
+<view style='padding-top: 40rpx;'>
+  <view class='dfree'>
+    <block wx:for='{{freeDatas}}' wx:key>
+      <view class='ddetail-item' bindtap='linkDetail' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' data-id='{{item.goods_id}}'>
+        <image mode='aspectFill' src='{{item.goods_cover}}'></image>
+        <view class='black-white'>
+          <view class='ddetail-item-tips'>
+            <view>{{item.lecturer.lecturer_name}}</view>
+            <!-- <view class='dline-hieght'></view> -->
+            <!-- <view>{{item.subscribe_num}} 次学习</view> -->
+            <view wx:if='{{item.goods.goods_type == 2}}'>
+              <image src='/images/white_video.png'></image>
+            </view>
+            <view wx:if='{{item.goods.goods_type == 3}}'>
+              <image src='/images/white_audio.png'></image>
+            </view>
+            <view wx:if='{{item.goods.goods_type == 1}}'>
+              <image src='/images/white_img.png'></image>
+            </view>
+            <view wx:if='{{item.goods_type == 2}}'>
+              <image src='/images/white_class.png'></image>
+            </view>
+          </view>
+        </view>
+        <view class='ddetail-info'>
+          <view>{{item.goods_name}}</view>
+          <!-- <view>{{item.click_count}}人查看</view> -->
+        </view>
+      </view>
+    </block>
+
+  </view>
+  <view class='no-buy-wrap' wx:if='{{noData2}}'>
+    <view class='no-buy-image'>
+      <image src='/images/null.png'></image>
+    </view>
+
+    <view class='no-buy-text'>暂无数据</view>
+
+  </view>
+</view>
+
+
+<view class='first' wx:if="{{firstcome}}">
+  <view class='btn' bindtap='iknow'></view>
+  <image src='/images/teach.png'></image>
+</view>
+
+
+
+<!-- 返回首页 -->
+
+<view class='backhome' bindtap='_backhome' wx:if='{{share}}'>
+  <view><image src='/images/backhome.png'></image></view>
+</view>

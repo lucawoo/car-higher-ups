@@ -1,0 +1,73 @@
+.live-video {
+  width: 100%;
+  height: 423rpx;
+  display: block;
+  position: relative;
+}
+
+.full-screen {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+
+.cover-bind-event {
+  width: 100%;
+  height: 423rpx;
+  display: block;
+  position: absolute;
+}
+
+.cover-bind-event-v {
+  height: 100%;
+  width: 100%;
+}
+
+.exit-full-screen {
+  position: absolute;
+  left: 20rpx;
+  bottom: 20rpx;
+}
+
+.full-screen-img {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.live-loading {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 28rpx;
+  width: 200rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+
+}
+
+.live-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  padding: 20rpx;
+  border-bottom: 1px solid #efefef;
+}
+
+.cont-tit{
+  padding: 25rpx 20rpx;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 24rpx;
+  position: relative;
+}
+
+.synopsis-cont{
+  padding: 40rpx 20rpx;
+  border-bottom: 5px solid #F6F6F6;
+  font-size: 24rpx;
+  color: #666666;
+  white-space: pre-line;
+}

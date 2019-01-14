@@ -1,0 +1,799 @@
+/*改*/
+
+.overscroll {
+  overflow: hidden;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+.bebuy, .afbuy {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100rpx;
+}
+
+.bebuy  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #e5e5e5;
+  text-align: center; 
+  background: #fff;
+}
+
+.bebuy > view {
+  flex: 1;
+  height: 100rpx;
+}
+
+.bebuy > view:last-child {
+  font-size: 32rpx;
+  font-weight: 600;
+  background-color: #00a0e8;
+  color: #fff;
+  flex: 3;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+.bebuy > view:nth-child(1) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.bebuy > view view {
+ font-size: 24rpx;
+ color: #666666;
+}
+
+.bebuy .iconfont {
+  font-size: 36rpx;
+  margin-top: 15rpx;
+}
+
+.afbuy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #e5e5e5;
+  text-align: center; 
+  background: #fff;
+}
+
+.afbuy > view {
+  flex: 1;
+  height: 100rpx;
+}
+
+.afbuy > view:last-child {
+  font-size: 32rpx;
+  font-weight: 600;
+  background-color: #00a0e8;
+  color: #fff;
+  flex: 3;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+.afbuy > view:nth-child(2) {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+}
+
+.afbuy > view view {
+ font-size: 24rpx;
+ color: #666666;
+}
+
+.afbuy .iconfont {
+  font-size: 36rpx;
+  margin-top: 15rpx;
+}
+
+.is-collect {
+  color: red!important;
+}
+
+.invite-btn {
+  padding: 0, 0, 0, 0;
+  font-size: 24rpx;
+  line-height:1.2;
+  background:#fff;
+  color: #666;
+}
+
+.invite-btn::after {
+  border: 0;
+}
+
+/*图文正文*/
+
+.descript {
+  padding: 30rpx;
+  font-size: 26rpx;
+  background: #FAFAFA;
+  color: #696969
+}
+
+.descript-title {
+  color: #C9C9C9;
+  font-size: 30rpx;
+  margin: 0 0 20rpx 0;
+}
+
+.article {
+  border-bottom: 10px solid #f6f6f6;
+  padding: 40rpx;
+}
+
+.art-tit {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.author {
+  position: relative;
+  padding-bottom: 40rpx;
+  margin-top: 50rpx;
+  /* border-bottom: 1px solid #eee; */
+}
+
+.author-name {
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+
+.author .headimg {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-top: 7rpx;
+}
+
+.author button {
+  color: #00a0e8;
+  border: 1px solid #00a0e8;
+  background: #fff;
+  border-radius: 50px;
+  width: 100rpx;
+}
+
+.author button::after {
+  border: 0px;
+}
+
+.collect {
+  position: absolute;
+  top: 10rpx;
+  right: 23%;
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+}
+
+.collect image {
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.no-love {
+  z-index: 10;
+}
+
+.loved {
+  z-index: 5;
+}
+
+.loved image {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.to-invite {
+  position: absolute;
+  top: 10rpx;
+  right: 13%;
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+}
+
+.to-invite image {
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.to-give {
+  position: absolute;
+  top: 10rpx;
+  right: 3%;
+  z-index: 10;
+  border-radius: 50%;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.to-give image {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+/*cont*/
+
+.art-cont {
+  padding-top: 40rpx;
+  font-size: 26rpx;
+  color: #666;
+  line-height: 40rpx;
+  white-space: pre-line;
+}
+
+.art-cont image {
+  width: 100%;
+  height: 230rpx;
+  margin-bottom: 30rpx;
+}
+
+.free {
+  text-align: center;
+  margin-top: 55rpx;
+  padding-top: 45rpx;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+
+.free-tit {
+  font-size: 24rpx;
+  color: #919191;
+}
+
+.sell-price {
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  padding-bottom: 45rpx;
+  color: #464646;
+  margin-left: 34%;
+}
+
+.sell-price text {
+  margin-right: 20rpx;
+  float: left;
+}
+
+.vip-price {
+  font-size: 20rpx;
+  background: #e7bf6e;
+  color: #fff;
+  padding: 0rpx 15rpx;
+  border-radius: 50px;
+  background: #e7bf6e;
+  padding-left: 35rpx;
+  float: left;
+  position: relative;
+  margin-top: 3rpx;
+}
+
+.vip-price image {
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 50%;
+  left: 3rpx;
+  margin-top: -12rpx;
+}
+
+.about-art {
+  margin-top: 40rpx;
+  padding-bottom: 20rpx;
+}
+
+.sell-msg {
+  font-size: 20rpx;
+  color: #bcbcbc;
+  margin-top: 10rpx;
+}
+
+.sell-msg text {
+  margin-right: 18rpx;
+}
+
+.sell-msg text:last-child {
+  float: right;
+}
+
+/*学员评论*/
+
+.cont-tit {
+  padding: 25rpx 7%;
+  border-bottom: 1px solid #eee;
+  font-size: 24rpx;
+  position: relative;
+}
+
+.comments-list {
+  padding: 40rpx 0 40rpx 7%;
+}
+
+.complaints {
+  text-align: center;
+  color: #00a0e8;
+}
+
+.published {
+  text-align: right;
+  color: #00a0e8;
+}
+
+.list-left {
+  border-bottom: 1px solid #eee;
+}
+
+.comments-name {
+  font-size: 26rpx;
+  float: left;
+}
+
+.dcomment-starts {
+  float: right;
+  color: #ffc000;
+}
+
+.dcomment-starts text {
+  margin-left: 5rpx;
+  font-size: 24rpx;
+}
+
+.dcomment-starts .gray {
+  color: #eee;
+}
+
+.comments-cont {
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}
+
+.comments-date {
+  font-size: 20rpx;
+  color: #919191;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+
+.reply-list {
+  padding: 15rpx 0 20rpx 20rpx;
+  background: #f9f9f9;
+  font-size: 24rpx;
+  color: #919191;
+}
+
+.reply .zan-icon {
+  position: absolute;
+  top: 15rpx;
+  left: -40rpx;
+  font-size: 24rpx;
+  color: #02a0e9;
+}
+
+.reply-name {
+  color: #02a0e9;
+  margin-bottom: 10rpx;
+}
+
+.allbtn {
+  padding: 0px 7%;
+  color: #00a0e8;
+  font-size: 24rpx;
+  text-align: right;
+  margin-bottom: 70rpx;
+}
+
+.add-btn {
+  position: absolute;
+  left: 22%;
+  top: 30%;
+  text-align: center;
+  border-radius: 2px;
+  z-index: 10;
+  color: #00a0e8;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.buybtn {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 85rpx;
+  background: #00a0e8;
+  font-size: 28rpx;
+  line-height: 85rpx;
+  color: #fff;
+  border-radius: 0px;
+}
+
+.buybtn image {
+  width: 43rpx;
+  height: 37rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -20rpx;
+  left: 33%;
+}
+
+.view_hide {
+  display: none;
+}
+
+.btn_hide {
+  display: none;
+}
+
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfloat {
+  zoom: 1;
+}
+
+/*赠送*/
+
+.dark {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  z-index: 10;
+  opacity: 0.7;
+}
+
+.paytit {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50%;
+  background: #fff;
+  z-index: 15;
+  text-align: center;
+}
+
+.paytit-tit {
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 30rpx;
+}
+
+.paytit .paytitli {
+  font-size: 24rpx;
+  padding: 10rpx;
+}
+
+.paytit button {
+  width: 200rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  border-radius: 50px;
+  line-height: 50rpx;
+  background: #00a0e8;
+  color: #fff;
+  margin-top: 40rpx;
+}
+
+.paytit button::after {
+  border: 0px;
+}
+
+.payfor {
+  position: fixed;
+  width: 100%;
+  height: 35%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 20;
+  background: #fff;
+}
+
+.payfor {
+  padding: 0px 8%;
+  box-sizing: border-box;
+}
+
+.surepay {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80rpx;
+  background: #00a0e8;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.payfor .title {
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 35rpx 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40rpx;
+}
+
+.cont {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.cont-left {
+  float: left;
+  font-size: 24rpx;
+}
+
+.cont-right {
+  float: right;
+}
+
+.leftbutton, .centernum, .rightbutton {
+  float: left;
+  font-size: 24rpx;
+  background: #f6f6f6;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.centernum {
+  width: 50rpx;
+}
+
+.allmo {
+  margin-top: 40rpx;
+}
+
+.allmo view:first-child {
+  float: left;
+  font-size: 24rpx;
+}
+
+.allmo view:last-child {
+  float: right;
+  color: #00a0e8;
+  font-size: 24rpx;
+}
+
+.borderblack {
+  width: 3rpx;
+  height: 23rpx;
+  background: #000;
+  position: absolute;
+  top: 28rpx;
+  left: 0px;
+}
+
+.first image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 55;
+}
+
+.first .btn {
+  width: 34%;
+  height: 80rpx;
+  opacity: 0;
+  z-index: 60;
+  position: fixed;
+  bottom: 5%;
+  left: 33%;
+}
+
+.evalview {
+  position: fixed;
+  top: 20%;
+  left: 15%;
+  width: 70%;
+  z-index: 25;
+}
+
+.eval_dark {
+  background: #000;
+  opacity: 0.4;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  height: 400rpx;
+  font-size: 26rpx;
+  background: #f8f9fd;
+}
+
+/*五星评价*/
+
+.pucont {
+  background: #fff;
+  border-radius: 25rpx 25rpx 0 0;
+  padding-left: 25rpx;
+}
+
+.star-image {
+  width: 37rpx;
+  height: 37rpx;
+  margin: 25rpx 10rpx;
+  position: relative;
+}
+
+.item {
+  float: left;
+  width: 33rpx;
+  height: 33rpx;
+}
+
+.tag {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.evalbtom-btn {
+  font-size: 28rpx;
+  line-height: 85rpx;
+}
+
+.evalbtom-btn view {
+  width: 50%;
+  float: left;
+  text-align: center;
+  border-radius: 0 0 0 25rpx;
+  background: #fff;
+}
+
+.evalbtom-btn button {
+  float: left;
+  font-size: 28rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  width: 50%;
+  background: #00a0e8;
+  color: #fff;
+  border-radius: 0 0 25rpx 0;
+}
+
+.evalbtom-btn button::after {
+  border: 0px;
+}
+
+.attach_dark {
+  z-index: 10;
+  height: 90%;
+}
+
+.attacahview {
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  height: 40%;
+  left: 0;
+  bottom: 80rpx;
+  background: #fff;
+  padding: 40rpx 5% 40rpx;
+  box-sizing: border-box;
+}
+
+.attachList {
+  height: 110rpx;
+  overflow: hidden;
+}
+
+.attachList-type {
+  width: 20%;
+  margin-right: 35rpx;
+}
+
+.attachList-type image {
+  width: 100%;
+  height: 110rpx;
+}
+
+.attachList-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.attachList-right{
+  height: 110rpx;
+}
+
+.attachList-size {
+  font-size: 22rpx;
+  float: left;
+  color: #919191;
+}
+
+.attachList-time {
+  font-size: 22rpx;
+  float: right;
+  color: #919191;
+}
+
+.share-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0,0, .5);
+}
+
+.share-btn {
+  width: 100%;
+	height: 341rpx;
+	background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.share-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24rpx;
+  width: 500rpx;
+  margin: 60rpx auto 0;
+}
+
+.share-btns image {
+  margin-bottom: 40rpx;
+}
+
+.share-button {
+  line-height: 0;
+  background: #fff;
+  font-size: 24rpx;
+  padding: 0 0 0 0;
+}
+
+.share-button::after {
+  border: 0;
+}
+
+
+
+
+
+
+
+

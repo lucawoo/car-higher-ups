@@ -1,0 +1,21 @@
+@import '../home/home.wxss';
+
+
+.first image {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 55;
+}
+
+.first .btn {
+  width: 34%;
+  height: 80rpx;
+  opacity: 0;
+  z-index: 60;
+  position: fixed;
+  bottom: 5%;
+  left: 33%;
+}

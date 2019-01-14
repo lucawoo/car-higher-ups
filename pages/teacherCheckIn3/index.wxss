@@ -1,0 +1,173 @@
+page {
+  background: #fff;
+}
+
+.form-tips {
+  font-size: 26rpx;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  background: #fff9de;
+
+}
+
+.personal-tips {
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #00a0e8;
+  margin: 30rpx 0 10rpx;
+}
+
+.personal-tips view:nth-child(1) {
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.personal-tips view:nth-child(2) {
+  width: 118rpx;
+	height: 54rpx;
+	background-color: #ffffff;
+	border-radius: 27rpx;
+	border: solid 1px #eeeeee;
+  text-align: center;
+  line-height: 54rpx;
+}
+
+.admin-tips {
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  color: #7c7c7c;
+}
+
+.dform-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 30rpx
+}
+
+.dform-item-title {
+  font-size: 30rpx;
+  color: #333;
+  height:1.4rem;
+  line-height: 1.4rem;
+}
+
+.dform-item-input {
+  min-width: 470rpx;
+  color: #6f6f6f;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.dform-item .is-full input {
+  color: #6f6f6f;
+}
+
+.is-full {
+  color: #6f6f6f;
+  font-size: 30rpx;
+}
+
+.dform-item-input input {
+  min-width: 470rpx;
+  color: #b0b0b0;
+  font-size: 30rpx;
+}
+
+.placeholder-color {
+  color: #b0b0b0;
+  font-size: 30rpx;
+}
+
+.dform-item .icon-previewright{
+  color: #555555;
+  font-size: 36rpx;
+  margin-left: 10rpx;
+}
+
+.submit-btn-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180rpx;
+}
+
+.dsubmit-btn {
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+
+.dsubmit-btn view {
+  width: 328rpx;
+	height: 85rpx;
+	border: solid 1px #00a0e8;
+  line-height: 85rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.pre-step {
+  color: #00a0e8;
+}
+
+.next-step {
+  background-color: #00a0e8;
+  color: #fff;
+}
+
+.next-step button {
+  font-size: 30rpx;
+  background-color: #00a0e8;
+  color: #fff;
+}
+
+.next-step button::after {
+  border: 0;
+}
+
+.dform-item-agreement {
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding: 0 30rpx;
+}
+
+.dform-item-agreement view:nth-child(1) {
+  width: 16rpx;
+  height: 16rpx;
+  border: 1px solid #eee;
+  border-radius: 4rpx;
+  margin-right: 10rpx;
+  padding: 6rpx;
+}
+
+.dsquire {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #00a0e8;
+  border-radius: 4rpx;
+}
+
+.link-to-detail {
+  color: #00a0e8;
+}
+
+.pwd-icon {
+  width: 33rpx;
+	height: 25rpx;  
+}
+
+.pwd-icon2 {
+  width: 34rpx;
+	height: 16rpx;
+}

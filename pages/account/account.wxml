@@ -1,0 +1,80 @@
+<view class='{{showModal || walcont ? "no-scollw": ""}}'>
+
+  <view class="balance">
+    <view class='balance-tit'>
+      <text>可提现余额</text>
+      <text style='color: #00a0e8;' bindtap='openModa'>提现说明</text> </view>
+    <view class='money'>
+      <text class='money-left'>￥<text>{{accList.balance_price}}</text></text>
+      <text class='money-today'>今日收益<text>{{today_income}}</text></text>
+    </view>
+    <view class='btn'>
+      <button bindtap='{{accList.balance_price==0?"":"alert"}}' class='{{accList.balance_price==0?"bodianji":"kedianji"}}'>提现</button>
+      <!-- <button>推广中心</button> -->
+    </view>
+  </view>
+
+
+  <view class='cont'>
+    <view class='cont-tit clearfloat'>
+      <text>收支明细</text>
+      <text bindtap='todetail'>全部明细</text>
+    </view>
+
+    <view class='detail-list zan-row' wx:key wx:for='{{allfinanceList}}'>
+      <view class='zan-col zan-col-1' style='width:59rpx;height:60rpx;border-radius:50%;'>
+        <image wx-if="{{item.type=='buy'}}" src='/images/finance-buy.png' style='width:59rpx;height:60rpx;'></image>
+        <image wx-if="{{item.type=='give'}}" src='/images/gift.png' style='width:59rpx;height:60rpx;'></image>
+        <image wx-if="{{item.type=='sell'}}" src='/images/finance-tuiguang.png' style='width:59rpx;height:60rpx;'></image>
+        <image wx-if="{{item.type=='withdraw'}}" src='/images/finance-tixian.png' style='width:59rpx;height:60rpx;'></image>
+      </view>
+      <view class='zan-col zan-col-20 zan-col-offset-1'>
+        <view class='clearfloat'>
+          <text wx-if="{{item.type=='give'}}" class='list-tit'>赠送</text>
+          <text wx-if="{{item.type=='buy'}}" class='list-tit'>已学</text>
+          <text wx-if="{{item.type=='sell'}}" class='list-tit'>收益</text>
+          <text wx-if="{{item.type=='withdraw'}}" class='list-tit'>提现</text>
+          <text class='list-income'>{{item.price}}</text>
+        </view>
+        <view class='list-cont' wx-if="{{!item.type=='sell'}}">{{item.note}}</view>
+        <view class='list-cont' wx-if="{{item.type=='sell'}}">收益</view>
+        <view class='clearfloat'>
+          <text class='list-date'>{{item.created_at}}</text>
+          <text class='list-buyer'>{{item.buyers}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx-if="{{!allfinanceList.length}}" style='display: flex;flex-direction: column;align-items: center;margin-top:-80rpx;'>
+      <image src='/images/null.png' mode="aspectFill" style='width:247rpx;height:288rpx;margin-top:260rpx;'></image>
+      <view style='font-size:28rpx;color:#ccc;margin-top:25rpx;'>暂无数据</view>
+    </view>
+
+  </view>
+</view>
+
+
+
+<view class='dark' bindtap='dark' wx-if="{{dark}}"></view>
+<view class='withdrawal' wx-if="{{walcont}}">
+  <view class='drawal-tit'>提现</view>
+  <view class='drawal-ipt'>
+    <text class='mon-icon'>￥</text>
+    <input type='digit' placeholder-class='mone-ipt' value='' bindblur='timoney' placeholder='输入提现金额'></input>
+  </view>
+  <view class='wenxin'>温馨提示：提现金额进入个人微信钱包</view>
+  <view class='button' bindtap='tixian'>确认提现</view>
+</view>
+
+<view class='modal-bg' bindtap='closeModal' wx:if='{{showModal}}'>
+  <view class='blance-tip'>
+    <view class='blance-title'>提现说明</view>
+    <view class='blance-tip-text'>
+      <view>提现金额不得少于1元，个人模式用于由平台代收产生的相关收益。</view>
+      <view>提现前需先绑定到账微信，微信实名认证后每日能提现上限2万，未认证每日提现上限2000元，余额大于1元即可提现。微信将收取每笔0.6%的交易手续费，由平台完成代缴并从用户账户扣除</view> 
+       <view>提现到账时间：微信支付的结算周期为T+3，提现申请后，3个工作日后款项会自动转至您的微信钱包</view>
+    </view>
+    <view class='close-modal' catchtap='closeModal'>我知道了</view>
+  </view>
+
+</view>

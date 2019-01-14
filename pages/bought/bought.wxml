@@ -1,0 +1,86 @@
+<!-- header  -->
+<view class='dbuy-menu-header'>
+  <block wx:for='{{buyTabs}}' wx:key>
+    <view data-index='{{index}}'
+          bindtap='selectTab'>
+              <view class='{{index == tabIndex ? "dtab-active" : ""}} inner-view'>{{item}}</view>
+              <!-- <text class='dcircle-tip' wx:if='{{index == 1}}'></text>  -->
+          </view>
+  </block>
+</view>
+
+<!-- 课程  -->
+<view class='dinformation-list' wx:if='{{tabIndex == 0}}'>
+
+  <block wx:for='{{course}}' wx:key>
+    <view class='dinformation-list-item'  bindtap='linkInfoDetail' data-type='course' data-id='{{item.id}}'>
+      <view><image src='{{item.cover}}' mode='aspectFill'></image></view>
+      <view class='dinformation-list-detail'>
+        <view class='dinformation-list-title'>{{item.name}}</view>
+        <view class='dinformation-list-subtitle'>共{{item.lesson_count}}节课</view>
+        <view class='dlist-detail-info'><text class='iconfont icon-timefill'></text><text>第{{item.learn_record_lesson}}节课学习中</text></view>
+      </view>
+    </view>
+    <view class='dline-half-hr'></view>
+  </block>
+</view> 
+
+<!-- 专栏  -->
+<!-- <view class='dinformation-list' wx:if='{{tabIndex == 1}}'>
+
+  <block wx:for='{{column}}' wx:key>
+    <view class='dinformation-list-item'  bindtap='linkInfoDetail' data-type='column' data-id='{{item.id}}'>
+      <view><image src='{{item.cover}}' mode='aspectFill'></image></view>
+      <view class='dinformation-list-detail'>
+        <view class='dinformation-list-title'>{{item.name}}</view>
+        <view class='dlist-detail-info'>
+          <text class='dupdate-counter'>已更新{{item.lesson_count}}期</text>
+          <text class='dhas-update'  wx:if='{{item.updated}}'>有更新 <text class='dupdate-circle'></text></text>
+        </view>
+      </view>
+    </view>
+    <view class='dline-half-hr'></view>
+  </block>
+
+</view>  -->
+
+<!-- 单品  -->
+<view class='dinformation-list' wx:if='{{tabIndex == 1}}'>
+
+  <block wx:for='{{singGoods}}' wx:key>
+    <view class='dinformation-list-item'  bindtap='linkInfoDetail' data-type='{{item.item_type}}' data-id='{{item.id}}'>
+      <view><image src='{{item.cover}}' mode='aspectFill'></image></view>
+      <view class='dinformation-list-detail'>
+        <view class='dlist-item-class' wx:if='{{item.item_type == "video"}}'>
+          <image src='/images/video_icon.png'></image>
+          <text>视频</text>
+        </view>
+        <view class='dlist-item-class' wx:if='{{item.item_type == "audio"}}'>
+          <image src='/images/audio_icon.png'></image>
+          <text>音频</text>
+        </view>
+        <view class='dlist-item-class' wx:if='{{item.item_type == "article"}}'>
+          <image src='/images/img_icon.png'></image>
+          <text>图文</text>
+        </view>
+        <view class='dinformation-list-title'>{{item.name}}</view>
+        <view class='dlist-detail-info' wx:if='{{item.item_type != "article"}}'>
+          <text class='dupdate-counter'>已播放 {{item.learn_record_time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='dline-half-hr'></view>
+  </block>
+
+</view> 
+
+
+
+<view wx:if='{{(singGoods.length == 0 && tabIndex == 1) || (course.length == 0 && tabIndex == 0)}}' class='no-buy-wrap'>
+  <view class='no-buy-image'>
+    <image src='/images/no-buy.png'></image>
+  </view>
+
+  <!-- <view class='no-buy-text'>去看看其他{{ tabIndex == 0 ? "课程" : "单品"}}吧！</view> -->
+
+</view>

@@ -1,0 +1,266 @@
+/*余额*/
+
+.no-scollw {
+  overflow:hidden;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+.balance{
+  padding: 60rpx 7% 37rpx;
+  border-bottom: 7px solid #f6f6f6;
+}
+.balance-tit{
+  font-size: 24rpx;
+  color: #666;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.money{
+  margin-top: 20rpx;
+}
+.money-left{
+  font-size: 36rpx;
+  width: 65%;
+  display: inline-block;
+}
+.money-left text{
+  font-size: 72rpx;
+}
+.money-today{
+  font-size: 24rpx;
+  color: #424242;
+  width: 33%;
+  display: inline-block;
+  text-align: center;
+  border-left: 1px solid #e5e5e5;
+}
+.money-today text{
+  color: #e01a1a;
+  margin-left: 15rpx;
+}
+
+.btn{
+  height: 74rpx;
+  margin-top: 80rpx;
+}
+.btn button{
+  width: 100%;
+  background: #fff;
+  height: 74rpx;
+  line-height: 74rpx;
+  font-size: 30rpx;
+}
+.kedianji{
+  border: 1px solid #00a0e8;
+  color: #00a0e8;
+}
+.bodianji{
+  border: 1px solid #DCDCDC;
+  color: #BBBBBB;
+}
+.btn button:first-child{
+  float: left;
+}
+/* .btn button:last-child{
+  float: right;
+} */
+.btn button::after{
+  border: 0;
+}
+
+/*内容*/
+.cont{
+  padding: 0px 7%;
+}
+
+.cont-tit{
+  margin-top: 55rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.cont-tit text:first-child{
+  font-weight: bold;
+  float: left;
+}
+.cont-tit text:last-child{
+  color: #00a0e8;
+  float: right;
+  font-size: 24rpx;
+}
+
+.detail-list{
+  padding: 45rpx 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.list-tit{
+  font-size: 28rpx;
+  float: left;
+}
+.list-income{
+  font-size: 24rpx;
+  color: #e01a1a;
+  float: right;
+}
+.list-cont{
+  font-size: 20rpx;
+  color: #919191;
+}
+.list-date{
+  font-size: 22rpx;
+  color: #b0b0b0;
+  float: left;
+}
+.list-buyer{
+  font-size: 22rpx;
+  color: #b0b0b0;
+  float: right;
+}
+
+
+/**/
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+
+
+
+.dark{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .7;
+}
+.withdrawal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500rpx;
+  height: 480rpx;
+  background: #fff;
+  margin-top: -240rpx;
+  margin-left: -250rpx;
+  box-sizing: border-box;
+}
+.drawal-tit{
+  font-size: 33rpx;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40rpx;
+  margin-bottom: 70rpx;
+}
+.drawal-ipt{
+  position: relative;
+}
+.drawal-ipt input{
+  width: 80%;
+  height: 70rpx;
+  border: 1px solid #b0b0b0;
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 10%;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.mone-ipt{
+  font-weight: normal;
+  font-size: 22rpx;
+  color: #b0b0b0;
+  text-align: center;
+}
+.mon-icon{
+  position: absolute;
+  top: 0px;
+  left: 15%;
+  font-size: 24rpx;
+  line-height: 70rpx;
+}
+.wenxin{
+  font-size: 22rpx;
+  text-align: center;
+  color: #919191;
+  margin-top: 18rpx;
+}
+.button{
+  width: 80%;
+  height: 70rpx;
+  background: #00a0e8;
+  color: #fff;
+  text-align: center;
+  line-height: 70rpx;
+  margin-left: 10%;
+  margin-top: 70rpx;
+  font-size: 30rpx;
+}
+
+.bind{
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 20rpx;
+}
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+}
+
+.blance-tip {
+  position: absolute;
+  width: 500rpx;
+  height: 740rpx;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+.close-modal {
+  width: 80%;
+  height: 74rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background: #00a0e8;
+  line-height: 74rpx;
+  margin: 40rpx auto;
+  border-radius: 40rpx;
+  text-align: center;
+}
+
+.blance-title {
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  
+}
+
+.blance-tip-text {
+  font-size: 27rpx;
+  padding: 0 40rpx;
+  line-height: 1.6;
+  color: #6f6f6f;
+  margin-bottom: 60rpx;
+  height: 410rpx;
+  overflow-y: scroll;
+}
+
+.blance-tip-text view {
+  text-indent: 1.5rem;
+}

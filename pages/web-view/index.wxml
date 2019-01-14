@@ -1,0 +1,9 @@
+<import wx:if='{{id}}' src="/wxParse/wxParse.wxml"/>
+
+
+<web-view src="{{src}}" wx:if='{{src}}'></web-view> 
+
+
+<web-view src="{{url}}api/official/oauth?api_token={{api_token}}&course_id={{course_id}}&type={{type}}&price={{price}}&quantity={{quantity}}" wx:if='{{formios==1}}'></web-view>
+
+<view wx:if='{{id}}'><template is="wxParse" data="{{wxParseData:content.nodes}}"/></view>

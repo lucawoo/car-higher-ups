@@ -1,0 +1,39 @@
+.main{
+  border-top: 10px solid #f4f4f4;
+  padding: 50rpx 6%;
+}
+
+/*cont*/
+.focus-list{
+  margin-bottom: 47rpx;
+  padding-bottom: 37rpx;
+  border-bottom: 1px solid #eee;
+}
+.focus-list:last-child{
+  border-bottom: 0px;
+}
+.lecturer-name{
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-top: 15rpx;
+}
+.lecturer-describe{
+  font-size: 26rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+.cance-btn{
+  background: #fff;
+  color: #0097ff;
+  border-radius: 50px;
+  height: 60rpx;
+  padding: 0px 5px;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  border: 1px solid #0097ff;
+}
+.cance-btn::after{
+  border: 0px;
+}

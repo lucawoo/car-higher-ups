@@ -1,0 +1,168 @@
+.vip{
+  margin-top: 90rpx;
+  margin-bottom: 120rpx;
+}
+.vip image{
+  border-radius: 10px;
+}
+
+
+/*tab*/
+.swiper-tab{
+  width: 60%;
+  margin-left: 20%;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+.swiper-tab-list{
+  font-size: 29rpx;
+  display: inline-block;
+  width: 50%;
+  color: #333;
+}
+.bre{
+  border-radius: 50px 0 0 50px;
+  background: #ededed;
+}
+.bae{
+  border-radius: 0 50px 50px 0;
+  background: #ededed;
+}
+.on{
+  color: #fff;
+  background: #e7bf6e;
+}
+
+
+/*内容*/
+  /*详情*/
+.swiper-box{
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+.menu-item{
+  background: #ededed;
+  float: left;
+  width: 50%;
+}
+.menu-active{
+  background: #e7bf6e;
+  color: #fff;
+}
+.rightb{
+  border-radius: 50rpx 0 0 50rpx;
+}
+.leftb{
+  border-radius: 0 50rpx 50rpx 0;
+}
+.vip-cont{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 73rpx;
+  font-size: 22rpx;
+  color: #C6C6C6;
+  text-align: left;
+}
+.fir-tit{
+  font-size: 34rpx;
+  margin-top: 66rpx;
+  font-weight: bold;
+}
+.fir-btm{
+  font-size: 22rpx;
+  margin-top: 8rpx;
+  color: #D5D5D5;
+}
+.kaipeo{
+  padding: 5rpx 20rpx;
+  font-size: 20rpx;
+  margin-top: 26rpx;
+  background: #ededed;
+  border-radius: 50px;
+  display: inline-block;
+}
+.give-other{
+  font-size: 20rpx;
+  color: #e7bf6e;
+  margin-top: 30rpx;
+  padding-bottom: 50rpx;
+  border-bottom: 1px solid #FAFAFA;
+}
+.give-icon{
+  background: #e7bf6e;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-left: 46%;
+  margin-top: 38rpx;
+}
+.give-icon text{
+  font-size: 30rpx;
+  color: #fff;
+  margin-right: 0;
+  line-height: 45rpx;
+}
+  /*权益*/
+.sec-cont{
+  margin-top: 109rpx;
+  text-align: left;
+}
+.sec-list{
+  width: 50%;
+  float: left;
+}
+.sec-kind{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18rpx;
+  color: #fff;
+  position: absolute;
+  top: 125rpx;
+  width: 90%;
+  left: 0px;
+}
+.sec-tit{
+  font-size: 22rpx;
+  line-height: 20px;
+  color: #201f2a;
+}
+.sec-time{
+  font-size: 20rpx;
+  color: #919191;
+}
+.list-cont{
+  margin-left: 5%;
+  position: relative;
+}
+
+
+/*底部button*/
+.open-btn{
+  position: relative;
+  height: 90rpx;
+  margin-top: 120rpx;
+}
+.open-btn button{
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 36rpx;
+  color: #fff;
+  border: 0px;
+}
+.open-btn image{
+  position: absolute;
+  top: 0px;
+  left: 25%;
+  z-index: 10;
+}
+
+.kind-icon image{
+  width: 17rpx;
+  height: 17rpx;
+  border-radius: 4rpx;
+  margin-right: 20rpx;
+}

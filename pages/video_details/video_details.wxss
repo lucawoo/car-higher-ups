@@ -1,0 +1,810 @@
+/*改*/
+.overscroll{
+  overflow:hidden;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+.calss{
+  display: none;
+}
+
+.bebuy, .afbuy {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100rpx;
+}
+
+.bebuy image, .afbuy image {
+  width: 46rpx;
+  height: 62rpx;
+  margin-top: 20rpx;
+}
+
+.bebuy  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #e5e5e5;
+  text-align: center; 
+  background: #fff;
+}
+
+.bebuy > view {
+  flex: 1;
+  height: 100rpx;
+}
+
+.bebuy > view:last-child {
+  font-size: 32rpx;
+  font-weight: 600;
+  background-color: #00a0e8;
+  color: #fff;
+  flex: 3;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+.bebuy > view:nth-child(1) {
+  border-right: 1px solid #e5e5e5;
+}
+
+.bebuy > view view {
+ font-size: 24rpx;
+ color: #666666;
+}
+
+.bebuy .iconfont {
+  font-size: 36rpx;
+  margin-top: 15rpx;
+}
+
+.afbuy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #e5e5e5;
+  text-align: center; 
+  background: #fff;
+}
+
+.afbuy > view {
+  flex: 1;
+  height: 100rpx;
+}
+
+.afbuy > view:last-child {
+  font-size: 32rpx;
+  font-weight: 600;
+  background-color: #00a0e8;
+  color: #fff;
+  flex: 3;
+  line-height: 100rpx;
+  height: 100rpx;
+}
+
+.afbuy > view:nth-child(2) {
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+}
+
+.afbuy > view view {
+ font-size: 24rpx;
+ color: #666666;
+}
+
+.afbuy .iconfont {
+  font-size: 36rpx;
+  margin-top: 15rpx;
+}
+
+.is-collect {
+  color: red!important;
+}
+
+.invite-btn {
+  padding: 0, 0, 0, 0;
+  font-size: 24rpx;
+  line-height:1.2;
+  background:#fff;
+  color: #666;
+}
+
+.invite-btn::after {
+  border: 0;
+}
+
+
+.evalview{
+  position: fixed;
+  top: 20%;
+  left: 15%;
+  width: 70%;
+  z-index: 25;
+}
+.eval_dark{
+  background: #000;
+  opacity: .4;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+}
+textarea{
+  border-radius: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  height: 400rpx;
+  font-size: 26rpx;
+  background: #F8F9FD;
+}
+/*五星评价*/
+.pucont{
+  background: #fff;
+  border-radius: 25rpx 25rpx 0 0;
+  padding-left: 25rpx;
+}
+.star-image {
+  width: 37rpx;
+  height: 37rpx;
+  margin: 25rpx 10rpx;
+  position: relative;
+}
+.item {
+  float: left;
+  width: 33rpx;
+  height: 33rpx;
+}
+.tag {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.evalbtom-btn{
+  font-size: 28rpx;
+  line-height: 85rpx;
+}
+.evalbtom-btn view{
+  width: 50%;
+  float: left;
+  text-align: center;
+  border-radius: 0 0 0 25rpx;
+  background: #fff;
+}
+.evalbtom-btn button{
+  float: left;
+  font-size: 28rpx;
+  height: 85rpx;
+  line-height: 85rpx;
+  width: 50%;
+  background: #00a0e8;
+  color: #fff;
+  border-radius: 0 0 25rpx 0;
+}
+.evalbtom-btn button::after{
+  border: 0px;
+}
+
+
+
+
+/* top video */
+.top{
+  width: 100%;
+  height: 423rpx;
+  overflow: hidden;
+}
+.topvideo video{
+  width: 100%;
+  height: 423rpx;
+}
+.poster{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 423rpx;
+}
+
+
+.controls{
+  position: relative;
+  display: flex;
+}
+.icon{
+  width: 40px;
+  height: 40px;
+  margin: 5px auto;
+  display: flex;
+  background: #000;
+}
+
+
+
+.collect{
+  background: #4F4F4F;
+}
+.collect .img{
+  width: 46rpx;
+  height: 46rpx;
+}
+.to-invite .img{
+  width: 46rpx;
+  height: 46rpx;
+  margin: auto;
+}
+.to-give{
+  background: #E7BF6E;
+}
+.to-give .img{
+  width: 46rpx;
+  height: 46rpx;
+  margin: auto;
+}
+
+.collect,.to-invite,.to-give{
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  margin-left: 15rpx;
+  margin-top: 20rpx;
+}
+.collect{
+  margin-left: 75%;
+}
+
+
+.top-collect{
+  position: absolute;
+  top: 20rpx;
+  right: 19%;
+  z-index: 10;
+  background: #4F4F4F;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+}
+.top-loved{
+  z-index: 5;
+}
+.top-collect image{
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+}
+.loved image{
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.top-to-invite{
+  position: absolute;
+  top: 20rpx;
+  right: 11%;
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+}
+.top-to-invite image{
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.top-to-give{
+  position: absolute;
+  top: 20rpx;
+  right: 3%;
+  z-index: 10;
+  border-radius: 50%;
+  width: 46rpx;
+  height: 46rpx;
+}
+.top-to-give image{
+  width: 46rpx;
+  height: 46rpx;
+}
+
+/* video介绍 */
+.video-msg{
+  padding: 0px 6%;
+}
+.sell-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 30rpx;
+}
+.sell-msg{
+  font-size: 24rpx;
+  color: #BCBCBC;
+  margin-top: 10rpx;
+}
+.sell-msg text{
+   margin-right: 18rpx;
+}
+.sell-price{
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfloat{zoom:1}
+.sell-price text{
+   margin-right: 20rpx;
+   float: left;
+}
+.vip-price{
+  font-size: 20rpx;
+  background: #E7BF6E;
+  color: #fff;
+  padding: 0rpx 15rpx;
+  padding-left: 35rpx;
+  border-radius: 50px;
+  float: left;
+  position: relative;
+  margin-top: 3rpx;
+}
+.vip-price image{
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 50%;
+  left: 3rpx;
+  margin-top: -12rpx;
+}
+.sell-who{
+  margin-top: 25rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-bottom: 25rpx;
+  overflow: hidden;
+}
+.sell-who .sell-name{
+  font-size: 24rpx;
+}
+.sell-who image{
+  float: left;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 7rpx;
+  border-radius: 50%;
+}
+.sell-name text{
+  margin-left: 30rpx;
+}
+.sell-who button{
+  float: right;
+  color: #00a0e8;
+  border: 1px solid #00a0e8;
+  background: #fff;
+  border-radius: 50px;
+  width: 120rpx;
+  margin-top: 18rpx;
+}
+.sell-who button::after{
+  border: 0px;
+}
+.video-msg{
+  border-bottom: 5px solid #F6F6F6;
+}
+
+/* 简介 */
+.cont-tit{
+  padding: 25rpx 7%;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 24rpx;
+  position: relative;
+}
+.synopsis-cont{
+  padding: 40rpx 7%;
+  border-bottom: 5px solid #F6F6F6;
+  font-size: 24rpx;
+  color: #666666;
+  white-space: pre-line;
+}
+
+/*学员评论*/
+.comments-list{
+  padding: 30rpx 0 0 7%;
+}
+.complaints{
+  text-align: right;
+  color: #00a0e8;
+}
+.published{
+  text-align: right;
+  color: #00a0e8;
+}
+
+.list-left{
+  border-bottom: 1px solid #eeeeee;
+}
+.comments-name{
+  font-size: 26rpx;
+  float: left;
+}
+.dcomment-starts{
+  float: right;
+  color: #ffc000;
+}
+.dcomment-starts text{
+	margin-left: 5rpx;
+	font-size: 24rpx;
+}
+.dcomment-starts .gray{
+  color: #eee;
+}
+.comments-cont{
+  font-size: 24rpx;
+  margin-top: 30rpx;
+}
+.comments-date{
+  font-size: 20rpx;
+  color: #919191;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+.reply-list{
+  padding: 15rpx 0 20rpx 20rpx;
+  background: #f9f9f9;
+  font-size: 24rpx;
+  color: #919191;
+}
+.reply .zan-icon{
+  position: absolute;
+  top: 15rpx;
+  left: -40rpx;
+  font-size: 24rpx;
+  color: #02a0e9;
+}
+.reply-name{
+  color: #02a0e9;
+  margin-bottom: 10rpx;
+}
+.allbtn{
+  padding: 0px 7%;
+  color: #00a0e8;
+  font-size: 24rpx;
+  text-align: right;
+  margin-bottom: 70rpx;
+}
+.buybtn{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 85rpx;
+  background: #00A0E8;
+  font-size: 28rpx;
+  line-height: 85rpx;
+  color: #fff;
+  border-radius: 0px;
+}
+.buybtn image{
+  width: 43rpx;
+  height: 37rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -20rpx;
+  left: 33%;
+}
+
+
+.aaa{
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  background: #000;
+  z-index: 10;
+}
+
+
+/*赠送*/
+.dark{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  z-index: 10;
+  opacity: 0.7;
+}
+.paytit{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50%;
+  background: #fff;
+  z-index: 15;
+  text-align: center;
+}
+.paytit-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 30rpx;
+}
+.paytit .paytitli{
+  font-size: 24rpx;
+  padding: 10rpx;
+}
+.paytit button{
+  width: 200rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  border-radius: 50px;
+  line-height: 50rpx;
+  background: #00a0e8;
+  color: #fff;
+  margin-top: 40rpx;
+}
+.paytit button::after{
+  border: 0px;
+}
+.payfor{
+  position: fixed;
+  width: 100%;
+  height: 35%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 20;
+  background: #fff;
+}
+.payfor{
+  padding: 0px 8%;
+  box-sizing: border-box;
+}
+.surepay{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80rpx;
+  background: #00a0e8;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.payfor .title{
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 35rpx 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40rpx;
+}
+.cont{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.cont-left{
+  float: left;
+  font-size: 24rpx;
+}
+.cont-right{
+  float: right;
+}
+.leftbutton,.centernum,.rightbutton{
+  float: left;
+  font-size: 24rpx;
+  background: #f6f6f6;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+.centernum{
+  width: 50rpx;
+}
+.allmo{
+  margin-top: 40rpx;
+}
+.allmo view:first-child{
+  float: left;
+  font-size: 24rpx;
+}
+.allmo view:last-child{
+  float: right;
+  color: #00a0e8;
+  font-size: 24rpx;
+}
+
+
+.borderblack{
+  width: 3rpx;
+  height: 23rpx;
+  background: #000;
+  position: absolute;
+  top: 28rpx;
+  left: 0px;
+}
+
+
+.first image{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 55;
+}
+.first .btn{
+  width: 34%;
+  height: 80rpx;
+  opacity: 0;
+  z-index: 60;
+  position: fixed;
+  bottom: 5%;
+  left: 33%;
+}
+
+.attach_dark{
+  z-index: 10;
+  height: 90%;
+}
+.attacahview{
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  height: 40%;
+  left: 0;
+  bottom: 80rpx;
+  background: #fff;
+  padding: 40rpx 5% 40rpx;
+  box-sizing: border-box;
+}
+
+.attachList {
+  height: 110rpx;
+  overflow: hidden;
+}
+
+.attachList-type {
+  width: 20%;
+  margin-right: 35rpx;
+}
+
+.attachList-type image {
+  width: 100%;
+  height: 110rpx;
+}
+
+.attachList-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.attachList-right{
+  height: 110rpx;
+}
+
+.attachList-size {
+  font-size: 22rpx;
+  float: left;
+  color: #919191;
+}
+
+.attachList-time {
+  font-size: 22rpx;
+  float: right;
+  color: #919191;
+}
+
+.acccc{
+  padding: 40rpx 5%;
+}
+
+.img-wrap {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .5);
+  z-index: 99999;
+}
+
+.save-img-wrap {
+  position: absolute;
+  width: 630rpx;
+	height: 1000rpx;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.save-img-wrap image{
+  width: 630rpx;
+	height: 885rpx;
+}
+
+.share-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0,0, .5);
+}
+
+.share-btn {
+  width: 100%;
+	height: 341rpx;
+	background-color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+.share-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24rpx;
+  width: 500rpx;
+  margin: 60rpx auto 0;
+}
+
+.share-btns image {
+  margin-bottom: 40rpx;
+}
+
+.share-button {
+  line-height: 0;
+  background: #fff;
+  font-size: 24rpx;
+  padding: 0 0 0 0;
+}
+
+.share-button::after {
+  border: 0;
+}
+
+.save-btn {
+  width: 630rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.save-btn view {
+  width: 300rpx;
+  text-align: center;
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+}
+
+.save-btn view:nth-child(1) {
+  border-radius: 10rpx;
+  background: #fff;
+  color: #000;
+}
+
+.save-btn view:nth-child(2) {
+  border-radius: 20rpx;
+  background: #20AAAB;
+  color: #fff;
+}

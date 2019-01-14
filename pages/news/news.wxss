@@ -1,0 +1,242 @@
+
+.dheader-menu {
+  text-align: center; 
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+
+.dheader-menu-left {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+  color: #777777;
+}
+
+.avatar-replay image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin: 0 30rpx 0 40rpx;
+}
+
+
+.dheader-menu-right {
+  position: fixed;
+  right: 40rpx;
+  color: #000;
+  font-size: 36rpx;
+  width: 142rpx;
+	height: 44rpx;
+	border-radius: 22px;
+	border: solid 1px #00a0e8;
+  text-align: center;
+  line-height: 44rpx;
+  bottom: 35rpx;
+  background: #fff;
+}
+
+.dbottom-line {
+  width: 16rpx;
+	height: 3rpx;
+  margin: 29rpx auto 0;
+}
+
+.dtab-active-bottom {
+  background: #00a0e8; 
+}
+
+.dtab-active-color {
+  color: #00a0e8;
+}
+
+.dline-hight {
+  height: 26rpx;
+  width: 1px;
+  background: #dcdcdc;
+  margin-top: 10rpx;
+}
+
+.dheader-menu-right {
+  color: #00a0e8;
+  font-size: 22rpx;
+  margin-top: 4rpx;
+}
+
+.dheader-menu-right .iconfont {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+  margin-top: 2rpx;
+}
+
+.dnews-list-item {
+  display: flex;
+  padding: 50rpx 0;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+.reding{
+  position: absolute;
+  top: 30rpx;
+  right: 40rpx;
+  width: 10rpx;
+  height: 10rpx;
+  background: #ff6a6a;
+  border-radius: 50%;
+}
+
+.dcomment-me {
+  display: flex;
+  padding: 37rpx 40rpx 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dcomment-me-title {
+  display: flex;
+  align-items: center;
+}
+
+.dcomment-me-title text:nth-child(1) {
+  font-size: 24rpx;
+  color: #919191;
+}
+
+.dcomment-me-title text:nth-child(2) {
+  color: #201f2a;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-left: 10rpx;
+  width:500rpx; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.replay {
+  font-size: 24rpx;
+  color: #00a0e8;
+  display: flex;
+  align-items: center;
+}
+
+.replay image {
+  width: 22rpx;
+  height: 22rpx;
+  margin: 4rpx 16rpx 0 0;
+}
+
+.ddashed-hr-line {
+  border-top: 1px dashed #eee;
+  margin: 24rpx 40rpx 44rpx;
+}
+
+.dcomment-replay-me {
+  background-color: #f9f9f9;
+	border-radius: 6rpx;
+  font-size: 24rpx;
+  color: #919191;
+  padding: 31rpx 34rpx 42rpx;
+  margin-top: 42rpx;
+}
+
+.dcomment-replay-me view:nth-child(2) {
+  margin-top: 20rpx;
+}
+
+.dcomment-replay-me .iconfont {
+  margin-right: 10rpx;
+  font-size: 30rpx;
+}
+
+.davatar-public {
+  margin: 0 30rpx 0 40rpx;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+}
+
+.dnews-avatar-system {
+  background: #b3c7f2;
+  line-height: 60rpx;
+}
+
+.dnews-avatar-system image {
+  width: 22rpx;
+	height: 22rpx;
+}
+
+.dnews-avatar { 
+  background: #f6bebe; 
+  line-height: 52rpx;
+}
+
+.dnews-avatar .iconfont {
+  font-size: 32rpx;
+}
+
+.dnews-detail {
+  padding-right: 40rpx;
+  width: 100%;
+  margin-left: 20rpx;
+}
+
+.dnews-info {
+  display: flex;
+  font-size: 18rpx;
+  color: #919191;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dnews-content {
+  color: #424242;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+
+/* 无数据  */
+.dno-data {
+  margin-top: 320rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #666666;
+  font-size: 24rpx;
+}
+
+.dno-data image {
+  width: 368rpx;
+  height: 275rpx;
+  margin-bottom: 40rpx;
+}
+
+
+/* 弹窗遮罩  */
+.dmodal-wrap-bg {
+  position: fixed; 
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .2);
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+
+/* 弹框 */
+.dclear-warn-modal {
+  position: absolute;
+  z-index: 1001;
+  background: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 420rpx;
+  height: 250rpx;
+}

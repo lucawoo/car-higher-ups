@@ -1,0 +1,155 @@
+.dbuy-menu-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 40rpx; 
+  align-items: center;
+  font-size: 30rpx;
+  color: #1f1f1f;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.dbuy-menu-header > view {
+  padding: 0 20rpx; 
+  position: relative;
+  z-index: 10;
+}
+
+.inner-view {
+  padding: 30rpx 0; 
+  border-bottom: 1px solid #fff;
+}
+
+.dcircle-tip {
+  position: absolute;
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  background: #e01a1a;
+  top: 28rpx;
+  right: 4rpx;
+  z-index: 100;
+}
+
+.dtab-active {
+  color: #0087e4;
+  border-bottom: 1px solid #0087e4;
+}
+
+.dinformation-list {
+  padding-top: 20rpx
+}
+
+.dinformation-list-item {
+  display: flex;
+  padding: 0 40rpx;
+  margin-top: 40rpx;
+}
+
+.dinformation-list-item image {
+  width: 161rpx;
+  height: 120rpx;
+  border-radius: 4rpx;
+}
+
+.dinformation-list-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  width: 480rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 120rpx; 
+}
+
+.dinformation-list-title {
+  color: #201f2a;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.dinformation-list-subtitle {
+  font-size: 20rpx;
+  color: #656565;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 10rpx;
+}
+
+.dlist-detail-info {
+  display: flex;
+  font-size: 20rpx;
+  align-items: center;
+  color: #00a0e8;
+}
+
+.dlist-detail-info .iconfont {
+  font-size: 22rpx;
+  margin-right: 10rpx; 
+  margin-top: 8rpx;
+}
+
+.dupdate-counter {
+  color: #919191;
+  margin-right: 14rpx;
+}
+
+.dhas-update {
+  color: #e01a1a;
+  position: relative;
+}
+
+.dupdate-circle {
+  position: absolute;
+  width: 8rpx;
+  height: 8rpx;
+  background-color: #e01a1a;
+  border-radius: 50%;
+  right: -10rpx;
+}
+
+.dline-half-hr {
+  height: 1rpx;
+  background: #eeeeee;
+  margin: 40rpx 0 40rpx 40rpx;
+}
+
+.dlist-item-class {
+    line-height: 20rpx; 
+    overflow: hidden;
+    height: 40rpx;
+}
+
+.dlist-item-class image {
+  width: 17rpx;
+  height: 17rpx;
+  margin-right: 20rpx; 
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.dlist-item-class text {
+  font-size: 20rpx;
+  color:#0087e4;
+}
+
+
+.no-buy-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-buy-image image{
+  width: 323rpx;
+  height: 259rpx;
+  margin: 240rpx 0 60rpx 0;
+}
+
+.no-buy-text {
+  font-size: 28rpx;
+  color: #ccc;
+}

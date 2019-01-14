@@ -1,0 +1,132 @@
+@import '../teacherHome/index.wxss';
+
+.dteacher-header-wrap {
+  padding-bottom: 0;
+}
+
+.dteacher-info {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  border-bottom: 1px dashed #eeeeee;
+  padding-bottom: 60rpx;
+}
+
+.dteacher-tags {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20rpx;
+  border-bottom: 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.icon-erweima {
+  font-size: 26rpx;
+  margin-right: 10rpx;
+}
+
+.dshort-line {
+  height: 50rpx;
+  width: 1px;
+  background: #eeeeee;
+  margin: 14rpx 60rpx 0; 
+}
+
+.dmiddle-border {
+  text-align: center;
+  
+}
+
+.dteacher-nums {
+  font-size: 26rpx;
+  color: #000;
+}
+
+.dteacher-text-introduction {
+  color: #919191;
+  font-size: 22rpx;
+}
+
+.dteacher-detail {
+  margin: 30rpx 0 60rpx;
+  width: 670rpx;
+}
+
+.dteacher-list-title {
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: bold;
+  padding: 60rpx 40rpx 20rpx 40rpx; 
+
+}
+
+.dcourse-home-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dcourse-home-btns view {
+  width: 50%;
+  text-align: center;
+  border-left: 1rpx solid #eee;
+  border-top: 1rpx solid #eee;
+  font-size: 24rpx;
+  color: #00a0e8;
+  padding: 30rpx 0;
+}
+
+.dcourse-home-btns image {
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 12rpx;
+  vertical-align: middle;
+  margin-top: -4rpx;
+}
+
+.dcourse-home-btns view:nth-child(1) {
+  border-left: 0;
+}
+
+
+.home-tips {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  background: rgba(0,0, 0, .7);
+  overflow-x: hidden;
+}
+
+.home-tips image {
+  position: absolute;
+}
+
+.tip-01 {
+  width: 750rpx;
+  height: 228rpx;
+  top: 40rpx;
+}
+
+.tip-02 {
+  width:811rpx;
+  height:320rpx;
+  left:-65rpx;
+  top:240rpx;
+
+}
+
+
+.tip-04 {
+  width:431rpx;
+  height:140rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 40rpx; 
+}
+
+
+

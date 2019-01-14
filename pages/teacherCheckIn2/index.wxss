@@ -1,0 +1,228 @@
+page {
+  padding-bottom: 160rpx;
+}
+
+.form-tips {
+  font-size: 26rpx;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  background: #fff9de;
+
+}
+
+.personal-tips {
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #00a0e8;
+  margin: 30rpx 0 10rpx;
+}
+
+.personal-tips view:nth-child(1) {
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.personal-tips view:nth-child(2) {
+  width: 118rpx;
+	height: 54rpx;
+	background-color: #ffffff;
+	border-radius: 27rpx;
+	border: solid 1px #eeeeee;
+  text-align: center;
+  line-height: 54rpx;
+}
+
+.dform-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 30rpx
+}
+
+.dform-item-title {
+  font-size: 30rpx;
+  color: #333;
+  height:1.4rem;
+  line-height: 1.4rem;
+}
+
+.dform-item-input {
+  min-width: 520rpx;
+  color: #b0b0b0;
+  font-size: 30rpx;
+}
+
+.dform-item-input input {
+  min-width: 520rpx;
+  color: #6f6f6f;
+  font-size: 30rpx;
+}
+
+.placeholder-color {
+  color: #b0b0b0;
+  font-size: 30rpx;
+}
+
+.is-full {
+  color: #6f6f6f;
+  font-size: 30rpx;
+}
+
+.dform-item .icon-previewright{
+  color: #555555;
+  font-size: 36rpx;
+  margin-left: 10rpx;
+}
+
+.ID-card {
+  padding: 40rpx;
+}
+
+.ID-card-title {
+  font-size: 30rpx;
+  color: #2c2b2b;
+  font-weight: 600;
+}
+
+.ID-card-tips {
+  font-size: 26rpx;
+  color: #bbbbbb;
+  margin-top: 10rpx;
+}
+
+.ID-card-wrap {
+  width: 338rpx;
+	height: 260rpx;
+	background-color: #ffffff;
+	border: dashed 1px #dcdcdc;
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.lenc-carmea {
+  width: 318rpx;
+	height: 240rpx;
+  margin-left: 10rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.lenc-carmea image {
+  width:90rpx;
+  height:77rpx;
+  margin-left: 116rpx;
+}
+
+.have-img {
+  width: 318rpx!important;
+	height: 240rpx!important;
+  margin-left: 0rpx!important;
+}
+
+.dsubmit-btn {
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dsubmit-btn view {
+  width: 328rpx;
+	height: 85rpx;
+	border: solid 1px #00a0e8;
+  line-height: 85rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.pre-step {
+  color: #00a0e8;
+}
+
+.next-step {
+  background-color: #00a0e8;
+  color: #fff;
+}
+
+
+
+/* 擅长领域  */
+
+.dfixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 10;
+}
+
+.ddrop-down-goods {
+  z-index: 11;
+  position: absolute;
+  width: 100%;
+  min-height: 500rpx;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+}
+
+.ddrop-down-wrap {
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.ddrop-down-title {
+  color: #00a0e8;
+  padding: 42rpx 0;
+}
+
+.dgoods-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 60rpx;
+  max-height: 500rpx;
+  overflow-y: scroll;
+}
+
+.dgoods-item view {
+  width: 266rpx;
+	height: 76rpx;
+	border-radius: 4rpx;
+	border: solid 1px #e5e5e5;
+  margin-top: 40rpx;
+  line-height: 76rpx;
+  color: #000000;
+  position: relative;
+}
+
+.dgoods-item view .iconfont {
+  position: absolute;
+  font-size: 36rpx;
+  right: 40rpx;
+}
+
+.ddrop-down-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: #00a0e8;
+  width: 200rpx;
+  margin: 112rpx auto 0;
+  padding-bottom: 70rpx;
+}
+
+.dgoods-item .dselect-check {
+  border: solid 1px #00a0e8;
+  color: #00a0e8;
+}

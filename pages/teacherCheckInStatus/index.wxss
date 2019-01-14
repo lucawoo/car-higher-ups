@@ -1,0 +1,44 @@
+
+page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dcheck-status {
+  margin: 300rpx auto;
+}
+
+.dmiddle-block image {
+  width: 194rpx;
+	height: 194rpx;
+}
+
+.dcheck-tips {
+  font-size: 30rpx;
+  color: #565656;
+  margin: 77rpx auto 80rpx;
+  text-align: center;
+}
+
+.dfail-tips {
+  font-size: 24rpx;
+  color: rgb(176, 176, 176);
+  line-height: 1.5;
+  margin-bottom: 60rpx;
+  width: 500rpx;
+  text-align: center;
+}
+
+
+.dconnect-me {
+  width: 315rpx;
+	height: 74rpx;
+	background-color: #02a0e9;
+	border-radius: 4rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 74rpx;
+  margin: 0 auto 40rpx;
+}

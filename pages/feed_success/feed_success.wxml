@@ -1,0 +1,5 @@
+<view class='cont'>
+  <icon type='success' color='#00a0e8' size='70'></icon>
+  <view class='title'>反馈成功</view>
+  <button class='backbtn' bindtap='back'>返回</button>
+</view>

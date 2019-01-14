@@ -1,0 +1,123 @@
+<view class='dteacher-header-wrap'>
+  <view class='dteacher-info' style='border-bottom: dashed 1px #eeeeee;'>
+    <view class='dteacher-info-left'>
+      <view class='dteacher-name'>{{teacherData.classroom_name ? teacherData.classroom_name : "汽车大咖"}}</view>
+      <!-- <view class='dteacher-tags'>
+        <view class='dteacher-tags-items'>
+          <text class='iconfont icon-book'></text>
+          <text class='dteacher-tag-text'>粉丝</text>
+          <text class='dteacher-tag-num'>{{teacherData.focus_num_count}}</text>
+        </view>
+        <view class='dteacher-tags-items'>
+          <text class='iconfont icon-heart'></text>
+          <text class='dteacher-tag-text'>内容</text>
+          <text class='dteacher-tag-num'>{{teacherData.course_count}}</text>
+        </view>
+      </view> -->
+      <view class='dteacher-tags'>
+        <view class='dteacher-tags-item'>
+          <view class='dteacher-nums'>{{teacherData.evaluate_score}}</view>
+          <view class='dteacher-text-introduction'>评分</view>
+        </view>
+        <view class='dshort-line'></view>
+        <view class='dteacher-tags-item dmiddle-border'>
+          <view class='dteacher-nums'>{{teacherData.course_count}}</view>
+          <view class='dteacher-text-introduction'>课程</view>
+        </view>
+        <view class='dshort-line'></view>
+        <view class='dteacher-tags-item' style='text-align: center;'>
+          <view class='dteacher-nums'>{{teacherData.focus_num_count}}</view>
+          <view class='dteacher-text-introduction'>学员</view>
+        </view>
+      </view>
+      
+    </view>
+    <view>
+      <image mode='aspectFill' src='{{teacherData.classroom_logo}}'></image>
+    </view>
+  </view>
+  <view style='margin-top: 30rpx;'>
+    <text class='dtext-color1'>所属机构：</text>
+    <text class='dtext-color2'>{{teacherData.company_name}}</text>
+  </view>
+  <view class='dtext-color1 dteacher-detail'>{{teacherData.classroom_info ? teacherData.classroom_info : "暂无简介"}}</view>
+  <view class='dteacher-home-btns' wx:if='{{teacherId != id}}'>
+    <view class='dteacher-attention' bindtap='toggleFocus'>{{teacherData.is_focus ? '取消关注': '关注'}}</view>
+    <view class='dteacher-ask' style='color: #fff;border-color: #fff;background: #fff;'>
+      <!-- <text style='font-size: 22rpx'>￥</text>
+      <text style='font-size: 30rpx;font-weight: blob;'>20.0 </text> -->
+      <text style='font-size: 24rpx'>提问</text>
+    </view>
+  </view>
+</view>
+
+<!-- 向上移动时的头部  -->
+<view class='dheader-fixed' wx:if='{{headerFixed}}'>
+  <view class='dheader2'>
+    <view class='dteacher-name'>{{teacherData.lecturer_name ? teacherData.lecturer_name : "汽车大咖"}}</view>
+    <view>
+      <view class='dteacher2-home-btns'>
+        <view class='dteacher-attention' bindtap='toggleFocus'>{{teacherData.is_focus ? '取消关注': '关注'}}</view>
+        <view class='dteacher-ask' style='color: #fff;border-color: #fff;background: #fff;'>
+          <!-- <text style='font-size: 22rpx'>￥</text>
+          <text style='font-size: 30rpx;font-weight: blob;'>20.0 </text> -->
+          <text style='font-size: 24rpx'>提问</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='dline-hr'></view>
+
+<view class='dteacher-list-title'>
+  课程列表{{'（'+teacherData.course_count + '）'}}
+</view>
+
+
+<view class='dclassify-detail-list'>
+  <block wx:for='{{course}}' wx:key>
+    <view class='dresult-list-item' bindtap='linkDetail' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' data-id='{{item.goods_id}}'>
+      <image src='{{item.cover}}' mode='aspectFill'></image>
+      <view class='dlist-item-detail'>
+        <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 2}}'>
+          <image src='/images/video_icon.png'></image>
+          <text>视频</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods.goods_type == 3}}'>
+          <image src='/images/audio_icon.png'></image>
+          <text>音频</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods.goods_type == 1}}'>
+          <image src='/images/img_icon.png'></image>
+          <text>图文</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods_type == 2}}'>
+          <image src='/images/class_icon.png'></image>
+          <text>课程</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods_type == 1}}'>
+          <image src='/images/cloumn_icon.png'></image>
+          <text>专栏</text>
+        </view>
+        <view class='dlist-item-title'>{{item.goods_name}}</view>
+        <view class='dlist-item-subtitle'>{{item.goods_desc}}</view>
+        <view class='dlist-item-info'>
+          <text> {{item.click_num}}  观看</text>
+          
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<!-- <view class='first' wx-if="{{firstcome}}">
+  <view class='btn' bindtap='iknow'></view>
+  <image src='/images/teach.png'></image>
+</view> -->
+
+
+<view class='backhome' bindtap='_backhome' wx:if='{{share}}'>
+  <view><image src='/images/backhome.png'></image></view>
+</view>

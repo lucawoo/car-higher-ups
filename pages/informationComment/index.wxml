@@ -1,0 +1,39 @@
+<view class='dline-hr'></view>
+<block wx:for='{{Comments}}' wx:key>
+  <view class='dinformation-comment-lsit'>
+    <view class='dcommenter-item-avatar'>
+      <view><image mode='aspectFill' src='{{item.member.avatar}}'></image></view>
+      <view class='dcommenter-item-info'>
+        <view class='dcommenter-name'>{{item.member.member_name}}</view>
+        <!-- <view class='dcomment-starts'>
+          <text class='iconfont icon-starok'></text>
+          <text class='iconfont icon-starok'></text>
+          <text class='iconfont icon-starok'></text>
+          <text class='iconfont icon-starok'></text>
+          <text class='iconfont icon-starok'></text>
+        </view> -->
+      </view>
+    </view>
+    <view class='dcomment-content-info'>
+      <view class='dcomment-content-detail'>
+        <view class='dcomment-item-content'>{{item.geval_content}}</view>
+        <view class='dcomment-item-time'>{{item.created_at}}</view> 
+      </view>
+    </view>
+    <!-- 回复  -->  
+    <view class='dcomment-content-replay' wx:if='{{item.reply_content}}'>
+      <view><text class='iconfont icon-tubiao15'></text></view>
+      <view class='dcomment-replay-info'>
+        <view class='dcomment-content-replayer'>后台管理员</view>
+        <view class='dcomment-content-replay-text'>{{item.reply_content}}</view>
+      </view>
+      
+    </view>
+  </view>
+  <view class='dline-half'></view>
+</block>
+
+
+<view class='dpublish-comment-wrap'>
+	<view class='dpublish-comment'><input type="text" value='{{inputVal}}' placeholder="发表评论" placeholder-style='color: #b4b4b4;' bindconfirm='submitData'></input></view>
+</view>

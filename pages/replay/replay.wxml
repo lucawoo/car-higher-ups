@@ -1,0 +1,18 @@
+<view class='main'>
+<form bindsubmit='feedSubmit'>
+  <view class='zan-row top'>
+    <image class='zan-col zan-col-4' style='width:70rpx;height:70rpx;border-radius:50%;' mode="aspectFill" src='{{info.avatar}}'></image>
+    <view class='zan-col zan-col-offset-1 zan-col-19 name'>{{info.member_name}}</view>
+  </view>
+
+  <view class='pucont'>
+
+    <textarea name="content" placeholder='请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。'></textarea>
+    
+    <button formType="submit" class='submit-btn'>提交</button>
+  
+  </view>
+</form>
+  
+
+</view>

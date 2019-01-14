@@ -1,0 +1,183 @@
+<!-- 菜单  -->
+<view class='dheader-menu'>
+  <view class='dheader-menu-left'>
+    <view class='dheader-menu-left-item'>
+      <view bindtap='getNews' data-index='0' class='{{tabIndex == 0 ? "dtab-active-color" :""}}'>通知</view>
+      <view class='dbottom-line {{tabIndex == 0 ? "dtab-active-bottom" :""}}'></view>
+    </view>
+    <view class='dheader-menu-left-item'>
+      <view bindtap='getNews' data-index='1' class='{{tabIndex == 1 ? "dtab-active-color" :""}}'>评论我的</view>
+      <view class='dbottom-line {{tabIndex == 1 ? "dtab-active-bottom" :""}}'></view>
+    </view>
+    <view class='dheader-menu-left-item'>
+      <view bindtap='getNews' data-index='2' class='{{tabIndex == 2 ? "dtab-active-color" :""}}'>回复我的</view>
+      <view class='dbottom-line {{tabIndex == 2 ? "dtab-active-bottom" :""}}'></view>
+    </view>
+  </view>
+</view>
+<!--  通知  -->
+<view class='dnews-list' wx:if='{{tabIndex == 0}}'>
+  <block wx:for='{{newsData}}' wx:key>
+    <view class='dnews-list-item' bindtap='newtodetail' data-type="{{item.msg_link.type}}" data-mid="{{item.mid}}" data-id="{{item.msg_link.id}}">
+      <view class='reding' wx-if="{{!item.msg_open}}"></view>
+      <view wx:if='{{item.msg_type == 2}}'>
+        <view class='dnews-avatar-system davatar-public'>
+          <text class='iconfont icon-liuliangyunpingtaitubiao08'></text>
+        </view>
+      </view>
+      <view wx:if='{{item.msg_type == 1}}'>
+        <view class='dnews-avatar davatar-public'>
+          <text class='iconfont icon-icontouxiang'></text>
+        </view>
+      </view>
+      <view class='dnews-detail'>
+        <view class='dnews-info'>
+          <view>发送人：{{item.from_name}}</view>
+          <view>{{item.created_at}}</view>
+        </view>
+        <view class='dnews-content'>{{item.msg_body}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 评论我的  -->
+<view class='dnews-list' wx:if='{{tabIndex == 1}}'>
+  <block wx:for='{{evaluateToMe}}' wx:key>
+    <view  bindtap='linkDetail' data-type="{{item.course.item.goods_type}}" data-typecourse='{{item.course.goods_type}}' data-id='{{item.course.group_id}}'>
+
+      <view class='dcomment-me'>
+        <view class='dcomment-me-title'>
+          <text>课程: </text>
+          <text>{{item.course.goods_name}}</text>
+        </view>
+        <view class='replay' bindtap='linkReplay' data-id='{{item.id}}' wx-if="{{!item.reply}}">
+          <image src='/images/blue_news.png'></image>
+          <text>回复</text>
+        </view>
+      </view>
+      <view class='ddashed-hr-line'></view>
+      <view class='dnews-list-item' style='padding-top: 0;'>
+        <view class='avatar-replay'>
+          <image src='{{item.member.avatar}}' mode='aspectFill'></image>
+        </view>
+        <view class='dnews-detail'>
+          <view class='dnews-info'>
+            <view>{{item.member.member_name}}</view>
+            <view>{{item.created_at}}</view>
+          </view>
+          <view class='dnews-content'>{{item.content}}</view>
+          <view class='dcomment-replay-me' wx:if='{{item.reply}}'>
+            <view>
+              <text class='iconfont icon-xie'></text>回复:
+              <text></text>
+            </view>
+            <view>
+              <text>{{item.reply.content}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='dline-hr' wx:if='{{evaluateToMe.length != index + 1 }}'></view>
+    </view>
+
+  </block>
+</view>
+
+<!-- 回复我的  -->
+<view class='dnews-list' wx:if='{{tabIndex == 2}}'>
+  <block wx:for='{{replyToMe}}' wx:key>
+    <view bindtap='linkDetail' data-type="{{item.from_evaluate.course.item.goods_type}}" data-typecourse='{{item.from_evaluate.course.goods_type}}' data-id='{{item.from_evaluate.course.group_id}}'>
+      <view class='dcomment-me'>
+        <view class='dcomment-me-title'>
+          <text>课程: </text>
+          <text>{{item.from_evaluate.course.goods_name}}</text>
+        </view>
+      </view>
+      <view class='ddashed-hr-line'></view>
+      <view class='dnews-list-item' style='padding-top: 0;'>
+        <!-- <view wx:if='{{item.reply_member.type === 0}}'>
+          <view class='dnews-avatar-system davatar-public'>
+            <image src='/images/replay.png'></image>
+          </view>
+        </view> -->
+
+        <view wx:if='{{item.reply_member.type !== 0}}'>
+          <view class='avatar-replay'>
+            <image src='{{item.reply_member.member_avatar}}' mode='aspectFill'></image>
+          </view>
+        </view>
+        <view wx:if='{{item.reply_member.type === 0}}'>
+          <view class='dnews-avatar davatar-public' >
+            <text class='iconfont icon-icontouxiang'></text>
+          </view>
+        </view> 
+        <view class='dnews-detail'>
+          <view class='dnews-info'>
+            <view>{{item.reply_member.member_name}}</view>
+            <view>{{item.created_at}}</view>
+          </view>
+          <view class='dnews-content'>{{item.content}}</view>
+          <view class='dcomment-replay-me'>
+            <view>
+              <text class='iconfont icon-xie'></text>评论:
+              <text></text>
+            </view>
+            <view>
+              <text>{{item.from_evaluate.content}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='dline-hr' wx:if='{{replyToMe.length != index + 1 }}'></view>
+    </view>
+
+  </block>
+</view>
+
+
+<!-- 暂无数据  -->
+<view class='dno-data' wx:if='{{(newsData.length == 0) && (tabIndex == 0)}}'>
+  <image src='/images/no_news.png'></image>
+  <view>暂无消息</view>
+</view>
+
+<view class='dno-data' wx:if='{{(evaluateToMe.length == 0) && (tabIndex == 1)}}'>
+  <image src='/images/no_news.png'></image>
+  <view>暂无消息</view>
+</view>
+
+<view class='dno-data' wx:if='{{(replyToMe.length == 0) && (tabIndex == 2)}}'>
+  <image src='/images/no_news.png'></image>
+  <view>暂无消息</view>
+</view>
+
+<!-- 清除警告弹窗  -->
+
+<!-- <view class='dclear-warn-modal' >
+  <view class='dmodal-text'>确认清空消息记录?</view>
+  <view class='dmodal-btn'>
+    <view class='dmodal-cancle' bindtap='cancleClear'>取消</view>
+    <view class='dmodal-confirm' bindtap='confirmClear'>确认</view>
+  </view>
+</view> -->
+
+
+
+
+
+<!-- 清空通知  -->
+<view class='dheader-menu-right' bindtap='clearNews' wx:if='{{tabIndex == 0 && newsData.length!=0}}'>
+  <text class='iconfont icon-dustbin_icon'></text>
+  <text>清空</text>
+</view>
+
+<!-- 清空评论我的  -->
+<view class='dheader-menu-right' bindtap='clearNews2' wx:if='{{tabIndex == 1 && evaluateToMe.length!=0}}'>
+  <text class='iconfont icon-dustbin_icon'></text>
+  <text>清空</text>
+</view>
+<!-- 清空回复我的  -->
+<view class='dheader-menu-right' bindtap='clearNews3' wx:if='{{tabIndex == 2 && replyToMe.length!=0}}'>
+  <text class='iconfont icon-dustbin_icon'></text>
+  <text>清空</text>
+</view>

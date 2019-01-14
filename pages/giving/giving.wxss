@@ -1,0 +1,60 @@
+.card{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+.cont{
+  position: fixed;
+  left: 50%;
+  top: 250rpx;
+  width: 50%;
+  height: auto;
+  margin-left: -25%;
+}
+.give-tit{
+  font-size: 48rpx;
+  color: #000;
+  letter-spacing: 9rpx;
+  height: 130rpx;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.give-price{
+  font-size: 40rpx;
+  color: #0087e4;
+  margin-top: 95rpx;
+  margin-left: -20rpx;
+}
+.give-price text{
+  font-size: 40rpx;
+}
+
+.give-ipt{
+  border: 1px solid #e5e5e5;
+  height: 70rpx;
+  width: 99%;
+  text-align: center;
+  font-size: 24rpx;
+  border-radius: 4px;
+  color: #919191;
+  margin-top: 260rpx;
+}
+.give-btn{
+  width: 215rpx;
+  height: 55rpx;
+  background: #009ee7;
+  color: #fff;
+  text-align: center;
+  font-size: 22rpx;
+  border-radius: 50px;
+  line-height: 55rpx;
+  margin-top: 100rpx;
+  margin-left: 75rpx;
+}
+.give-btn::after{
+  border: 0px;
+}

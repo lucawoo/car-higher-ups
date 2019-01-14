@@ -1,0 +1,67 @@
+.collect-list{
+  padding: 30rpx 7%;
+}
+.collect-list .cover{
+  float: left;
+  width: 250rpx;
+  height: 150rpx;
+  border-radius: 2px;
+  margin-right: 40rpx;
+}
+.coll-kind{
+  color: #00a0e8;
+  font-size: 18rpx;
+  line-height: 18rpx;
+  height: 18rpx;
+}
+.coll-kind image{
+  width: 17rpx;
+  height: 17rpx;
+  float: left;
+  margin-right: 10rpx;
+}
+.coll-tit{
+  font-size: 28rpx;
+  line-height: 50rpx;
+  margin-top: 5rpx;
+}
+.coll-cont{
+  font-size: 20rpx;
+  color: #656565;
+  margin-top: 5rpx;
+}
+.coll-about{
+  font-size: 18rpx;
+  color: #919191;
+  margin-top: 30rpx;
+}
+.coll-price{
+  font-size: 24rpx;
+  color: #00a0e8;
+  float: right;
+}
+
+/**/
+.bottom-clear{
+  position: fixed;
+  bottom: 0px;
+  right: 7%;
+  padding-bottom: 25rpx;
+}
+.bottom-clear button{
+  background: #fff;
+  color: #0097ff;
+  border-radius: 50px;
+  height: 45rpx;
+  padding: 0px 20px;
+  font-size: 24rpx;
+  border: 1px solid #0097ff;
+  line-height: 45rpx;
+}
+.bottom-clear button::after{
+  border: none;
+}
+.bottom-clear .iconfont{
+  font-size: 22rpx;
+  margin-right: 10px;
+}

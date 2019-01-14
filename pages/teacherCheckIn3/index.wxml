@@ -1,0 +1,80 @@
+
+
+
+<view class='dteacher-check-in'>
+  <view class='form-tips'>请填写成为讲师所需资料。同一申请无需填写多次。申请结果信息将会以短信方式通知您</view>
+  <view class='personal-tips'>
+    <view>帐号信息</view>
+    <view bindtap='saveInfo'>保存</view>
+  </view>
+  <view class='admin-tips'>(课程管理后台登录账号和密码)</view>
+  <form bindsubmit="getAllData" report-submit="true">
+    <view class='dform-item'>
+        <view class='dform-item-title'>手机号：</view>
+        <view class='dform-item-input is-full' style='min-width: 510rpx'>{{lecturerInfo.lecturer_phone}}</view>
+    </view>
+
+     <view class='dform-item'>
+        <view class='dform-item-title'>登录帐号：</view>
+        <view class='dform-item-input is-full'><input type='text' style='min-width: 510rpx' name='user_name' value='{{lecturerInfo.user_name?lecturerInfo.user_name:""}}' bindblur='getTeacher' placeholder-style='color: #b0b0b0' placeholder='账号由6-36位英文和数字组成'></input></view>
+    </view>
+
+    
+    <view class='dform-item'>  
+      <view class='dform-item-title'>登录密码：</view>
+      <view class='dform-item-input is-full'>
+        <input type='text' password='{{!lookPwd}}' name='password' value='{{lecturerInfo.password?lecturerInfo.password:""}}' bindblur='getPwd' placeholder-style='color: #b0b0b0' placeholder='6-18位英文和数字组成'></input>
+        <image src='{{lookPwd?"/images/open-eye.png":"/images/close-eye.png"}}' class='{{lookPwd?"pwd-icon":"pwd-icon2"}}' bindtap='lookPwd'></image>
+      </view>
+    </view>
+    
+
+    <view class='dform-item'>  
+      <view class='dform-item-title'>确认密码：</view>
+      <view class='dform-item-input is-full'>
+        <input type='text' password='{{!lookPwd2}}' name='password' value='{{lecturerInfo.password?lecturerInfo.password:""}}' bindinput='getPwd2' placeholder-style='color: #b0b0b0' placeholder='6-18位英文和数字组成'></input>
+        <image src='{{lookPwd2?"/images/open-eye.png":"/images/close-eye.png"}}' class='{{lookPwd2?"pwd-icon":"pwd-icon2"}}'  bindtap='lookPwd2'></image>
+      </view>
+    </view>
+    
+    <view class='submit-btn-bottom'>
+      <view class='dform-item-agreement'>
+        <view bindtap='agreeAgreement'><text class='{{agree ? "dsquire" : ""}} '></text></view>
+        <view>同意<text class='link-to-detail' bindtap='linkAggree'>《讲师入驻》</text>协议</view>
+      </view>
+      <view class='dsubmit-btn'>
+        <view class='pre-step' bindtap='preStep'>上一步</view>
+        <view class='next-step'><button form-type='submit'>提交</button></view>
+      </view>
+    </view>
+    
+  </form>
+</view>
+
+<view class='dfixed-bg' wx:if='{{showGoodsModal}}'>
+  <view class='ddrop-down-goods'>
+    <view class='ddrop-down-wrap'>
+      <view class='ddrop-down-title'>请选择您擅长的领域</view>
+      <view class='dgoods-item'>
+        <block wx:for='{{classifyDatas}}' wx:key>
+          <view class='{{item.select ? "dselect-check" : ""}}' 
+                bindtap='seletGoods' 
+                data-index='{{index}}' data-item='{{item.class_name}}' data-cid='{{item.cid}}'>
+            <text>{{item.class_name}}</text>
+            <text class='iconfont {{item.select ? "icon-right" : ""}}'></text>
+          </view>
+        </block> 
+      </view>
+
+      <view class='ddrop-down-bottom'>
+        <view bindtap='cancleSelect'>取消</view>
+        <view bindtap='confirmSelect'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+

@@ -1,0 +1,94 @@
+
+
+<view class='dteacher-check-in'>
+  <view class='form-tips'>请填写成为讲师所需资料。同一申请无需填写多次。申请结果信息将会以短信方式通知您</view>
+  <view class='personal-tips'>
+    <view>从业信息</view>
+    <view bindtap='saveInfo'>保存</view>
+  </view>
+  <form bindsubmit="getAllData" report-submit="true">
+    <view class='dform-item'>
+        <view class='dform-item-title'>职位：</view>
+        <view class='dform-item-input'><input type='text' name='sex' value='{{lecturerInfo.lecturer_duty ? lecturerInfo.lecturer_duty : ""}}' bindinput='getDuty' placeholder='职位名称(不超过20字)' placeholder-style='color: #b0b0b0'></input></view>
+    </view>
+
+     <view class='dform-item'>
+        <view class='dform-item-title'>公司/机构:</view>
+        <view class='dform-item-input'><input type='text' name='sex' value='{{lecturerInfo.company_name ? lecturerInfo.company_name : ""}}' bindinput='getCompany' placeholder-style='color: #b0b0b0' placeholder='所属公司/机构的名称(不超过20字)'></input></view>
+    </view>
+
+    <picker mode="selector" range='{{years}}' value="{{carsIndex}}" bindchange="carsYear" >
+      <view class='dform-item'>
+        <view class='dform-item-title'>汽车行业从业年限</view>
+        <view style='display: flex;align-items: center;'>
+          <text class='{{lecturerInfo.industry_work_years ? "is-full" : "placeholder-color"}}'>{{trainYear[lecturerInfo.industry_work_years - 1] ? trainYear[lecturerInfo.industry_work_years - 1]  : "选择从业年限"}}</text>
+          <text class='iconfont icon-previewright'></text>
+        </view>
+      </view>
+    </picker>
+
+    <picker mode="selector" range='{{trainYear}}' value="{{trainIndex}}" bindchange="trainYear" >
+      <view class='dform-item'>  
+        <view class='dform-item-title'>培训师从业年限</view>
+        <view>
+          <text class='{{lecturerInfo.lecturer_work_years ? "is-full" : "placeholder-color"}}' >{{trainYear[lecturerInfo.lecturer_work_years - 1] ? trainYear[lecturerInfo.lecturer_work_years - 1] : "选择从业年限"}}</text>  
+          <text class='iconfont icon-previewright'></text>
+        </view>
+      </view>
+    </picker>
+
+    <view class='dform-item' bindtap='showGoodsModal' >
+      <view class='dform-item-title'>擅长领域</view>
+      <view style='display: flex;align-items: center;'>
+        <text class='{{goodsValue ? "is-full" : "placeholder-color"}}' >{{goodsValue ? goodsValue : "(可多选，最多3个)"}}</text> 
+        <text class='iconfont icon-previewright'></text>
+      </view>
+    </view>
+    <view class='dline-hr'></view>
+
+
+
+
+
+    <view class='ID-card'>
+      <view class='ID-card-title'>上传荣誉或资格证书</view>
+      <view class='ID-card-wrap' bindtap='hornerCard'>
+        <view class='lenc-carmea'>
+          <image src='{{lecturerInfo.certification_pic? lecturerInfo.certification_pic : "/images/lenc-carmea.png"}}' mode='aspectFill' class='{{lecturerInfo.certification_pic? "have-img" : ""}}'></image>
+        </view>
+      </view>  
+    </view>
+
+    
+
+    <view class='dsubmit-btn'><view class='pre-step' bindtap='preStep'>上一步</view><view class='next-step' bindtap='nextStep'>下一步</view></view>
+  </form>
+</view>
+
+<view class='dfixed-bg' wx:if='{{showGoodsModal}}'>
+  <view class='ddrop-down-goods'>
+    <view class='ddrop-down-wrap'>
+      <view class='ddrop-down-title'>请选择您擅长的领域</view>
+      <view class='dgoods-item'>
+        <block wx:for='{{classifyDatas}}' wx:key>
+          <view class='{{item.select ? "dselect-check" : ""}}' 
+                bindtap='seletGoods' 
+                data-index='{{index}}' data-item='{{item.class_name}}' data-cid='{{item.cid}}'>
+            <text>{{item.class_name}}</text>
+            <text class='iconfont {{item.select ? "icon-right" : ""}}'></text>
+          </view>
+        </block> 
+      </view>
+
+      <view class='ddrop-down-bottom'>
+        <view bindtap='cancleSelect'>取消</view>
+        <view bindtap='confirmSelect'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+

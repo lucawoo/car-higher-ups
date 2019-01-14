@@ -1,0 +1,54 @@
+<view class='cont'>
+  <view class='menu swiper-tab {{fixed?"":"tabfix"}}'>
+    <block wx:for='{{menus}}' wx:key>
+      <view class='menu-item'>
+        <view bindtap='showMenuDetail' class='{{index == tabIndex ? "dtab-active-color" : ""}}' data-index='{{index}}'>{{item}}</view>
+        <view class='btm-line {{index == tabIndex ? "dtab-active-bottom" : ""}}'></view>
+      </view>
+    </block>
+  </view>
+
+  <!--主体内容-->
+
+  <view class='swiper-box'>
+    <view class='dclassify' wx:if='{{tabIndex == 0}}'>
+      <view class='newmost'>
+
+        <view class='zan-row new-list'  bindtap='tocdetail' data-id='{{item.goods_id}}' wx:key wx:for="{{columnList}}">
+          <view class='zan-col zan-col-7'>
+            <image style="width: 180rpx;height: 130rpx;border-radius:2px;" mode="aspectFill" src='{{item.cover}}'></image>
+          </view>
+          <view class='zan-col zan-col-17'>
+            <view class='new-name'>{{item.goods_name}}</view>
+            <view class='new-describe' style='overflow: hidden;white-space: nowrap;text-overflow: ellipsis'>{{item.goods_desc}}</view>
+            <view class='zan-row new-botm'>
+              <view class='zan-col zan-col-19'>已更新{{item.lesson_count}}期</view>
+              
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!-- 最热  -->
+    <view class='drecommend' wx:if='{{tabIndex == 1}}'>
+      <view class='newmost'>
+
+        <view class='zan-row new-list' bindtap='tocdetail' data-id='{{item.goods_id}}' wx:key wx:for="{{columnList}}">
+          <view class='zan-col zan-col-7'>
+            <image style="width: 180rpx;height: 130rpx;border-radius:2px;" mode="aspectFill" src='{{item.cover}}'></image>
+          </view>
+          <view class='zan-col zan-col-17'>
+            <view class='new-name'>{{item.goods_name}}</view>
+            <view class='new-describe' style='overflow: hidden;white-space: nowrap;text-overflow: ellipsis'>{{item.goods_desc}}</view>
+            <view class='zan-row new-botm'>
+              <view class='zan-col zan-col-19'>已更新{{item.lesson_count}}期</view>
+              
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

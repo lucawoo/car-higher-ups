@@ -1,0 +1,224 @@
+@import '/pages/article_details/article_details.wxss';
+
+.article{
+  border: 0px;
+}
+.overscroll{
+  overflow:hidden;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+/*tab*/
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 14px;
+}
+.swiper-tab-list{
+  font-size: 29rpx;
+  display: inline-block;
+  width: 50%;
+}
+.swiper-box{
+  width: 100%;
+  height: 40%;
+  position: fixed;
+  bottom: 83rpx;
+  left: 0px;
+  background: #fff;
+  z-index: 200;
+  padding: 40rpx 5% 40rpx;
+  box-sizing: border-box;
+}
+.dclassify{
+  max-height: 100%;
+}
+.lasteval{
+  padding-top: 0px;
+}
+.forcenter{
+  padding: 0 5%;
+}
+
+.menu{
+  width: 100%;
+  color: #777777;
+  border-top: 1rpx solid #eee;
+}
+.menu-item{
+  width: 33.3333%;
+  float: left;
+  font-size: 28rpx;
+  text-align: center;
+  box-sizing: border-box;
+  border-right: 1px solid #eee;
+}
+.menu-item:last-child{
+  border: 0px;
+}
+
+.tabfix{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+.synopsis-cont{
+  border: 0px;
+}
+.botmmenu{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 20;
+}
+
+.menu-dark{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+}
+
+
+.hoverclick{
+  position: fixed;
+  bottom: 0px;
+  width: 33.333%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background: #00a0e8;
+  color: #fff;
+  font-size: 28rpx;
+  z-index: 100;
+}
+.hoverclick1{
+  left: 0px;
+}
+.hoverclick2{
+  left: 33.333%;
+}
+.hoverclick3{
+  right: 0px;
+}
+
+/**/
+.good-dexc{
+  font-size: 28rpx;
+  text-indent: 55rpx;
+}
+
+/*目录*/
+.zan-icon-wap-nav{
+  margin-right: 10rpx;
+  font-size: 24rpx;
+}
+.directory-list{
+  position: relative;
+  padding: 0 7%;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.directory-list:last-child{
+  border-bottom: 0px;
+}
+.list-num{
+  font-size: 24rpx;
+  color: #E5E5E5;
+  position: absolute;
+  top: 5rpx;
+  left: 10rpx;
+}
+.list-name{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.list-time{
+  font-size: 20rpx;
+  color: #919191;
+  margin-top: 5rpx;
+}
+.list-cont{
+  margin-top: 25rpx;
+}
+.list-cont image{
+  float: left;
+  margin-right: 25rpx;
+}
+.list-kind{
+  font-size: 18rpx;
+  color: #0087e4;
+  line-height: 18rpx;
+  overflow: hidden;
+}
+.list-had text{
+  font-size: 18rpx;
+  margin-top: 50rpx;
+}
+.seepeo,.talkpeo{
+  color: #919191;
+}
+.trystudy{
+  color: #00a0e8;
+  text-align: right;
+}
+
+.list-icon{
+  width: 17rpx;
+  height: 17rpx;
+  
+}
+
+.wxParse-img{
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.attachList {
+  height: 110rpx;
+}
+
+.attachList-type {
+  width: 20%;
+  margin-right: 35rpx;
+}
+
+.attachList-type image {
+  width: 100%;
+  height: 110rpx;
+}
+
+.attachList-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.attachList-right{
+  height: 110rpx;
+}
+
+.attachList-size {
+  font-size: 22rpx;
+  float: left;
+  color: #919191;
+}
+
+.attachList-time {
+  font-size: 22rpx;
+  float: right;
+  color: #919191;
+}

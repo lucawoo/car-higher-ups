@@ -1,0 +1,72 @@
+page {
+  padding-bottom: 160rpx;
+}
+
+.dform-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #eee;
+  padding: 32rpx 30rpx 32rpx 50rpx;
+}
+
+.dform-item-title {
+  font-size: 34rpx;
+  color: #000;
+}
+
+.davater image {
+  width: 90rpx;
+	height: 90rpx;
+  border-radius: 50%;
+}
+
+.dform-item-input {
+  margin-top: 10rpx;
+  color: #6f6f6f;
+  font-size: 26rpx;
+}
+
+.dform-item-input input {
+  min-width: 560rpx;
+  color: #6f6f6f;
+  font-size: 26rpx;
+}
+
+.dform-item-input textarea {
+  min-height: 90rpx;
+  width: 650rpx;
+}
+
+.dsubmit-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;  
+}
+
+.dsubmit-btn button {
+	height: 91rpx;
+  width: 100%;
+	background-color: #00a0e8;
+  color: #fff;
+  border-radius: 0;
+}
+
+.dsubmit-btn button::after{
+  border: 0;
+}
+
+.dcreate-code-card {
+  color: #00a0e8;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 180rpx;
+}
+
+.dcreate-code-card .icon-erweima {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+

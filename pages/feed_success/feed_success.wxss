@@ -1,0 +1,15 @@
+.cont{
+  text-align: center;
+  padding-top: 30%;
+}
+.title{
+  font-size: 35rpx;
+  margin-top: 20rpx;
+}
+.backbtn{
+  width: 86%;
+  background: #00a0e8;
+  color: #fff;
+  margin-top: 5%;
+  font-size: 35rpx;
+}

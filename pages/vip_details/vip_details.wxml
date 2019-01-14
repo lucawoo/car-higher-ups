@@ -1,0 +1,70 @@
+<import src="/wxParse/wxParse.wxml"/>
+
+<view class='vip'>
+  <image style="width: 80%;height: 295rpx;margin-left:10%;" src='{{vipcover}}' mode="aspectFit"></image>
+</view>
+
+<view class='main'>
+  <view class='menu swiper-tab'>
+    <block wx:for='{{menus}}' wx:key>
+      <view class='menu-item {{index==0?"rightb":"leftb"}}'>
+        <view bindtap='showMenuDetail' class='{{index == tabIndex ? "menu-active" : ""}}' data-index='{{index}}'>{{item}}</view>
+      </view>
+    </block>
+  </view>
+  <!--主体内容-->
+  <view class='swiper-box'>
+    <view wx:if='{{tabIndex == 0}}'>
+      <view class='fir-tit'>{{vipInfoList.name}}</view>
+      <view class='fir-btm'>{{vipInfoList.desc}}</view>
+      <text class='kaipeo'>{{vipInfoList.vip_count}}人开通</text>
+      <!-- <view class='give-other'>
+        <view class='give-icon'>
+          <text class="zan-cell__icon zan-icon zan-icon-receive-gift"></text>
+        </view>
+        <view>送好友</view>
+      </view> -->
+
+      <view class='vip-cont'>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+      </view>
+
+      <!-- <view class='open-btn'>
+        <image style='width:40rpx;height:90rpx;' src='../../images/open_vip.png' mode="aspectFit"></image>
+        <button size="default" style='background:#E8BF6F;' bindtap='buyvip' wx-if="{{!vipstate}}">开通</button>
+        <button size="default" style='background:#E5E5E5;' wx-if="{{vipstate}}">已开通</button>
+      </view> -->
+    </view>
+
+
+<!-- 权益 -->
+
+    <view wx:if='{{tabIndex == 1}}'>
+      <view class='sec-cont'>
+
+        <view class='sec-list' bindtap='toDetila' data-id='{{item.goods_id}}' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' wx:key wx:for="{{vipCourselList}}">
+          <view class='list-cont'>
+            <image style='width:90%;height:150rpx;border-radius:2px;' mode="aspectFill" src='{{item.goods_cover}}'></image>
+            <view class='sec-tit' style='overflow: hidden;white-space: nowrap;text-overflow: ellipsis'>{{item.goods_name}}</view>
+           
+
+            <view class='sec-kind'>
+              <view>{{item.lecturer.lecturer_name}}</view>
+              <view>{{item.subscribe_num}}  次学习</view>
+              <view class='kind-icon'>
+                <view class='list-kind' wx:if='{{item.goods.goods_type == 2}}'><image class='list-icon' src='/images/white_video.png'></image></view>
+                <view class='list-kind' wx:if='{{item.goods.goods_type == 3}}'><image class='list-icon' src='/images/white_audio.png'></image></view>
+                <view class='list-kind' wx:if='{{item.goods.goods_type == 1}}'><image class='list-icon' src='/images/white_img.png'></image></view>
+                <view class='list-kind' wx:if='{{item.goods_type == 2}}'><image class='list-icon' src='/images/white_class.png'></image></view>
+                <view class='list-kind' wx:if='{{item.goods_type == 1}}'><image class='list-icon' src='/images/white_column.png'></image></view>
+            </view>
+            </view>
+            
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,17 @@
+<image class="card" src="{{url}}image/give_bg.png"></image>
+
+<!-- <view class='cont'>
+  <form bindsubmit='messgfeedSubmit'>
+    <view class='give-tit'>{{tit}}</view>
+    <view class='give-price'>￥<text>{{price}}</text></view>
+    <input class='give-ipt' type='text' name="message" placeholder='请输入你的赠言'></input>
+    <button  open-type="share" class='give-btn' formType="submit">赠送</button>
+  </form>
+</view> -->
+
+<view class='cont'>
+    <view class='give-tit'>{{tit}}</view>
+    <view class='give-price'>￥<text>{{price}}</text></view>
+    <input class='give-ipt' type='text' bindblur='getmsg' placeholder='请输入你的赠言'></input>
+    <button open-type="share" class='give-btn'>赠送</button>
+</view>

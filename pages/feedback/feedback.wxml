@@ -1,0 +1,15 @@
+<view class='feedmain'>
+  <form bindsubmit='feedSubmit' report-submit="true">
+    
+    <textarea name="content" placeholder-class="areaph" placeholder='您的意见是我们前进的动力(100字以内)' maxlength='100'></textarea>
+    <input type='text' name="contact" placeholder-class="txtph" placeholder='联系方式，QQ、邮箱、手机号等'></input>
+    <view class='upload' bindtap='uploadimg'>
+      <view class='up-icon'>
+        <image src='../../images/camer.png'></image>
+      </view>
+      <view class='text'>上传图片</view>
+      <image class='upimg' src='{{src}}'></image>
+    </view>
+    <button formType="submit" class='submit-btn'>提交</button>
+  </form>
+</view>

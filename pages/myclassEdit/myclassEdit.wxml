@@ -1,0 +1,32 @@
+<view class='dline-hr'></view>
+
+<view class='dteacher-check-in'>
+    <view class='dform-item' bindtap='chooseLogo'>
+      <view class='dform-item-title'>课堂图标</view>
+      <view class='davater'><image mode='aspectFill' src='{{courseInfo.classroom_logo ? courseInfo.classroom_logo : "/images/logo.png"}}'></image></view>
+    </view>
+    <view class='dform-item'>
+      <view>
+        <view class='dform-item-title'>所属机构</view>
+        <view class='dform-item-input'><input bindblur='getName' value='{{courseInfo.company_name}}' disabled='true' maxlength='10' placeholder='所属机构为空' ></input></view>
+      </view>
+    </view>
+    <view class='dform-item'>
+      <view>
+        <view class='dform-item-title'>课堂名称</view>
+        <view class='dform-item-input'><input bindblur='getName' value='{{courseInfo.classroom_name}}' maxlength='10' placeholder='输入课堂名称' ></input></view>
+      </view>
+    </view>
+    <view class='dform-item' style='padding: 32rpx 30rpx 32rpx 50rpx;'>
+      <view>
+        <view class='dform-item-title'>课堂简介</view>
+        <view class='dform-item-input'>
+          <textarea bindblur='getRank' auto-height='true' cursor-spacing='40' type='text' value='{{courseInfo.classroom_info}}' placeholder='200字数限制' maxlength='200'></textarea>
+        </view>
+      </view>
+    </view>
+    <view class='dsubmit-btn'><button bindtap='submitData'>保存</button></view>
+
+  <view class='dcreate-code-card'><navigator url='/pages/invite/invite?goods_id={{id}}&intype=6' hover-class='none' style='padding: 20rpx;'><text class='iconfont icon-erweima'></text><text>推广课程</text></navigator></view>
+</view>
+

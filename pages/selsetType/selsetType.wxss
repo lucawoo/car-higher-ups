@@ -1,0 +1,124 @@
+
+.select-title {
+  font-size: 36rpx;
+  color: #333333;
+  margin-top: 40rpx;
+  padding: 0 65rpx;
+}
+
+.select-tips {
+  font-size: 30rpx;
+  color: #bbbbbb;
+  margin-top: 20rpx;
+  padding: 0 65rpx;
+}
+
+.select-personal {
+  width: 720rpx;
+	height: 400rpx;
+  margin: 80rpx 20rpx 0;
+  overflow: hidden;
+}
+
+.select-personal image {
+  width: 710rpx;
+	height: 390rpx;
+  padding-left: 20rpx;
+}
+
+.select-opganization {
+  width: 700rpx;
+	height: 400rpx;
+  margin: 40rpx 20rpx 60rpx;
+  overflow: hidden;
+}
+
+.select-opganization image {
+  width:674rpx;
+  height:342rpx;
+  padding-left: 20rpx;
+} 
+
+
+
+.telbox{
+  width: 476rpx;
+	height: 367rpx;
+  position: absolute;
+  z-index: 20;
+  background: #fff;
+  border-radius: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.telbox input{
+  border: 1px solid #ededed;
+  font-size: 12px;
+  width: 381rpx;
+	height: 74rpx;
+  border-radius: 4px;
+  padding-left: 20rpx;
+}
+
+.authcode {
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+  margin-top: 24rpx;
+  width: 401rpx;
+}
+
+.authcode input{
+  width: 185rpx;
+	height: 74rpx;
+  border-radius: 4px;
+}
+.authcode button{
+  font-size: 12px;
+  color: #0087e4;
+  width: 175rpx;
+	height: 74rpx;
+  border: 1px solid #0087e4;
+  line-height: 74rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 4px;
+  margin-right: 0;
+  padding: 0;
+}
+
+.authcode button::after {
+  border: 0;
+}
+
+.save-btn button{
+  background: #02a0e9;
+  color: #fff;
+  width: 401rpx;
+	height: 74rpx;
+  line-height: 74rpx;
+  font-size: 30rpx;
+  margin-top: 37rpx;
+  border-radius: 4px;
+}
+.dmodal-wrap-bg{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+  z-index: 100000;
+  left: 0px;
+  top: 0px;
+}
+
+.view_hide{ 
+  display: none;
+
+}
+
+.geting{
+  display: none;
+}

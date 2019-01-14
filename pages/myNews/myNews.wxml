@@ -1,0 +1,10 @@
+
+<import src="/wxParse/wxParse.wxml"/>
+<view class='agree-title'>
+  讲师协议
+</view>
+<view class='agree-doc'>
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>
+
+<view class='backPre' bindtap='backPre'>返回</view>

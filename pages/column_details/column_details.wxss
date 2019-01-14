@@ -1,0 +1,496 @@
+/*改*/
+.overscroll{
+  overflow:hidden;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+
+.bebuy,.afbuy{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80rpx;
+  
+}
+.bebuy view{
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  float: left;
+  color: #666;
+  overflow: hidden;
+}
+/* .bebuy view:first-child{
+  width: 40%;
+  background: #fff;
+} */
+.bebuy view{
+  width: 100%;
+  background: #00A0E8;
+  color: #fff;
+}
+.afbuy view{
+  overflow: hidden;
+  float: left;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  background: #fff;
+  border-left: 1rpx solid #e5e5e5;
+  box-sizing: border-box;
+  border-top: 1rpx solid #e5e5e5;
+  color: #666;
+}
+/* .afbuy view:first-child{
+  width: 40%;
+  background: #fff;
+} */
+.afbuy view{
+  width: 100%;
+  background: #00A0E8;
+  color: #fff;
+}
+.bebuy view{
+  border-top: 1rpx solid #e5e5e5;
+}
+.bebuy view:last-child{
+  border: none;
+}
+.afbuy view:last-child{
+  background: #0087e4;
+  color: #fff;
+  border: none;
+}
+.bebuy button,.afbuy button{
+  background: #fff;
+  color: #666;
+  font-size: 26rpx;
+  line-height: 80rpx;
+}
+.afbuy button::after,.bebuy button::after{
+  border: 0px;
+}
+
+
+
+
+/*tab*/
+.swiper-tab{
+  width: 100%;
+  border-bottom: 2rpx solid #eee;
+  text-align: center;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+.swiper-tab-list{
+  font-size: 29rpx;
+  display: inline-block;
+  width: 50%;
+}
+.swiper-box{
+  width: 100%;
+  padding-top: 40rpx;
+}
+
+.menu{
+  width: 100%;
+  color: #777777;
+}
+.menu-item{
+  width: 50%;
+  float: left;
+  font-size: 28rpx;
+  text-align: center;
+}
+.btm-line {
+  width: 16rpx;
+	height: 3rpx;
+  margin: 10rpx auto 0;
+}
+.dtab-active-bottom {
+  background: #00a0e8; 
+}
+.dtab-active-color {
+  color: #00a0e8;
+}
+
+.tabfix{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+.forcenter{
+  padding: 0 5%;
+}
+
+/*视频*/
+.top{
+  width: 100%;
+  height: 350rpx;
+  position: relative;
+}
+.column_cover{
+  height: 350rpx;
+  overflow: hidden;
+}
+.collect{
+  position: absolute;
+  top: 20rpx;
+  right: 19%;
+  z-index: 10;
+  background: #4F4F4F;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+}
+.loved{
+  z-index: 5;
+}
+.collect image{
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+}
+.to-invite{
+  position: absolute;
+  top: 20rpx;
+  right: 11%;
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 50%;
+  background: #4F4F4F;
+}
+.to-invite image{
+  z-index: 10;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.to-give{
+  position: absolute;
+  top: 20rpx;
+  right: 3%;
+  z-index: 10;
+  border-radius: 50%;
+  width: 46rpx;
+  height: 46rpx;
+}
+.to-give image{
+  width: 46rpx;
+  height: 46rpx;
+}
+
+/*专栏详情*/
+.sell-tit{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.sell-btm{
+  font-size: 24rpx;
+  color: #bcbcbc;
+  margin-top: 10rpx;
+  padding-bottom: 40rpx;
+  border-bottom: 1px dashed #E5E5E5;
+}
+.sell-msg{
+   font-size: 20rpx;
+   color: #BCBCBC;
+   margin-top: 55rpx;
+}
+.sell-msg text{
+   margin-right: 18rpx;
+   color: #919191;
+}
+.sell-price{
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfloat{zoom:1}
+.sell-price text{
+   margin-right: 20rpx;
+   float: left;
+}
+.vip-price{
+  font-size: 20rpx;
+  background: #E7BF6E;
+  color: #fff;
+  padding: 0rpx 15rpx;
+  padding-left: 35rpx;
+  border-radius: 50px;
+  float: left;
+  position: relative;
+  margin-top: 3rpx;
+}
+.vip-price image{
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 50%;
+  left: 3rpx;
+  margin-top: -12rpx;
+}
+.column-article{
+  margin-top: 40rpx;
+  border-top: 5px solid #F6F6F6;
+  padding-top: 20rpx;
+  padding-bottom: 80rpx;
+  position: relative;
+}
+.art-tit{
+  text-align:center;
+  font-size:30rpx;
+  margin-top:40rpx;
+  font-weight:bold;
+}
+.art-cont{
+  padding: 0 7%;
+  font-size: 26rpx;
+  color: #919191;
+}
+
+
+/*专栏目录*/
+.zan-icon-wap-nav{
+  margin-right: 10rpx;
+  font-size: 24rpx;
+}
+.directory-list{
+  position: relative;
+  padding: 0 7%;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.list-num{
+  font-size: 24rpx;
+  color: #E5E5E5;
+  position: absolute;
+  top: 5rpx;
+  left: 10rpx;
+}
+.list-name{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.list-time{
+  font-size: 20rpx;
+  color: #919191;
+  margin-top: 5rpx;
+}
+.list-cont{
+  margin-top: 25rpx;
+}
+.list-cont image{
+  float: left;
+  margin-right: 25rpx;
+}
+.list-kind{
+  font-size: 18rpx;
+  color: #0087e4;
+  line-height: 18rpx;
+  overflow: hidden;
+}
+.list-had text{
+  font-size: 18rpx;
+  margin-top: 50rpx;
+}
+.seepeo,.talkpeo{
+  color: #919191;
+}
+.trystudy{
+  color: #00a0e8;
+  text-align: right;
+}
+
+.list-icon{
+  width: 17rpx;
+  height: 17rpx;
+  
+}
+
+
+.bottom{
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+.add-btn{
+  position: absolute;
+  left: 34%;
+  top: 32%;
+  text-align: center;
+  border-radius: 2px;
+  z-index: 10;
+  color: #00A0E8;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.bottom button{
+  background: #00A0E8;
+  font-size: 28rpx;
+  line-height: 85rpx;
+  color: #fff;
+  border-radius: 0px;
+  height: 85rpx;
+}
+
+.view_hide{ 
+  display: none;
+}
+
+
+
+/*赠送*/
+.dark{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  z-index: 10;
+  opacity: 0.7;
+}
+.paytit{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50%;
+  background: #fff;
+  z-index: 15;
+  text-align: center;
+}
+.paytit-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 30rpx;
+}
+.paytit .paytitli{
+  font-size: 24rpx;
+  padding: 10rpx;
+}
+.paytit button{
+  width: 200rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  border-radius: 50px;
+  line-height: 50rpx;
+  background: #00a0e8;
+  color: #fff;
+  margin-top: 40rpx;
+}
+.paytit button::after{
+  border: 0px;
+}
+.payfor{
+  position: fixed;
+  width: 100%;
+  height: 35%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 20;
+  background: #fff;
+}
+.payfor{
+  padding: 0px 8%;
+  box-sizing: border-box;
+}
+.surepay{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80rpx;
+  background: #00a0e8;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.payfor .title{
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 35rpx 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40rpx;
+}
+.pay-cont{
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.cont-left{
+  float: left;
+  font-size: 24rpx;
+}
+.cont-right{
+  float: right;
+}
+.leftbutton,.centernum,.rightbutton{
+  float: left;
+  font-size: 24rpx;
+  background: #F6F6F6;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+.centernum{
+  width: 50rpx;
+}
+.allmo{
+  margin-top: 40rpx;
+}
+.allmo view:first-child{
+  float: left;
+  font-size: 24rpx;
+}
+.allmo view:last-child{
+  float: right;
+  color: #00a0e8;
+  font-size: 24rpx;
+}
+
+.borderblack{
+  width: 3rpx;
+  height: 23rpx;
+  background: #000;
+  position: absolute;
+  top: 28rpx;
+  left: 0px;
+}
+
+
+
+.first image{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 55;
+}
+.first .btn{
+  width: 34%;
+  height: 80rpx;
+  opacity: 0;
+  z-index: 60;
+  position: fixed;
+  bottom: 5%;
+  left: 33%;
+}

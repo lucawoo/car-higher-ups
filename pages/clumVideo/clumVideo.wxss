@@ -1,0 +1,125 @@
+@import '/pages/video_details/video_details.wxss';
+
+.good-name{
+  font-size: 35rpx;
+  font-weight: bold;
+  padding: 45rpx 30rpx;
+  border-bottom: 10rpx solid #f6f6f6;
+}
+
+/*tab*/
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 14px;
+}
+.swiper-tab-list{
+  font-size: 29rpx;
+  display: inline-block;
+  width: 50%;
+}
+.swiper-box{
+  width: 100%;
+  padding-top: 20rpx;
+}
+.lasteval{
+  padding-top: 0px;
+}
+.forcenter{
+  padding: 0 5%;
+}
+
+.menu{
+  width: 100%;
+  color: #777777;
+}
+.menu-item{
+  width: 33.3333%;
+  float: left;
+  font-size: 28rpx;
+  text-align: center;
+}
+.btm-line {
+  width: 16rpx;
+	height: 3rpx;
+  margin: 10rpx auto 0;
+}
+.dtab-active-bottom {
+  background: #00a0e8; 
+}
+.dtab-active-color {
+  color: #00a0e8;
+}
+
+.tabfix{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+.synopsis-cont{
+  border: 0px;
+  font-size: 28rpx;
+}
+
+
+/*目录*/
+.zan-icon-wap-nav{
+  margin-right: 10rpx;
+  font-size: 24rpx;
+}
+.directory-list{
+  position: relative;
+  padding: 0 7%;
+  margin-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.list-num{
+  font-size: 24rpx;
+  color: #E5E5E5;
+  position: absolute;
+  top: 5rpx;
+  left: 10rpx;
+}
+.list-name{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.list-time{
+  font-size: 20rpx;
+  color: #919191;
+  margin-top: 5rpx;
+}
+.list-cont{
+  margin-top: 25rpx;
+}
+.list-cont image{
+  float: left;
+  margin-right: 25rpx;
+}
+.list-kind{
+  font-size: 18rpx;
+  color: #0087e4;
+  line-height: 18rpx;
+  overflow: hidden;
+}
+.list-had text{
+  font-size: 18rpx;
+  margin-top: 50rpx;
+}
+.seepeo,.talkpeo{
+  color: #919191;
+}
+.trystudy{
+  color: #00a0e8;
+  text-align: right;
+}
+
+.list-icon{
+  width: 17rpx;
+  height: 17rpx;
+  
+}

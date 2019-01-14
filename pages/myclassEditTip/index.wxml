@@ -1,0 +1,12 @@
+<view class='wrap-tip'>
+  <view class='block-tip'>
+    <view class='step-title'>step.1</view>
+    <view class='step-tip'>请使用电脑浏览器打开网址</view>
+    <view class='admin-site'><text selectable='true'>{{url}}</text></view>
+  </view>
+
+  <view class='block-tip'>
+    <view class='step-title'>step.2</view>
+    <view class='step-tip'>输入注册的手机号，获取验证码登录</view>
+  </view>
+</view>

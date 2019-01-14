@@ -1,0 +1,13 @@
+<view class='main'>
+<form bindsubmit='feedSubmit'>
+  <textarea placeholder='问题描述' name="content" maxlength='100'></textarea>
+  <view class='upload' bindtap='uploadimg'>
+      <view class='up-icon'>
+        <image src='../../images/camer.png'></image>
+      </view>
+      <view class='text'>上传图片</view>
+      <image class='upimg' src='{{src}}'></image>
+    </view>
+  <button formType="submit" class='submit-btn'>提交</button>
+</form>
+</view>

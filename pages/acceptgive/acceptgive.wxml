@@ -1,0 +1,39 @@
+<image class="card" src="{{url}}image/give_bg.png"></image>
+
+<view class='cont'>
+  <view class='member'>
+    <image src='{{member_avatar}}'></image>
+    <text class='member-name'>{{member_name}}</text>
+    <text class='title'>赠送给您</text>
+  </view>
+
+  <view class='give-tit'>{{tit}}</view>
+  <view class='give-price'>￥
+    <text>{{price}}</text>
+  </view>
+  <view class='fitmsg' style='margin-top:114rpx;'>赠言：</view>
+  <view class='fitmsg' style='margin-top:15rpx;'>{{sendlist.message}}</view>
+  <button bindtap='accept' class='give-btn'>查看</button>
+</view>
+
+
+<view class='gowhere' wx-if="{{edit}}">
+  <view class='topacct'>
+    <image wx-if="{{acctype==1}}" src='/images/accept_success.png' mode='aspectFit'></image>
+    <image wx-if="{{acctype==2}}" src='/images/accept_error.png' mode='aspectFit'></image>
+    <image wx-if="{{acctype==3}}" src='/images/accept_have.png' mode='aspectFit'></image>
+  </view>
+  <view style='text-align:center;font-size:30rpx;margin:50rpx 0;font-weight:bold;'>{{accsuccess}}</view>
+  <view class='botm'>
+    <view bindtap='gohome'>返回首页</view>
+    <view bindtap='gogood'>查看商品详情</view>
+  </view>
+  <view class='close' bindtap='cancel'>
+    <image src='/images/close.png'></image>
+  </view>
+</view>
+<view wx-if="{{edit}}" class='gowhere-dark'></view>
+
+<view class='backhome' bindtap='_backhome' wx:if='{{share}}'>
+  <view><image src='/images/backhome.png'></image></view>
+</view>

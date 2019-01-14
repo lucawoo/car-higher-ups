@@ -1,0 +1,31 @@
+<view class='comments'>
+  <view class='comments-list zan-row' wx:key wx:for="{{commList}}">
+    <image class='zan-col zan-col-4' style='width:60rpx;height:60rpx;border-radius:50%;' mode="aspectFill" src='{{item.member.avatar}}'></image>
+    <view class='zan-col zan-col-offset-1 zan-col-19 list-left'>
+      <view class='clearfloat'>
+        <view class='comments-name'>{{item.member.name}}</view>
+        <view class='dcomment-starts'>
+          <block wx:key wx:for="{{item.score}}">
+            <text class='iconfont icon-starok'></text>
+          </block>
+          <block wx:key wx:for="{{5-item.score}}">
+            <text class='iconfont icon-starok gray'></text>
+          </block>
+        </view>
+      </view>
+      <view class='comments-cont'>{{item.content}}</view>
+      <view class='comments-date'>{{item.created_at}}</view>
+      <view class='reply' wx-if="{{item.reply}}">
+        <text class='zan-icon zan-icon-pending-evaluate'></text>
+        <view class='reply-list'>
+          <view class='reply-name'>{{item.reply.member.name}}</view>
+          <text>{{item.reply.content}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='ipt' wx-if="{{purchased === 'true'}}">
+  <input type='text' data-id='{{courseList.id}}' placeholder='发表评论' disabled bindtap='topublishedcomm'></input>
+</view>

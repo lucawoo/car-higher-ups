@@ -1,0 +1,97 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/live/live",
+    "pages/free/free",
+    "pages/bought/bought",
+    "pages/bindTel/bindTel",
+    "pages/login/login",
+    "pages/mine/mine",
+    "pages/vip/vip",
+    "pages/pay/pay",
+    "pages/column/column",
+    "pages/classifyDetail/index",
+    "pages/giving/giving",
+    "pages/article_details/article_details",
+    "pages/audio_details/audio_details",
+    "pages/column_details/column_details",
+    "pages/focusOn/focusOn",
+    "pages/feedback/feedback",
+    "pages/feed_success/feed_success",
+    "pages/message/message",
+    "pages/news/news",
+    "pages/teacherCheckIn3/index",
+    "pages/teacherCheckIn2/index",
+    "pages/teacherCheckIn/index",
+    "pages/selsetType/selsetType",
+    "pages/collection/collection",
+    "pages/search/search",
+    "pages/recommend/index",
+    "pages/acceptgive/acceptgive",
+    "pages/replay/replay",
+    "pages/looked/looked",
+    "pages/alldetail/alldetail",
+    "pages/account/account",
+    "pages/myclass/myclass",
+    "pages/myNews/myNews",
+    "pages/vip_details/vip_details",    
+    "pages/giftrecord/giftrecord",
+    "pages/searchInfo/search",
+    "pages/course/course",
+    "pages/video_details/video_details",
+    "pages/teacherCheckInStatus/index",
+    "pages/publishedcomm/publishedcomm",
+    "pages/teacherHome/index",
+    "pages/informationComment/index",
+    "pages/Leaderboard/index",
+    "pages/complaints/complaints",
+    "pages/invite/invite",
+    "pages/myclassEditTip/index",
+    "pages/comments/comments",
+    "pages/myclassEdit/myclassEdit",
+    "pages/informationDetail/index",
+    "pages/clumArt/clumArt",
+    "pages/clumVideo/clumVideo",
+    "pages/clumAudio/clumAudio",
+    "pages/web-view/index",
+    "pages/cutFace/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "汽车大咖",
+    "navigationBarTextStyle": "black",
+    "onReachBottomDistance": "50"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_a.png"
+      },
+      {
+        "pagePath": "pages/bought/bought",
+        "text": "正在学",
+        "iconPath": "images/bought.png",
+        "selectedIconPath": "images/bought_a.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_a.png"
+      }
+    ],
+    "color": "#919191",
+    "selectedColor": "#00A0E8",
+    "backgroundColor": "#fff"
+  },
+  "networkTimeout": {
+    "request": 100000,
+    "connectSocket": 100000,
+    "uploadFile": 100000,
+    "downloadFile": 100000
+  }
+}

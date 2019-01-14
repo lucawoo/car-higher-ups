@@ -1,0 +1,98 @@
+<!--logs.wxml-->
+<view class='header zan-row'>
+  <view class='zan-col zan-col-4 toux' bindtap='tomessage'>
+      <image style="width: 120rpx;height: 120rpx;" mode="aspectFill" src="{{usermsg.avatar}}"></image>
+  </view>
+  <view class='zan-col zan-col-12 nickname'>
+    <view bindtap='tomessage'>{{usermsg.member_name}}<text class='is-lecturer' wx-if="{{is_lecturer==2}}">职业讲师</text></view>
+    <!-- <view class='nick-bottom' wx-if="{{!vipstate}}">非</view>
+    <view class='nick-bottom' wx-if="{{vipstate}}">正式</view> -->
+  </view>
+
+  <!-- <view class='zan-col zan-col-6' bindtap='tovip'>
+    <view class='nick-vip'><text>{{!vipstate?'成为':'查看'}}</text></view>
+  </view> -->
+</view>
+
+<view class='visited' bindtap='tolooked' wx-if="{{lookedList.length}}">
+  <view class='visited-top'> 
+    <view class="zan-cell zan-cell--access visited-title">
+      <view class="zan-cell__bd">浏览记录</view>
+      <view class="iconfont icon-previewright" style='font-size:24rpx;color:#c3c3c3;'></view>
+    </view>
+  </view>
+
+  <view class='message-banner'>
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+      <view class='visited-list' catchtap='togoods' data-id='{{item.goods_id}}' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' wx:key wx:for="{{lookedList}}">
+        <view class='list-item'>
+          <image style='width:100%;height:185rpx;border-radius:2px;' src='{{item.goods_cover}}' mode="aspectFill"></image>
+          <view class='list-cont'>
+            <view>{{item.lecturer.name}}</view>
+            <!-- <view class='list-border'></view> -->
+            <!-- <view>{{item.subscribe_num}} 人查看</view> -->
+            <view class='kind-icon'>
+              <view class='list-kind' wx:if='{{item.goods.goods_type == 2}}'><image class='list-icon' src='/images/white_video.png'></image></view>
+              <view class='list-kind' wx:if='{{item.goods.goods_type == 3}}'><image class='list-icon' src='/images/white_audio.png'></image></view>
+              <view class='list-kind' wx:if='{{item.goods.goods_type == 1}}'><image class='list-icon' src='/images/white_img.png'></image></view>
+              <view class='list-kind' wx:if='{{item.goods_type == 2}}'><image class='list-icon' src='/images/white_class.png'></image></view>
+              <!-- <view class='list-kind' wx:if='{{item.goods_type == 1}}'><image class='list-icon' src='/images/white_column.png'></image></view> -->
+            </view>
+          </view>
+          <view class='list-tit'>
+            <view>{{item.goods_name}}</view>
+            <view>{{item.click_count}}人查看</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+</view>
+
+<view class='cont'>
+
+  <view class="zan-cell" bindtap='tomyclass'>
+    <view class='my_nav_icon'><image style='width:35rpx;height:27rpx;margin-right:23rpx;' src='../../images/my_class.png' mode="aspectFill"></image></view>
+    <view class="zan-cell__bd">我的课堂</view>
+    <view class="iconfont icon-previewright" style='font-size:24rpx;color:#c3c3c3;'></view>
+  </view>
+  <view class="zan-cell" bindtap='toaccount'>
+    <view class='my_nav_icon'><image style='width:35rpx;height:27rpx;' src='../../images/my_money.png' mode="aspectFill"></image></view>
+    <view class="zan-cell__bd">我的钱包</view>
+    <view class="iconfont icon-previewright" style='font-size:24rpx;color:#c3c3c3;'></view>
+  </view>
+
+  <view class="zan-cell" bindtap='tofocus'>
+    <view class='my_nav_icon'><image style='width:32rpx;height:30rpx;' src='../../images/my_focus.png' mode="aspectFill"></image></view>
+    <view class="zan-cell__bd">我的关注</view>
+    <view class="iconfont icon-previewright" style='font-size:24rpx;color:#c3c3c3;'></view>
+  </view>
+
+  <view class="zan-cell" bindtap='tocollection'>
+    <view class='my_nav_icon'><image style='width:31rpx;height:30rpx;' src='../../images/my_collect.png' mode="aspectFill"></image></view>
+    <view class="zan-cell__bd">我的收藏</view>
+    <view class="iconfont icon-previewright" style='font-size:24rpx;color:#c3c3c3;'></view>
+  </view>
+
+  <!-- <view class="zan-cell" bindtap='tomynews'>
+    <view class="zan-cell__icon zan-icon zan-icon-chat" style="color:#DCDCDC;"></view>
+    <view class="zan-cell__bd">我的客服</view>
+  </view> -->
+
+  <view class="zan-cell" bindtap='togiftrecord'>
+    <view class='my_nav_icon'><image style='width:30rpx;height:30rpx;' src='../../images/my_give.png' mode="aspectFill"></image></view>
+    <view class="zan-cell__bd">赠送记录</view>
+    <view class="iconfont icon-previewright" style='font-size:24rpx;color:#c3c3c3;'></view>
+  </view>
+
+  <view class="zan-cell" bindtap='tofeedback'>
+    <view class='my_nav_icon'><image style='width:34rpx;height:34rpx;' src='../../images/my_feed.png' mode="aspectFill"></image></view>
+    <view class="zan-cell__bd">意见反馈</view>
+    <view class="iconfont icon-previewright" style='font-size:24rpx;color:#c3c3c3;'></view>
+  </view>
+  <!-- <view class="zan-cell" bindtap='tofeedback'>
+      <view class='my_nav_icon'><image style='width:34rpx;height:34rpx;' src='/images/messages.png' mode="aspectFill"></image></view>
+      <view class="zan-cell__bd"><button open-type="contact" session-from="weapp">客服</button></view>
+  </view> -->
+</view>

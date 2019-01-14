@@ -1,0 +1,167 @@
+/**app.wxss**/
+@import "/zanui/index.wxss";
+@import '/font.wxss';
+@import '/wxParse/wxParse.wxss';
+
+page {
+    padding-bottom: 160rpx;
+    position: relative;
+    height: auto;
+}
+
+.dline-hr {
+  height: 20rpx;
+  width: 100%;
+  background: #f8f8f8;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.sell-msg {
+  font-size: 24rpx!important;
+}
+
+.sell-name {
+   font-size: 26rpx!important;
+}
+
+.comments-cont {
+  font-size: 28rpx!important;
+}
+
+.comments-date {
+  font-size: 24rpx!important;
+}
+
+.cont-tit {
+  font-size: 30rpx!important;
+}
+
+.borderblack  {
+  height: 28rpx;
+}
+
+.backhome {
+  position: fixed;
+  bottom: 120rpx;
+  left: 40rpx;
+  width: 180rpx;
+  height: 80rpx;
+  overflow: hidden;
+}
+
+.backhome image {
+  width: 180rpx;
+  height: 80rpx;
+}
+
+.bebuy view {
+  border-bottom: none!important;
+}
+
+.bebuy image, .afbuy image {
+  width: 46rpx;
+  height: 62rpx;
+  margin-top: 20rpx;
+}
+
+
+.ios-buy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 99999999;
+}
+
+
+.buy-button {
+  background: #fff;
+  width: 600rpx;
+  height: 240rpx;
+  position: absolute;
+  top: -200rpx;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.tips {
+  text-align: center;
+  font-size: 28rpx;
+  color: #555555;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 40rpx;
+  padding: 15rpx 0 45rpx;
+  margin-top: 30rpx;
+}
+
+.contact-btn {
+  font-size: 30rpx;
+  background: #ffffff;
+  width: 540rpx;
+  color: red;
+  padding: 15rpx 0;
+}
+
+.contact-btn::after {
+  border: 0;
+}
+
+.phone-icon {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  right: 30rpx;
+  bottom: 120rpx;
+}
+
+.phone-icon image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.phone-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+}
+
+.phone-modal {
+  position: absolute;
+  width: 500rpx;
+  height: 320rpx;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  background: #fff;
+  border-radius: 25rpx;
+}
+
+.phone-title {
+  padding: 30rpx 30rpx 20rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.modal-tips {
+  font-size: 28rpx;
+  padding: 0 30rpx;
+}
+
+.phone-detail {
+  padding: 10rpx 30rpx;
+  font-size: 26rpx;
+}

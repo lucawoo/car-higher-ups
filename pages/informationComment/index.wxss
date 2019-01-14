@@ -1,0 +1,123 @@
+page {
+  padding-bottom: 140rpx;
+}
+
+.dinformation-comment-lsit {
+	margin-top: 46rpx;
+}
+
+.dcommenter-item-avatar {
+  display: flex;
+  align-items: center;
+}
+
+.dcommenter-item-avatar image{
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+	margin: 0 40rpx;
+}
+
+.dcommenter-item-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  width: 610rpx;
+  
+}
+
+.dcommenter-name {
+	color: #1e1e1e;
+	font-size: 24rpx;
+}
+
+.dcomment-starts {
+	color: #ffc000;
+  margin: -10rpx 40rpx 0 0;
+}
+
+.dcomment-starts text {
+	margin-left: 10rpx;
+	font-size: 24rpx;
+}
+
+.dcomment-content-detail {
+  width: 570rpx;
+  padding-right: 40rpx;
+  margin-left: 140rpx;
+}
+
+
+
+.dcomment-item-content {
+	color: #6f6f6f;
+	font-size: 24rpx;
+	margin: 20rpx 0 20rpx;
+  line-height: 1.8;
+}
+
+.dcomment-item-time {
+	color: #b0b0b0;
+	font-size: 20rpx;
+	padding-bottom: 20rpx;
+}
+
+.dcomment-content-replay {
+  display: flex;
+  /* justify-content: space-between; */
+
+}
+
+.dcomment-replay-info {
+  background-color: #f9f9f9;
+  margin-left: 20rpx;
+  padding: 20rpx;
+  width: 100%;
+}
+
+.dcomment-content-replayer {
+  color: #02a0e9;
+  font-size: 24rpx;
+  margin-top: -10rpx;
+}
+
+.dcomment-content-replay .icon-tubiao15 {
+	margin: 0 40rpx;
+	color: #02a0e9;
+}
+
+.dcomment-content-replay-text {
+  font-size: 24rpx;
+  color: #919191;
+  margin-top: 10rpx;
+  line-height: 1.6;
+}
+
+.dline-half {
+  height: 1px;
+  width: 610rpx;
+  background: #eee;
+  margin: 40rpx 0 40rpx 140rpx;
+}
+
+.dpublish-comment-wrap {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: #f8f8f8;
+  font-size: 24rpx;
+  color: #b4b4b4;
+}
+
+.dpublish-comment {
+  height: 100%;
+  padding: 20rpx;
+}
+
+.dpublish-comment input {
+  background: #fff;
+  height: 70rpx;
+  border: solid 1rpx #dcdcdc;
+  border-radius: 4px;
+  padding: 0 20rpx;
+}

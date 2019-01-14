@@ -1,0 +1,36 @@
+<image class='invite_bg' wx:if='{{tabIndex == 0}}' src='{{url}}image/invite.png'></image>
+<image class='invite_bg' wx:if='{{tabIndex == 1}}' src='{{url}}image/invite_2.png'></image>
+<image class='invite_bg' wx:if='{{tabIndex == 2}}' src='{{url}}image/invite_3.png'></image>
+<image class='invite_bg' wx:if='{{tabIndex == 3}}' src='{{url}}image/invite_4.png'></image>
+
+<view class='cont {{tabIndex == 3 ? "whitecolor" : ""}}'>
+  <image class='headimg' src='{{usermsg.avatar}}' mode="aspectFill"></image>
+  <view class='cont-name'>{{usermsg.member_name}}</view>
+  <view class='cont-tit'>邀请你来一起学习</view>
+  <image bindlongpress='savecode' class='Qr_code' src='{{codeimg}}'></image>
+  <view style='font-size:22rpx;margin-top:10rpx;color:#999;'>长按二维码分享好友</view>
+</view>
+
+
+
+<view class='menu swiper-tab'>
+  <block wx:for='{{menus}}' wx:key>
+    <image src='{{item}}' class='menu-item {{index == tabIndex ? "active-shadow" : ""}}' bindtap='showMenuDetail' data-index='{{index}}'></image>
+  </block>
+</view>
+
+<view wx-if="{{hidesheet}}" class='actionsheet'>
+  <view bindtap='saveimg'>保存到手机相册</view>
+  <button open-type="share">分享给好友</button>
+  <view bindtap='hidesheet'>取消</view>
+</view>
+<view class='dark' wx-if="{{hidesheet}}" bindtap='hidesheet'></view>
+
+
+
+<canvas style="width: 375px;height: 630px;background:red;position: fixed;top: -10000px;" canvas-id="shareFrends"></canvas>
+
+
+
+
+

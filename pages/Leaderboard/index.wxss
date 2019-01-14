@@ -1,0 +1,46 @@
+@import '../classifyDetail/index.wxss';
+
+page {
+  padding-bottom: 60rpx;
+}
+
+.dclassify-detail-menu view {
+  border: 0;
+}
+
+.dclassify-detail-menu .dtab-active {
+  border: 0;
+}
+
+.dbottom-line {
+  width: 16rpx;
+  height: 3rpx;
+  margin: 29rpx auto 0;
+}
+
+.dtab-active-bottom {
+  background: #00a0e8;
+}
+
+.dlist-item-detail image {
+  width: 17rpx;
+  height: 17rpx;
+  margin-right: 10rpx;
+}
+
+.no-buy-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-buy-image image {
+  width: 247rpx;
+  height: 288rpx;
+  margin: 240rpx 0 60rpx 0;
+}
+
+.no-buy-text {
+  font-size: 28rpx;
+  color: #ccc;
+}

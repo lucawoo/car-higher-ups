@@ -1,0 +1,61 @@
+<view class="zan-panel mesg-cont">
+  <view class="mesg-list head">
+    <view class="item-left">头像</view>
+    <view class="item-right">
+      <image style="width: 120rpx;height: 120rpx;background-color: #eeeeee;border-radius: 50%;" mode="aspectFill" src="{{usermsg.avatar}}"></image>
+    </view>
+  </view>
+
+  <view class="mesg-list mesg">
+    <view class="item-left">昵称</view>
+    <input class='item-right' type='text' placeholder="{{usermsg.member_name}}" disabled='ture'></input>
+  </view>
+
+  <picker bindchange="bindPickerChange" range="{{sex}}">
+    <view class="mesg-list mesg">
+      <view class="item-left">性别</view>
+      <input type='text' class='item-right' placeholder='{{sexSelect ? sexSelect : sex[usermsg.member_sex]}}' disabled></input>
+    </view>
+  </picker>
+
+  <picker mode="date" start="1918-01-01" end="{{time}}" bindchange="bindDateChange">
+    <view class="mesg-list mesg">
+      <view class="item-left">生日</view>
+      <input type='text' class='item-right' placeholder='{{usermsg.birthday?usermsg.birthday:endtime}}' value='{{date}}' disabled></input>
+    </view>
+  </picker>
+
+  <view class="mesg-list mesg">
+    <view class="item-left">真实姓名</view>
+    <input type='text' class='item-right' placeholder="{{usermsg.truename?usermsg.truename:'真实姓名'}}" bindblur='getTrueName'></input>
+  </view>
+  <view class="mesg-list mesg" wx-if="{{usermsg.member_mobile}}">
+    <view class="item-left">手机号</view>
+    <input type='text' class='item-right' placeholder="{{usermsg.member_mobile}}" disabled></input>
+  </view>
+  <view class='bor-gary'></view>
+  <view class="mesg-list mesg">
+    <view class="item-left">地址</view>
+    <input type='text'  class='item-right' placeholder="{{usermsg.company_ads?usermsg.company_ads:'填写公司地址'}}" bindblur='getCompanyAds'></input>
+  </view>
+  <view class="mesg-list mesg">
+    <view class="item-left">公司</view>
+    <input type='text' class='item-right' placeholder="{{usermsg.company_name?usermsg.company_name:'填写公司名称'}}" bindblur='getCompanyName'></input>
+  </view>
+  <view class="mesg-list mesg">
+    <view class="item-left">职位</view>
+    <input type='text' class='item-right' placeholder="{{usermsg.duty?usermsg.duty:'填写您的职位'}}" bindblur='getjob'></input>
+  </view>
+</view>
+
+
+<!-- <view class='telbox {{showView?"":"view_hide"}}'>
+  <view><input placeholder='请输入11位手机号码' value='{{member_mobile}}' bindinput="gettel" maxlength='11'></input></view>
+  <view class='authcode'>
+    <input placeholder='验证码' value='{{code}}' bindinput='getCode'></input>
+    <button class='{{getView?"geting":""}}' disabled="{{codebtn}}" bindtap='sendCode'>获取验证码</button>
+    <button class='{{getView?"":"geting"}}' disabled>重新发送{{codetime}}</button>
+  </view>
+  <view class='save-btn'><button bindtap="sumTel">提交</button></view>
+</view>
+<view class='dmodal-wrap-bg {{showView?"":"view_hide"}}' bindtap="subscribeOn"></view> -->

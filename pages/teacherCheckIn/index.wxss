@@ -1,0 +1,289 @@
+page {
+  padding-bottom: 0rpx; 
+}
+
+.no-scollw {
+  overflow:hidden;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+}
+
+.form-tips {
+  font-size: 26rpx;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  background: #fff9de;
+
+}
+
+.personal-tips {
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  color: #00a0e8;
+  margin: 30rpx 0 40rpx;
+}
+
+.personal-tips view:nth-child(1) {
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.personal-tips view:nth-child(2) {
+  width: 118rpx;
+	height: 54rpx;
+	background-color: #ffffff;
+	border-radius: 27rpx;
+	border: solid 1px #eeeeee;
+  text-align: center;
+  line-height: 54rpx;
+}
+
+.personal-tips view:nth-child(2) button {
+  background: #fff;
+  padding: 0;
+  width: 118rpx;
+	height: 54rpx;
+	border-radius: 27rpx;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 30rpx;
+  color: #00a0e8;
+}
+
+.personal-tips view:nth-child(2) button::after {
+  border: 0;
+}
+
+.dform-item {
+  display: flex;
+  align-items: center;
+  padding: 10rpx 30rpx;
+  flex-direction: row;
+}
+
+.dform-item2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 30rpx
+}
+
+.placeholder-color {
+  color: #b0b0b0;
+  font-size: 30rpx;
+}
+
+.is-full {
+  color: #6f6f6f;
+  font-size: 26rpx;
+}
+
+
+.dform-item-title {
+  font-size: 30rpx;
+  color: #333333;
+  margin-right: 20rpx;
+}
+
+.davater image {
+  width: 100rpx;
+	height: 100rpx;
+  border-radius: 50%;
+}
+
+.dform-item-input {
+  color: #b0b0b0;
+  font-size: 30rpx;
+}
+
+.dform-item-input input {
+  min-width: 520rpx;
+  color: #b0b0b0;
+  font-size: 26rpx;
+}
+
+.dform-item .is-full input {
+  color: #6f6f6f;
+}
+
+.dform-item2 .icon-previewright{
+  color: #555555;
+  font-size: 36rpx;
+  margin-left: 10rpx;
+}
+
+.dform-item-desc {
+  width: 686rpx;
+  height: 149rpx;
+  border: solid 1px #e5e5e5;
+  font-size: 26rpx;
+  margin-top: 24rpx;
+}
+
+.dself-info-text {
+  position: static;
+  z-index: 0; 
+  width: 646rpx;
+  font-size: 30rpx;
+  color: #6f6f6f;
+  height: 80rpx;
+  overflow: hidden;
+  padding: 20rpx;
+}
+
+.hr-line-sm {
+  height: 1px;
+  width: 690rpx;
+  background: #e5e5e5;
+  margin: 40rpx auto 40rpx;
+}
+
+.ID-card {
+  padding: 40rpx;
+}
+
+.ID-card-title {
+  font-size: 30rpx;
+  color: #2c2b2b;
+  font-weight: 600;
+}
+
+.ID-card-tips {
+  font-size: 26rpx;
+  color: #bbbbbb;
+  margin-top: 10rpx;
+}
+
+.ID-card-wrap {
+  width: 338rpx;
+	height: 260rpx;
+	background-color: #ffffff;
+	border: dashed 1px #dcdcdc;
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.ID-card-wrap image {
+  width: 318rpx;
+	height: 240rpx;
+  margin-left: 10rpx;
+}
+
+.some-certificate {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.some-certificate > view {
+  width: 318rpx;
+	height: 240rpx;
+}
+
+.some-certificate > view image {
+  width:90rpx;
+  height:77rpx;
+  margin-left: 110rpx;
+}
+
+.certificate-tips {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+  text-align: center;
+}
+
+.certificate-tips view {
+  width: 338rpx;
+  font-size: 26rpx;
+  color: #7c7c7c;
+} 
+
+.lenc-carmea {
+  width:298rpx;
+  height:220rpx;
+  margin-left: 10rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.have-img {
+  width: 298rpx!important;
+	height: 220rpx!important;
+  margin-left: 0rpx!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.dform-item-input-full {
+  margin-top: 10rpx;
+  color: #6f6f6f;
+  font-size: 26rpx;
+}
+
+.dform-item-input-full input {
+  min-width: 600rpx;
+  color: #6f6f6f;
+  font-size: 26rpx;
+}
+
+
+.dform-item2 .icon-previewright{
+  color: #434343;
+}
+
+.dself-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dtext-limt {
+  color: #919191;
+  font-size: 24rpx;
+}
+
+
+
+.dsubmit-btn {
+  width: 100%;  
+  background-color: #00a0e8;
+  margin-top: 60rpx;
+}
+
+.dsubmit-btn button {
+	height: 91rpx;
+  width: 100%;
+	background-color: #00a0e8;
+  color: #fff;
+  border-radius: 0;
+  z-index: 1000;
+}
+
+.dsubmit-btn button::after {
+  border: 0;
+}

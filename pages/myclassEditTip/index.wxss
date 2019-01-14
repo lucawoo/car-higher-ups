@@ -1,0 +1,29 @@
+.wrap-tip {
+  padding: 160rpx 40rpx 0;
+  text-align: center;
+}
+
+.block-tip {
+  height: 300rpx;
+  width: 100%;
+  border: 1rpx solid #eee;
+  border-radius: 20rpx;
+  margin-top: 40rpx;
+}
+
+.admin-site {
+  color: rgb(112, 161, 222);
+  margin-top: 40rpx;
+  font-size: 40rpx;
+}
+
+.step-title {
+  color: rgb(211,211,211);
+   margin-top: 40rpx;
+}
+
+.step-tip {
+  color: rgb(158, 158, 158);
+  margin-top: 40rpx;
+  font-size: 28rpx;
+}

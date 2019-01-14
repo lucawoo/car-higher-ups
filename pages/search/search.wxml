@@ -1,0 +1,141 @@
+<view class='dsearch-header'>
+  <view>
+    <image src='/images/search.png'></image>
+  </view>
+  <input class='dsearch-input' value='{{searchText}}' type="text" placeholder="搜索讲师、课程" bindblur='hideHistorySearch' bindfocus='showHistorySearch' confirm-type='搜索' bindconfirm='startSearch' placeholder-style='color: #bebdbd;'></input>
+</view>
+<view class='dline-hr'></view>
+<view class='dsearch-main'>
+  <view class='dserach-menu'>
+    <block wx:for='{{dsearchTabs}}' wx:key>
+      <view class='{{tabIndex == index ? "dtab-active" : ""}}' bindtap='selectTab' data-index='{{index}}'>{{item}}</view>
+    </block>
+  </view>
+  <!-- 触发搜索框时 的历史搜索记录  -->
+  <view class='dhistory-search' wx:if='{{showHistorySearch}}'>
+    <view class='dhistory-search-title'>历史搜索</view>
+    <view class='dhistory-items'>
+      <block wx:for='{{historySearch}}' wx:key>
+        <view bindtap='selectSearch' data-text='{{item.name}}'>{{item.name}}</view>
+      </block>
+    </view>
+    <view class='dhot-search-title'>热门搜索</view>
+    <view class='dhot-items'>
+      <block wx:for='{{hotSearch}}' wx:key>
+        <view bindtap='selectSearch' data-text='{{item.name}}'>{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+  <!-- 搜搜结果列表  全部-->
+  <view class='dsearch-result-list' wx:if='{{!showHistorySearch && tabIndex == 0}}'>
+
+    <block wx:for='{{Lecturer}}' wx:key>
+      <view class='dresult-list-item' bindtap='linkDetail' data-id='{{item.id}}' data-type='teacher'>
+        <image src='{{item.lecturer_avatar}}' mode='aspectFill' class='dsearch-result-list-teacher'></image>
+        <view class='dlist-item-detail dlist-item-detail-teacher'>
+          <view class='dlist-item-title'>{{item.lecturer_name}}</view>
+          <view class='dlist-item-subtitle-text'>{{item.lecturer_info}}</view>
+        </view>
+        <view class='dcancle-btn' catchtap='toggleFocus' data-id='{{item.id}}' data-focus='{{item.focus.length}}'>{{item.focus.length> 0? "取消" : "关注"}}</view>
+      </view>
+    </block>
+    <block wx:for='{{course}}' wx:key>
+      <view class='dresult-list-item' bindtap='linkDetail'  data-type="course" 
+            data-typecourse='{{item.goods_type}}' 
+            data-goodstype='{{item.goods.goods_type}}' 
+            data-id='{{item.group_id}}'>
+        <image src='{{item.goods_cover}}' mode='aspectFill'></image>
+        <view class='dlist-item-detail'>
+          <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 2}}'>
+            <image src='/images/video_icon.png'></image>
+            <text>视频</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 3}}'>
+            <image src='/images/audio_icon.png'></image>
+            <text>音频</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 1}}'>
+            <image src='/images/img_icon.png'></image>
+            <text>图文</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods_type == 2}}'>
+            <image src='/images/class_icon.png'></image>
+            <text>课程</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods_type == 1}}'>
+            <image src='/images/cloumn_icon.png'></image>
+            <text>专栏</text>
+          </view>
+          <view class='dlist-item-title'>{{item.goods_name}}</view>
+          <view class='dlist-item-subtitle'>{{item.goods_desc}}</view>
+          <view class='dlist-item-info'>
+            <text> {{item.click_num}}  人查看</text>
+            
+          </view>
+        </view>
+      </view>
+    </block>
+
+
+  </view>
+
+  <!-- 搜搜结果列表  讲师-->
+  <view class='dsearch-result-list' wx:if='{{!showHistorySearch && tabIndex == 1}}'>
+    <block wx:for='{{Lecturer}}' wx:key>
+      <view class='dresult-list-item' bindtap='linkDetail' data-id='{{item.id}}' data-type='teacher'>
+        <image src='{{item.lecturer_avatar}}' class='dsearch-result-list-teacher' mode='aspectFill'></image>
+        <view class='dlist-item-detail dlist-item-detail-teacher'>
+          <view class='dlist-item-title'>{{item.lecturer_name}}</view>
+          <view class='dlist-item-subtitle-text'>{{item.lecturer_info}}</view>
+        </view>
+        <view class='dcancle-btn' catchtap='toggleFocus' data-id='{{item.id}}' data-focus='{{item.focus.length}}'>{{item.focus.length> 0? "取消" : "关注"}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 搜搜结果列表  课程-->
+  <view class='dsearch-result-list' wx:if='{{!showHistorySearch && tabIndex == 2}}'>
+    <block wx:for='{{course}}' wx:key>
+      <view class='dresult-list-item' bindtap='linkDetail'  data-type="course" 
+            data-typecourse='{{item.goods_type}}' 
+            data-data-goodstype='{{item.goods.goods_type}}' 
+            data-id='{{item.group_id}}'>
+        <image src='{{item.goods_cover}}' mode='aspectFill'></image>
+        <view class='dlist-item-detail'>
+          <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 2}}'>
+            <image src='/images/video_icon.png'></image>
+            <text>视频</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 3}}'>
+            <image src='/images/audio_icon.png'></image>
+            <text>音频</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 1}}'>
+            <image src='/images/img_icon.png'></image>
+            <text>图文</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods_type == 2}}'>
+            <image src='/images/class_icon.png'></image>
+            <text>课程</text>
+          </view>
+          <view class='dlist-item-class' wx:if='{{item.goods_type == 1}}'>
+            <image src='/images/cloumn_icon.png'></image>
+            <text>专栏</text>
+          </view>
+          <view class='dlist-item-title'>{{item.goods_name}}</view>
+          <view class='dlist-item-subtitle'>{{item.goods_desc}}</view>
+          <view class='dlist-item-info'>
+            <text> {{item.click_num}}  人查看</text>
+            
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<view class='dclear-history' wx:if='{{showHistorySearch}}' bindtap='cleanSearchList'>
+  <view class='dclear-history-btn'>
+    <text class='iconfont icon-dustbin_icon'></text>
+    <text>清空</text>
+  </view>
+</view>

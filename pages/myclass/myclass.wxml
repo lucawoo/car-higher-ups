@@ -1,0 +1,103 @@
+<view class='dteacher-header-wrap'>
+  <view class='dteacher-info'>
+    <view class='dteacher-info-left'>
+      <view class='dteacher-name'>{{courseData.classroom_name ? courseData.classroom_name : "汽车大咖"}}</view>
+      <view class='dteacher-tags'>
+        <view class='dteacher-tags-item'>
+          <view class='dteacher-nums'>{{courseData.evaluate_score}}</view>
+          <view class='dteacher-text-introduction'>评分</view>
+        </view>
+        <view class='dshort-line'></view>
+        <view class='dteacher-tags-item dmiddle-border'>
+          <view class='dteacher-nums'>{{courseData.course_count}}</view>
+          <view class='dteacher-text-introduction'>课程</view>
+        </view>
+        <view class='dshort-line'></view>
+        <view class='dteacher-tags-item' style='text-align: center;'>
+          <view class='dteacher-nums'>{{courseData.focus_num_count}}</view>
+          <view class='dteacher-text-introduction'>学员</view>
+        </view>
+      </view>
+    </view>
+    <view>
+      <image mode='aspectFill' src='{{courseData.classroom_logo? courseData.classroom_logo : "/images/logo.png"}}'></image>
+    </view>
+  </view>
+</view>
+<view style='padding: 0 40rpx;'>
+  <view style='margin-top: 30rpx;'>
+    <text class='dtext-color1'>所属机构：</text>
+    <text class='dtext-color2'>{{courseData.company_name}}</text>
+  </view>
+  <view class='dtext-color1 dteacher-detail'>
+    {{courseData.classroom_info ? courseData.classroom_info : "汽车大咖"}}
+  </view>
+</view>
+<view class='dcourse-home-btns'>
+  <view bindtap='editMyclass'>
+    <image src='/images/bianji.png'></image>
+    <text>编辑</text>
+  </view>
+  <view>
+    <navigator url='/pages/invite/invite?goods_id={{courseData.lecturer_id}}&intype=6' hover-class='none'><text class='iconfont icon-erweima'></text><text>推广课程</text></navigator>
+  </view>
+  <view bindtap='addContent'>
+    <image src='/images/add.png'></image>
+    <text>发布课程</text>
+  </view>
+</view>
+
+<view class='dline-hr'></view>
+
+<view class='dteacher-list-title'>
+  <text>课程列表({{courseData.course_count}})</text>
+</view>
+
+
+<view class='dclassify-detail-list'>
+  <block wx:for='{{course}}' wx:key>
+    <view class='dresult-list-item' bindtap='linkDetail' data-type="{{item.goods.goods_type}}" data-typecourse='{{item.goods_type}}' data-id='{{item.goods_id}}'>
+      <image src='{{item.cover}}' mode='aspectFill'></image>
+      <view class='dlist-item-detail'>
+        <view class='dlist-item-class' wx:if='{{item.goods.goods_type == 2}}'>
+          <image src='/images/video_icon.png'></image>
+          <text>视频</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods.goods_type == 3}}'>
+          <image src='/images/audio_icon.png'></image>
+          <text>音频</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods.goods_type == 1}}'>
+          <image src='/images/img_icon.png'></image>
+          <text>图文</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods_type == 2}}'>
+          <image src='/images/class_icon.png'></image>
+          <text>课程</text>
+        </view>
+        <view class='dlist-item-class1' wx:if='{{item.goods_type == 1}}'>
+          <image src='/images/cloumn_icon.png'></image>
+          <text>专栏</text>
+        </view>
+        <view class='dlist-item-title'>{{item.goods_name}}</view>
+        <view class='dlist-item-subtitle'>{{item.goods_desc}}</view>
+        <view class='dlist-item-info'>
+          <text> {{item.click_num}}  观看</text>
+          
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+
+<view class='backhome' bindtap='_backhome' wx:if='{{share}}'>
+  <view><image src='/images/backhome.png'></image></view>
+</view>
+
+
+<view class='home-tips' catchtouchmove='true' wx:if='{{!hasSee}}'>
+  <image src='/images/_01.png' mode='aspectFill' class='tip-01'></image>
+  <image src='/images/_03.png' mode='aspectFill' class='tip-02'></image>
+  <image src='/images/_06.png' mode='aspectFill' class='tip-04' bindtap='closeTIPS'></image>
+</view>

@@ -1,0 +1,65 @@
+/* vip卡片 */
+.vip{
+  margin-top: 90rpx;
+  margin-bottom: 150rpx;
+}
+
+/* 内容*/
+
+.privilege{
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 100rpx;
+}
+.privilege-list{
+  height: 140rpx;
+  width: 80%;
+  color: #999;
+  padding-left: 20%;
+  margin-top: 30rpx;
+}
+.privilege-list image{
+  float: left;
+  margin-top: 20rpx;
+  margin-right: 25rpx;
+}
+.privilege-fir{
+  font-size: 24rpx;
+  padding-top: 40rpx;
+  color: #000;
+}
+.privilege-two{
+  font-size: 20rpx;
+}
+.vip-details{
+  text-align: center;
+  color: #C79A5E;
+  font-size: 26rpx;
+  margin-bottom: 12rpx;
+}
+
+
+.open-btn button{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  border: 0px;
+  background:#E8BF6F;
+  border-radius: 20rpx;
+  font-size: 30rpx;
+}
+.open-btn button::after{
+  border: 0px;
+}
+.open-btn{
+  position: relative;
+  height: 90rpx;
+  margin-top: 25rpx;
+}
+.open-btn image{
+  position: absolute;
+  top: -5rpx;
+  left: 30%;
+  z-index: 10;
+}

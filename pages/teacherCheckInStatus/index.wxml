@@ -1,0 +1,53 @@
+
+<!-- 讲师入住情况查询  -->
+
+<!-- 资料已提交，等待审核  -->
+
+<view class='dwait-checked dcheck-status' wx:if='{{first}}'>
+  <view class='dmiddle-block'>
+    <view><image src='/images/wait_check.png'></image></view>
+    <view class='dcheck-tips'>资料提交成功，请等待审核！</view>
+    <navigator open-type='switchTab' url='/pages/home/home' hover-class="none">
+      <view class='dconnect-me'>返回首页</view>
+    </navigator>
+  </view>
+</view> 
+
+
+
+<!-- z资料正在审核  -->
+<view class='dwait-checked dcheck-status' wx:if='{{lecturerInfo.data.lecturer.lecturer_state == 1}}'>
+  <view class='dmiddle-block'>
+    <view><image src='/images/is_checking.png'></image></view>
+    <view class='dcheck-tips'>资料正在审核</view>
+    <view class='dfail-tips' style='margin-top: -40rpx;'>预计在1-2个工作日完成审核</view>
+    <view class='dconnect-me' bindtap='contact'>联系客服</view>
+    <view style='font-size:24rpx;color:#B0B0B0;'>客服电话：{{phone}}</view>
+    <view style='font-size:20rpx;color:#B0B0B0;margin-top:15rpx;'>服务时间：工作日9:00-18:00</view>
+  </view>
+</view>
+
+
+
+<!-- 审核成功  -->
+
+<view class='dwait-checked dcheck-status' wx:if='{{lecturerInfo.data.lecturer.lecturer_state == 2}}'>
+  <view class='dmiddle-block'>
+    <view><image src='/images/check_success.png'></image></view>
+    <view class='dcheck-tips'>资料审核通过</view>
+  </view>
+</view>
+
+
+
+<!-- 审核失败  -->
+<view class='dwait-checked dcheck-status' wx:if='{{lecturerInfo.data.lecturer.lecturer_state == 3}}'>
+  <view class='dmiddle-block'>
+    <view><image src='/images/check_fail.png'></image></view>
+    <view class='dcheck-tips'>资料审核失败</view>
+    <view class='dfail-tips'>{{state.data.reason}}</view>
+    <navigator url='/pages/teacherCheckIn/index' hover-class="none">
+      <view class='dconnect-me' bindtap='replyAgain'>重新申请</view>
+    </navigator>
+  </view>
+</view>

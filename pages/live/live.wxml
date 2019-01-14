@@ -1,0 +1,53 @@
+<import src="/wxParse/wxParse.wxml" />
+
+<view>
+  <live-player  id='livePlay'
+                src="{{liveData.playUrl[0]}}"
+                mode="RTC" 
+                autoplay
+                binderror="error" 
+                class='live-video' 
+                orientation='{{orientation}}'
+                bindstatechange='statechange'
+                bindfullscreenchange='screenchange'> 
+    <cover-view bindtap='showScreenBtn' class='{{fullScreen ? "cover-bind-event-v" : "cover-bind-event"}}'></cover-view>
+    <!-- 直播前黑屏处理 -->
+    <cover-view class='live-loading' wx:if='{{!startLiving && liveStatus.status == 1}}'>直播加载中...</cover-view>
+    <!-- 无直播时处理 -->
+    <cover-view class='live-loading' wx:if='{{liveStatus.status == 0}}'>暂无直播</cover-view>
+    <cover-view class='live-loading' wx:if='{{errorCODE && liveStatus.status == 1}}'>经过多次自动重连失败，放弃链接</cover-view>
+    <!-- 全屏按钮-->
+    <!--  -->
+    <cover-view class="{{fullScreen ? 'exit-full-screen' : 'full-screen'}}" 
+                catchtap='{{fullScreen ? "exitFullScreen" : "fullScreen"}}' 
+                wx:if='{{showScreenBtn}}'>
+      <cover-image src='{{fullScreen ? "/images/exit-full-screen.png" : "/images/full-screen.png"}}' class='full-screen-img' />
+    </cover-view>
+    
+  </live-player>
+</view>
+
+<view class='live-title'>{{liveData.live_info.live_name}}</view>
+
+
+<view class='synopsis'>
+  <view class='cont-tit'>简介
+    <text class='borderblack'></text>
+  </view>
+  <view class='synopsis-cont'>
+    <template is="wxParse" data="{{wxParseData:desc.nodes}}" />
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
